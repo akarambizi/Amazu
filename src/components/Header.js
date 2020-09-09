@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
-import { breakPoint } from '../styles/break-point';
+import { media } from '../styles/media';
 
 const HeaderContainer = styled.header`
     background: red;
@@ -9,7 +9,7 @@ const HeaderContainer = styled.header`
     color: black;
     margin: 0 1em;
     padding: 0.25em 1em;
-    @media ${breakPoint.tablet} {
+    @media ${media.tablet} {
         background: green;
     }
 `;

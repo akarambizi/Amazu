@@ -8,7 +8,7 @@ const size = {
     desktop: '2560px'
 }
 
-export const breakPoint = {
+export const media = {
     mobileS: `(min-width: ${size.mobileS})`,
     mobileM: `(min-width: ${size.mobileM})`,
     mobileL: `(min-width: ${size.mobileL})`,
