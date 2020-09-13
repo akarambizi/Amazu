@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
-import { media } from '../styles/media';
+import { media } from '../styles';
 
 const HeaderContainer = styled.header`
     background: red;
@@ -23,7 +23,7 @@ function Header() {
                 </div>
                 <ul>
                     <li>
-                        <Link to="/">Home </Link>
+                        <Link to="/">Home</Link>
                     </li>
                     <li>
                         <Link to="/rent">Rent</Link>

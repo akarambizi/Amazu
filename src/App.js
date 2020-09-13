@@ -1,20 +1,19 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
-import HomePage from './pages/HomePage';
-import Rent from './pages/Rent';
-import Buy from './pages/Buy';
-import NotFound from './pages/NotFound';
+import { HomePage, Rent, Buy, NotFound } from './pages';
 import Header from './components/Header';
+import { GlobalStyles } from './styles';
 
 function App() {
     return (
         <main>
-            <Header/>
+            <GlobalStyles />
+            <Header />
             <Switch>
                 <Route path="/" component={HomePage} exact />
                 <Route path="/rent" component={Rent} />
                 <Route path="/buy" component={Buy} />
-                <Route component={NotFound}/>
+                <Route component={NotFound} />
             </Switch>
         </main>
     );
