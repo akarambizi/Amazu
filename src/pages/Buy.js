@@ -1,11 +1,11 @@
-import React from 'react'
+import React from 'react';
 
 function Buy() {
     return (
         <section>
             <p>Buy page</p>
         </section>
-    )
+    );
 }
 
-export default Buy
+export default Buy;

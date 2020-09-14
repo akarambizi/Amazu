@@ -1,26 +1,43 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
-import { media } from '../styles';
+import { colors } from '../styles';
+import { Button } from '../elements';
 
 const HeaderContainer = styled.header`
-    background: red;
-    border: 1px solid palevioletred;
-    color: black;
-    margin: 0 1em;
-    padding: 0.25em 1em;
-    @media ${media.tablet} {
-        background: green;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: ${colors.divider};
+
+    nav {
+        display: flex;
+        align-items: center;
+
+        ul {
+            padding: 0;
+            list-style: none;
+            text-align: right;
+
+            li {
+                display: inline-block;
+                padding: 10px 20px;
+            }
+        }
+
+        p {
+            margin: 0;
+        }
     }
 `;
 
 function Header() {
     return (
-        <HeaderContainer>
+        <HeaderContainer className="hello">
+            <div className="logo">
+                <p>RentHouse</p>
+            </div>
             <nav>
-                <div className="logo">
-                    <p>RentHouse</p>
-                </div>
                 <ul>
                     <li>
                         <Link to="/">Home</Link>
@@ -33,7 +50,8 @@ function Header() {
                     </li>
                 </ul>
                 <div className="register">
-                    <button>Sign In</button>
+                    <Button>Register</Button>
+                    <Button>Log In</Button>
                 </div>
             </nav>
         </HeaderContainer>
