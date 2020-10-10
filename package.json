@@ -46,7 +46,6 @@
     "eslint-plugin-react": "^7.21.4",
     "eslint-plugin-react-hooks": "^4.0.0",
     "husky": "^4.3.0",
-    "lint-staged": "^10.4.0",
     "prettier": "^2.1.2",
     "prettier-eslint": "^11.0.0",
     "prettier-eslint-cli": "^5.0.0"
@@ -55,8 +54,5 @@
     "hooks": {
       "pre-commit": "npm run lint && npm run format"
     }
-  },
-  "lint-staged": {
-    "$(pwd)": "npm run format"
   }
 }
