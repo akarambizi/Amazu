@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 function Card({ data }) {
-    const { name, image, address, bedrooms, bathrooms, area, price } = data;
+    const { name, image, address, bedrooms, bathrooms, area, price } =data;
     return (
         <article>
             <img src={image} alt={name} />
