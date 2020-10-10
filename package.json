@@ -57,8 +57,6 @@
     }
   },
   "lint-staged": {
-    "*.{js,jsx,ts,tsx}": [
-        "prettier-eslint --eslint-config-path ./.eslintrc.js --write \"$(pwd)/**/*.js\" --list-different"
-    ]
+    "$(pwd)": "npm run format"
   }
 }
