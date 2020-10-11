@@ -5,7 +5,7 @@ import { colors } from '../styles';
 import { Button } from '../elements';
 
 const HeaderContainer = styled.header`
-    display: flex;
+         display: flex;
     justify-content: space-between;
     align-items: center;
     background-color: ${colors.divider};
