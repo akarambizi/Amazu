@@ -4,7 +4,7 @@ import { Button } from '../components/elements';
 
 function Typography() {
     const card = {
-        name: 2,
+        name: 'house 1',
         image: 'https://images.unsplash.com/photo-1580587771525-78b9dba3b914?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=667&q=80',
         address: '567 Marconi Dr.Pasadena, MD 21122',
         price: 500,

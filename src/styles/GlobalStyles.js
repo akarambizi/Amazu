@@ -10,6 +10,10 @@ const GlobalStyles = createGlobalStyle`
         ${colors};
         ${fonts}
     }
+
+    body {
+        font-family:var(--font-tertiary);
+    }
 `;
 
 export default GlobalStyles;
