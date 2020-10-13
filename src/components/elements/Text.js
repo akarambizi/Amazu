@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 const Text = styled.p`
     font-family: var(--font-tertiary);
-    font-size: ${(props) => (props.bold ? '20px' : '16px')};
+    font-size: ${(props) => (props.bold ? 'var(--font-size-xl)' : 'var(--font-size-md)')};
     line-height: 20px;
     font-weight: ${(props) => props.bold && '700'};
     color: ${(props) => (props.secondary ? 'var(--primary-color)' : 'var(--primary-text-color)')};

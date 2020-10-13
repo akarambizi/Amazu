@@ -8,7 +8,7 @@ const Button = styled.button`
     font-family: var(--font-secondary);
     font-style: normal;
     font-weight: normal;
-    font-size: 14px;
+    font-size: var(--font-size-sm);
     line-height: 16px;
     color: ${(props) => (props.secondary ? 'var(--primary-text-color)' : 'var(--primary-color-text)')};
     border: ${(props) => (props.secondary ? '1px solid var(--divider-color)' : '1px solid var(--primary-color)')};

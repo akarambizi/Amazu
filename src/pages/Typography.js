@@ -1,6 +1,6 @@
 import React from 'react';
 import { Card } from '../components';
-import { Button } from '../components/elements';
+import { Button, Grid, Container } from '../components/elements';
 
 function Typography() {
     const card = {
@@ -13,15 +13,24 @@ function Typography() {
         area: 1000,
     };
     return (
-        <div>
+        <>
             <h2>card</h2>
-            <Card data={card} />
+            <Container>
+                <Grid>
+                    <Card data={card} />
+                    <Card data={card} />
+                    <Card data={card} />
+                    <Card data={card} />
+                    <Card data={card} />
+                    <Card data={card} />
+                </Grid>
+            </Container>
 
             <h2>buttons</h2>
             <Button shadow>Join Group</Button>
             <Button secondary>login</Button>
             <Button>Register</Button>
-        </div>
+        </>
     );
 }
 
