@@ -6,7 +6,7 @@ const Grid = styled.section`
     gap: 24px;
     flex-wrap: wrap;
 
-    display:grid;
+    display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
 `;
 

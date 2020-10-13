@@ -3,7 +3,7 @@ import styled from 'styled-components';
 const Anchor = styled.a`
     text-transform: capitalize;
     text-decoration: none !important;
-    display:block;
+    display: block;
 `;
 
 export default Anchor;

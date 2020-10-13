@@ -34,7 +34,7 @@ const CardImage = styled.a`
         border: 3px solid var(--primary-color);
         border-radius: 12px;
         transition: opacity 0.1s ease-out;
-        pointer-events:none;
+        pointer-events: none;
     }
 
     img {
