@@ -20,9 +20,10 @@ const ImageSection = styled.div`
         margin-bottom: 15px;
     }
 `;
+
 const ImageContainer = styled.div`
     width: 100%;
-    height:100%;
+    height: 100%;
 
     img {
         width: 100%;

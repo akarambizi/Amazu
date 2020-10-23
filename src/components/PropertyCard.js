@@ -1,9 +1,8 @@
-import React from 'react'
+import React from 'react';
 import styled from 'styled-components';
-
-import PropertyImages from './property/PropertyImages'
-import PropertyOwner from './property/PropertyOwner'
-import { mixins,media } from '../styles';
+import PropertyImages from './property/PropertyImages';
+import PropertyOwner from './property/PropertyOwner';
+import { mixins, media } from '../styles';
 
 const PropertyCardTop = styled.section`
     @media ${media.laptop} {
@@ -19,7 +18,7 @@ function PropertyCard() {
                 <PropertyOwner />
             </PropertyCardTop>
         </div>
-    )
+    );
 }
 
-export default PropertyCard
+export default PropertyCard;

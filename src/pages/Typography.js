@@ -24,7 +24,6 @@ function Typography() {
                     <Card data={card} />
                     <Card data={card} />
                 </Grid>
-
             </Container>
 
             <Container>
