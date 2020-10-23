@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card } from '../components';
+import { Card, PropertyCard } from '../components';
 import { Button, Grid, Container } from '../components/elements';
 
 function Typography() {
@@ -14,8 +14,8 @@ function Typography() {
     };
     return (
         <>
-            <h2>card</h2>
             <Container>
+                <h2>card</h2>
                 <Grid>
                     <Card data={card} />
                     <Card data={card} />
@@ -24,12 +24,20 @@ function Typography() {
                     <Card data={card} />
                     <Card data={card} />
                 </Grid>
+
             </Container>
 
-            <h2>buttons</h2>
-            <Button shadow>Join Group</Button>
-            <Button secondary>login</Button>
-            <Button>Register</Button>
+            <Container>
+                <h2>property Card</h2>
+                <PropertyCard />
+            </Container>
+
+            <Container>
+                <h2>buttons</h2>
+                <Button shadow>Join Group</Button>
+                <Button secondary>login</Button>
+                <Button>Register</Button>
+            </Container>
         </>
     );
 }

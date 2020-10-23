@@ -4,7 +4,7 @@ import { media } from '../../styles';
 const Container = styled.div`
     padding: 0 20px;
 
-    @media ${media.desktop} {
+    @media ${media.laptop} {
         max-width: 1200px;
         margin: 0 auto;
     }

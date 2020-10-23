@@ -14,6 +14,7 @@ const Button = styled.button`
     border: ${(props) => (props.secondary ? '1px solid var(--divider-color)' : '1px solid var(--primary-color)')};
     padding: 10px 20px;
     min-width: 142px;
+    width: ${(props) => props.width};
     text-transform: capitalize;
     transition: 0.3s;
 
