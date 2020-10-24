@@ -9,7 +9,7 @@ const PropertyInfoContainer = styled.div`
     max-width: 885px;
 `;
 
-const PropertyInfoTop = styled.div`
+const PropertyInfoSection = styled.div`
     ${mixins.grid};
     ${(props) => (props.max ? mixins.flexBetween : mixins.grid)};
     grid-template-columns: repeat(3, 1fr);
@@ -51,7 +51,7 @@ const PropertyInfoTop = styled.div`
 function PropertyInfo() {
     return (
         <PropertyInfoContainer>
-            <PropertyInfoTop max>
+            <PropertyInfoSection max>
                 <div>
                     <p>$4000000</p>
                 </div>
@@ -61,8 +61,8 @@ function PropertyInfo() {
                 <div>
                     <p>Share</p>
                 </div>
-            </PropertyInfoTop>
-            <PropertyInfoTop>
+            </PropertyInfoSection>
+            <PropertyInfoSection>
                 <div>
                     <p>Bedrooms</p>
                     <span>4</span>
@@ -78,8 +78,8 @@ function PropertyInfo() {
                     <span>4 </span>
                     <IconAreaSvg />
                 </div>
-            </PropertyInfoTop>
-            <PropertyInfoTop>
+            </PropertyInfoSection>
+            <PropertyInfoSection>
                 <div>
                     <p>Built</p>
                     <span>2017</span>
@@ -92,8 +92,8 @@ function PropertyInfo() {
                     <p>Area Safety</p>
                     <span>4 </span>
                 </div>
-            </PropertyInfoTop>
-            <PropertyInfoTop>
+            </PropertyInfoSection>
+            <PropertyInfoSection>
                 <h4>Description</h4>
                 <p className="description">
                     From the outside this house looks warm and cozy. It has been built with spruce wood and has sandstone decorations. Small, rectangular windows let in plenty of light and have been
@@ -101,7 +101,7 @@ function PropertyInfo() {
                     dining area and a large storage room. The building is square shaped. The house is partially surrounded by glass overhanging panels on two sides. The second floor is bigger than the
                     first, which creates a stylish overhang around half the house. This floor has a very different style than the floor below.
                 </p>
-            </PropertyInfoTop>
+            </PropertyInfoSection>
         </PropertyInfoContainer>
     );
 }
