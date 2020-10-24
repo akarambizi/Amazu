@@ -17,6 +17,11 @@ const mixins = {
         justify-content: space-between;
         align-items: center;
     `,
+
+    grid: css`
+        display: grid;
+        align-items: center;
+    `,
 };
 
 export default mixins;

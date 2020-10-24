@@ -2,10 +2,10 @@ import React from 'react';
 import styled from 'styled-components';
 import { mixins } from '../../styles';
 
-const PropertyImagesContainer = styled.section`
+const PropertyImagesContainer = styled.div`
     height: 270px;
     box-sizing: border-box;
-
+    margin-bottom: 40px;
     ${mixins.flexBetween}
 `;
 

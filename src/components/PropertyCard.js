@@ -2,22 +2,25 @@ import React from 'react';
 import styled from 'styled-components';
 import PropertyImages from './property/PropertyImages';
 import PropertyOwner from './property/PropertyOwner';
+import PropertyInfo from './property/PropertyInfo';
 import { mixins, media } from '../styles';
 
-const PropertyCardTop = styled.section`
+const PropertyCardContainer = styled.article`
     @media ${media.laptop} {
         ${mixins.flexBetween}
+        align-items:flex-start;
     }
 `;
 
 function PropertyCard() {
     return (
-        <div>
-            <PropertyCardTop>
+        <PropertyCardContainer>
+            <section>
                 <PropertyImages />
-                <PropertyOwner />
-            </PropertyCardTop>
-        </div>
+                <PropertyInfo />
+            </section>
+            <PropertyOwner />
+        </PropertyCardContainer>
     );
 }
 
