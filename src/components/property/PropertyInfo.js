@@ -7,16 +7,18 @@ import { mixins } from '../../styles';
 
 const PropertyInfoContainer = styled.div`
     max-width: 885px;
+    color: var(--secondary-text-color);
 `;
 
 const PropertyInfoSection = styled.div`
     ${mixins.grid};
     ${(props) => (props.max ? mixins.flexBetween : mixins.grid)};
     grid-template-columns: repeat(3, 1fr);
-    max-width: ${(props) => (props.max ? '100%' : '555px')};
+    max-width: ${(props) => (props.max ? '100%' : '570px')};
     margin-left: auto;
-
     margin-bottom: 25px;
+    border-top: ${(props) => props.border && ' 1px solid var(--divider-color)'};
+    padding-top: ${(props) => props.border && ' 20px'};
 
     p {
         font-family: var(--secondary-text-color);
@@ -43,8 +45,30 @@ const PropertyInfoSection = styled.div`
         vertical-align: middle;
     }
 
+    h4 {
+        align-self: start;
+        font-size: 24px;
+    }
+
     .description {
         grid-column: span 2;
+        line-height: 24px;
+        color: var(--secondary-text-color);
+    }
+
+    .price {
+        p {
+            font-size: 30px;
+            color: var(--primary-color);
+            font-weight: 800;
+        }
+    }
+
+    .address {
+        p {
+            font-size: 22px;
+            font-weight: 800;
+        }
     }
 `;
 
@@ -52,17 +76,17 @@ function PropertyInfo() {
     return (
         <PropertyInfoContainer>
             <PropertyInfoSection max>
-                <div>
-                    <p>$4000000</p>
+                <div className="price">
+                    <p>$400,0000</p>
                 </div>
-                <div>
+                <div className="address">
                     <p>567 Marconi Dr.Pasadena, MD 21122</p>
                 </div>
                 <div>
                     <p>Share</p>
                 </div>
             </PropertyInfoSection>
-            <PropertyInfoSection>
+            <PropertyInfoSection border>
                 <div>
                     <p>Bedrooms</p>
                     <span>4</span>
