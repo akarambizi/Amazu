@@ -2,9 +2,9 @@ import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import { colors } from '../styles';
-import { Button } from './elements';
+import { Button, Container } from './elements';
 
-const HeaderContainer = styled.header`
+const HeaderContainer = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -33,28 +33,32 @@ const HeaderContainer = styled.header`
 
 function Header() {
     return (
-        <HeaderContainer className="hello">
-            <div className="logo">
-                <p>RentHouse</p>
-            </div>
-            <nav>
-                <ul>
-                    <li>
-                        <Link to="/">Home</Link>
-                    </li>
-                    <li>
-                        <Link to="/rent">Rent</Link>
-                    </li>
-                    <li>
-                        <Link to="/buy">Buy</Link>
-                    </li>
-                </ul>
-                <div className="register">
-                    <Button>Register</Button>
-                    <Button>Log In</Button>
-                </div>
-            </nav>
-        </HeaderContainer>
+        <header>
+            <Container>
+                <HeaderContainer className="hello">
+                    <div className="logo">
+                        <p>RentHouse</p>
+                    </div>
+                    <nav>
+                        <ul>
+                            <li>
+                                <Link to="/">Home</Link>
+                            </li>
+                            <li>
+                                <Link to="/rent">Rent</Link>
+                            </li>
+                            <li>
+                                <Link to="/buy">Buy</Link>
+                            </li>
+                        </ul>
+                        <div className="register">
+                            <Button>Register</Button>
+                            <Button>Log In</Button>
+                        </div>
+                    </nav>
+                </HeaderContainer>
+            </Container>
+        </header>
     );
 }
 
