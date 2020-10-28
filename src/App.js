@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import { GlobalStyles } from './styles';
 import { HomePage, Rent, Buy, NotFound, Typography } from './pages';
-import { Header } from './components';
+import { Footer, Header } from './components';
 
 function App() {
     return (
@@ -18,6 +18,7 @@ function App() {
                     <Route component={NotFound} />
                 </Switch>
             </main>
+            <Footer />
         </BrowserRouter>
     );
 }
