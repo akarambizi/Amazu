@@ -75,7 +75,7 @@ const PropertyInfoSection = styled.div`
 function PropertyInfo() {
     return (
         <PropertyInfoContainer>
-            <PropertyInfoSection max>
+            <PropertyInfoSection max={1}>
                 <div className="price">
                     <p>$400,0000</p>
                 </div>
