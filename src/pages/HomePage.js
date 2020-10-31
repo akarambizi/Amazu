@@ -1,9 +1,22 @@
 import React from 'react';
+import { Card, Hero } from '../components';
+import { Container, Grid } from '../components/elements';
 
 function HomePage() {
     return (
         <section>
-            <p>homepage</p>
+            <Hero />
+            <Container>
+                <h2>card</h2>
+                {/* <Grid>
+                    <Card data={card} />
+                    <Card data={card} />
+                    <Card data={card} />
+                    <Card data={card} />
+                    <Card data={card} />
+                    <Card data={card} />
+                </Grid> */}
+            </Container>
         </section>
     );
 }
