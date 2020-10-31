@@ -13,8 +13,9 @@
             "address": "567 Marconi Dr.Pasadena",
             "city": "city",
             "country": "country",
+            "fullAdress":"567 Marconi Dr.Pasadena, MD 21122",
             "state": "MD",
-            "zip": "21122"
+            "zip": 21122
         },
         "owner": {
             "name": "owner name",

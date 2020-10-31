@@ -11,7 +11,7 @@ const CardContainer = styled.article`
     max-width: 100%;
 `;
 
-const CardImage = styled.a`
+const CardImageLink = styled.a`
     position: relative;
     display: block;
 
@@ -76,28 +76,28 @@ const CardIcons = styled.div`
     }
 `;
 function Card({ data }) {
-    const { name, image, address, bedrooms, bathrooms, area, price } = data;
+    const { title, images, location:{fullAdress}, bedRooms, bathRooms, area, price } = data;
     return (
         <CardContainer>
-            <CardImage href="/typography">
-                <img src={image} alt={name} />
-            </CardImage>
+            <CardImageLink href="/typography">
+                <img src={images[0]} alt={title} />
+            </CardImageLink>
             <div>
                 <CardContent>
                     <CardLink href="/">
-                        <Text bold>{name}</Text>
+                        <Text bold>{title}</Text>
                     </CardLink>
-                    <Text>{address}</Text>
+                    <Text>{fullAdress}</Text>
                     <Text bold secondary>{`$${price}`}</Text>
                 </CardContent>
                 <CardIcons>
                     <Text title="Bedrooms">
                         <IconBedSvg />
-                        {bedrooms}
+                        {bedRooms}
                     </Text>
                     <Text title="Bathrooms">
                         <IconBathRoomSvg />
-                        {bathrooms}
+                        {bathRooms}
                     </Text>
                     <Text title="Area">
                         <IconAreaSvg />
@@ -116,13 +116,15 @@ Card.defaultProps = {
 
 Card.propTypes = {
     data: PropTypes.shape({
-        name: PropTypes.string.isRequired,
-        image: PropTypes.string.isRequired,
-        address: PropTypes.string.isRequired,
-        price: PropTypes.number.isRequired,
-        bedrooms: PropTypes.number,
-        bathrooms: PropTypes.number,
         area: PropTypes.number,
+        bathRooms: PropTypes.number,
+        bedRooms: PropTypes.number,
+        images: PropTypes.arrayOf(PropTypes.string).isRequired,
+        location: PropTypes.shape({
+            fullAdress: PropTypes.string.isRequired,
+        }),
+        price: PropTypes.number.isRequired,
+        title: PropTypes.string.isRequired,
     }),
 };
 

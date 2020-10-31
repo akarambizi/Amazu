@@ -1,6 +1,7 @@
 import React from 'react';
-import { Card, Hero } from '../components';
+import { Hero, Card } from '../components';
 import { Container, Grid } from '../components/elements';
+import data from '../assets/json/properties.json';
 
 function HomePage() {
     return (
@@ -8,14 +9,14 @@ function HomePage() {
             <Hero />
             <Container>
                 <h2>card</h2>
-                {/* <Grid>
-                    <Card data={card} />
-                    <Card data={card} />
-                    <Card data={card} />
-                    <Card data={card} />
-                    <Card data={card} />
-                    <Card data={card} />
-                </Grid> */}
+                <Grid>
+                    <Card data={data[0]} />
+                    <Card data={data[0]} />
+                    <Card data={data[0]} />
+                    <Card data={data[0]} />
+                    <Card data={data[0]} />
+                    <Card data={data[0]} />
+                </Grid>
             </Container>
         </section>
     );
