@@ -76,7 +76,15 @@ const CardIcons = styled.div`
     }
 `;
 function Card({ data }) {
-    const { title, images, location:{fullAdress}, bedRooms, bathRooms, area, price } = data;
+    const {
+        title,
+        images,
+        location: { fullAdress },
+        bedRooms,
+        bathRooms,
+        area,
+        price,
+    } = data;
     return (
         <CardContainer>
             <CardImageLink href="/typography">
