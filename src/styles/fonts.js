@@ -8,7 +8,6 @@ const fonts = {
     '--font-size-lg': '18px',
     '--font-size-xl': '20px',
     '--font-size-xxl': '24px',
-    '--font-size-heading': '32px',
 };
 
 export default fonts;
