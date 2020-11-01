@@ -1,6 +1,6 @@
 import React from 'react';
 import { Hero, Card, ListProperty } from '../components';
-import { Container, Grid } from '../components/elements';
+import { Container, Grid } from '../styles/elements';
 import data from '../assets/json/properties.json';
 
 function HomePage() {

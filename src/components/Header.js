@@ -2,15 +2,17 @@ import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import { colors } from '../styles';
-import { Button, Container } from './elements';
+import { Button, Container } from '../styles/elements';
+import { ReactComponent as OpenSvg } from '../assets/images/icon-bars.svg';
+import { ReactComponent as CloseSvg } from '../assets/images/icon-cross.svg';
 
 const HeaderContainer = styled.div`
-    display: flex;
+    /* display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: center; */
     background-color: ${colors.divider};
 
-    nav {
+    /* nav {
         display: flex;
         align-items: center;
 
@@ -27,7 +29,14 @@ const HeaderContainer = styled.div`
 
         p {
             margin: 0;
-        }
+        } */
+    }
+`;
+
+const HeaderButtons = styled.div`
+    svg {
+        height: 30px;
+        width: 30px;
     }
 `;
 
@@ -39,6 +48,14 @@ function Header() {
                     <div className="logo">
                         <p>RentHouse</p>
                     </div>
+                    <HeaderButtons>
+                        <button type="button" aria-label="open header">
+                            <OpenSvg />
+                        </button>
+                        <button type="button" aria-label="close header">
+                            <CloseSvg />
+                        </button>
+                    </HeaderButtons>
                     <nav>
                         <ul>
                             <li>

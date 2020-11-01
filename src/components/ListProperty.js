@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Button } from './elements';
+import { Button } from '../styles/elements';
 
 const ListPropertyContainer = styled.section`
     width: 80%;

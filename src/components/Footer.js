@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
-import { Container } from './elements';
+import { Container } from '../styles/elements';
 import { ReactComponent as IconApple } from '../assets/images/icon-apple.svg';
 import { ReactComponent as IconGooglePlay } from '../assets/images/icon-google-play.svg';
 

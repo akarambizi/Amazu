@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
-import { Anchor, Text } from './elements';
+import { Anchor, Text } from '../styles/elements';
 import { mixins } from '../styles';
 import { ReactComponent as IconAreaSvg } from '../assets/images/icon-area.svg';
 import { ReactComponent as IconBathRoomSvg } from '../assets/images/icon-bathroom.svg';
