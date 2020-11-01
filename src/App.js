@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import { GlobalStyles } from './styles';
-import { HomePage, Rent, Buy, NotFound, Typography } from './pages';
+import { Home, Rent, Buy, NotFound, Typography } from './pages';
 import { Footer, Header } from './components';
 
 function App() {
@@ -11,7 +11,7 @@ function App() {
             <Header />
             <main>
                 <Switch>
-                    <Route path="/" component={HomePage} exact />
+                    <Route path="/" component={Home} exact />
                     <Route path="/rent" component={Rent} />
                     <Route path="/buy" component={Buy} />
                     <Route path="/typography" component={Typography} />

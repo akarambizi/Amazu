@@ -3,7 +3,7 @@ import { Hero, Card, ListProperty } from '../components';
 import { Container, Grid } from '../styles/elements';
 import data from '../assets/json/properties.json';
 
-function HomePage() {
+function Home() {
     return (
         <section>
             <Hero />
@@ -23,4 +23,4 @@ function HomePage() {
     );
 }
 
-export default HomePage;
+export default Home;
