@@ -1,5 +1,5 @@
 import React from 'react';
-import { Hero, Card } from '../components';
+import { Hero, Card, ListProperty } from '../components';
 import { Container, Grid } from '../components/elements';
 import data from '../assets/json/properties.json';
 
@@ -7,6 +7,7 @@ function HomePage() {
     return (
         <section>
             <Hero />
+            <ListProperty />
             <Container>
                 <h2>card</h2>
                 <Grid>
