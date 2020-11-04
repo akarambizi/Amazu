@@ -56,7 +56,6 @@ export const Button = styled.button`
     transition: 0.3s;
     display: ${(props) => (props.min ? 'inline-block' : 'block')};
 
-
     &:hover {
         background: var(--primary-color-light);
         color: var(--primary-text-color);
