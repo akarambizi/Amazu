@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
-import { Container } from '../styles/elements';
+import { Wrapper } from '../styles/elements';
 import { ReactComponent as IconApple } from '../assets/images/icon-apple.svg';
 import { ReactComponent as IconGooglePlay } from '../assets/images/icon-google-play.svg';
 
@@ -15,10 +15,10 @@ const FooterContainer = styled.footer`
     }
 `;
 
-function footer() {
+function Footer() {
     return (
         <FooterContainer>
-            <Container>
+            <Wrapper>
                 <p>footer</p>
                 <nav>
                     <ul>
@@ -37,9 +37,9 @@ function footer() {
                     <IconApple />
                     <IconGooglePlay />
                 </div>
-            </Container>
+            </Wrapper>
         </FooterContainer>
     );
 }
 
-export default footer;
+export default Footer;

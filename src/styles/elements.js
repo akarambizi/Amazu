@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { media } from '.';
 
-export const Container = styled.div`
+export const Wrapper = styled.div`
     padding: 0 20px;
 
     @media ${media.laptop} {
@@ -49,11 +49,13 @@ export const Button = styled.button`
     line-height: 16px;
     color: ${(props) => (props.secondary ? 'var(--primary-text-color)' : 'var(--primary-color-text)')};
     border: ${(props) => (props.secondary ? '1px solid var(--divider-color)' : '1px solid var(--primary-color)')};
-    padding: 10px 20px;
+    padding: 14px 20px;
     min-width: 142px;
     width: ${(props) => props.width};
     text-transform: capitalize;
     transition: 0.3s;
+    display: ${(props) => (props.min ? 'inline-block' : 'block')};
+
 
     &:hover {
         background: var(--primary-color-light);

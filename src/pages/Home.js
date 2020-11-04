@@ -1,6 +1,6 @@
 import React from 'react';
 import { Hero, Card, ListProperty } from '../components';
-import { Container, Grid } from '../styles/elements';
+import { Wrapper, Grid } from '../styles/elements';
 import data from '../assets/json/properties.json';
 
 function Home() {
@@ -8,7 +8,7 @@ function Home() {
         <section>
             <Hero />
             <ListProperty />
-            <Container>
+            <Wrapper>
                 <h2>card</h2>
                 <Grid>
                     <Card data={data[0]} />
@@ -18,7 +18,7 @@ function Home() {
                     <Card data={data[0]} />
                     <Card data={data[0]} />
                 </Grid>
-            </Container>
+            </Wrapper>
         </section>
     );
 }

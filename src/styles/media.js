@@ -6,10 +6,10 @@ const size = {
 };
 
 const media = {
-    mobile: `(min-width: ${size.mobile})`,
-    tablet: `(min-width: ${size.tablet})`,
-    laptop: `(min-width: ${size.laptop})`,
-    desktop: `(min-width: ${size.desktop})`,
+    mobile: `@media (min-width: ${size.mobile})`,
+    tablet: `@media (min-width: ${size.tablet})`,
+    laptop: `@media (min-width: ${size.laptop})`,
+    desktop: `@media (min-width: ${size.desktop})`,
 };
 
 export default media;
