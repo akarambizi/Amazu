@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
-import { colors, mixins, media } from '../styles';
 import { Button, Wrapper } from '../styles/elements';
-import { ReactComponent as OpenSvg } from '../assets/images/icon-bars.svg';
+import { colors, mixins, media } from '../styles';
 import { ReactComponent as CloseSvg } from '../assets/images/icon-cross.svg';
+import { ReactComponent as OpenSvg } from '../assets/images/icon-bars.svg';
 
 const HeaderWrapper = styled.header`
     background-color: ${colors.divider};
