@@ -1,16 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
-import { colors, mixins } from '../styles';
+import { colors, mixins, media } from '../styles';
 import { Button, Wrapper } from '../styles/elements';
 import { ReactComponent as OpenSvg } from '../assets/images/icon-bars.svg';
 import { ReactComponent as CloseSvg } from '../assets/images/icon-cross.svg';
 
 const HeaderWrapper = styled.header`
     background-color: ${colors.divider};
-    padding: 10px 0;
     border-bottom: 1px solid var(--divider-color);
     box-shadow: 0 1px 6px 0 rgba(32, 33, 36, 0.28);
+    padding: 10px 0;
 `;
 
 const HeaderTop = styled.div`
@@ -36,7 +36,6 @@ const HeaderButtonWrapper = styled.div`
     box-shadow: ${(props) => props.close && '0 1px 6px 0 rgba(32, 33, 36, 0.28)'};
     margin-right: 6px;
     padding: ${(props) => props.close && '16px'};
-    text-align: right;
 
     .open {
         padding: 10px 10px 10px 0;
@@ -55,9 +54,8 @@ const HeaderButton = styled.button`
     outline-color: var(--primary-color);
 
     svg {
-        display: inline-block;
+        ${mixins.inlineBlock}
         height: 20px;
-        vertical-align: middle;
         width: 20px;
 
         path {
@@ -66,12 +64,11 @@ const HeaderButton = styled.button`
     }
 
     span {
+        ${mixins.inlineBlock}
         color: var(--primary-color);
-        display: inline-block;
         font-size: 14px;
         font-weight: 700;
         text-transform: uppercase;
-        vertical-align: middle;
     }
 `;
 
@@ -80,9 +77,7 @@ const HeaderNav = styled.nav`
     ${mixins.positionFixed};
     background-color: var(--primary-color-text);
     border-right: 1px solid var(--divider-color);
-    transition: left 0.3s ease;
     width: 100%;
-    display: ${(props) => (props.isVisible ? 'block' : 'none')};
 
     ul {
         li {
@@ -104,6 +99,11 @@ const HeaderNav = styled.nav`
 
 const HeaderForm = styled.div`
     margin-top: ${(props) => (props.nav ? '20px' : 'none')};
+    display: ${(props) => props.primary && 'none'};
+
+    ${media.laptop} {
+        display: ${(props) => props.primary && 'block'};
+    }
 
     button {
         margin: 0 auto;
@@ -117,13 +117,14 @@ const HeaderForm = styled.div`
 `;
 
 function Header() {
+    const [isVisible, setIsVisible] = useState(false);
     return (
         <HeaderWrapper>
             <Wrapper>
                 <HeaderTop>
                     <div>
                         <HeaderButtonWrapper>
-                            <HeaderButton class="open" type="button" aria-label="open header">
+                            <HeaderButton className="open" type="button" aria-label="open header" onClick={() => setIsVisible(true)}>
                                 <OpenSvg />
                             </HeaderButton>
                         </HeaderButtonWrapper>
@@ -131,38 +132,40 @@ function Header() {
                             <Link to="/">RentHouse</Link>
                         </HeaderLogo>
                     </div>
-                    <HeaderForm>
+                    <HeaderForm primary>
                         <Button className="register" aria-label="register">
                             Register
                         </Button>
                         <Button aria-label="Log In">Log In</Button>
                     </HeaderForm>
                 </HeaderTop>
-                <HeaderNav>
-                    <HeaderButtonWrapper close>
-                        <HeaderButton type="button" aria-label="close header">
-                            <span>Close</span>
-                            <CloseSvg />
-                        </HeaderButton>
-                    </HeaderButtonWrapper>
-                    <ul>
-                        <li>
-                            <Link to="/">Home</Link>
-                        </li>
-                        <li>
-                            <Link to="/rent">Rent</Link>
-                        </li>
-                        <li>
-                            <Link to="/buy">Buy</Link>
-                        </li>
-                    </ul>
-                    <HeaderForm nav>
-                        <Button className="register" aria-label="register">
-                            Register
-                        </Button>
-                        <Button aria-label="Log In">Log In</Button>
-                    </HeaderForm>
-                </HeaderNav>
+                {isVisible && (
+                    <HeaderNav>
+                        <HeaderButtonWrapper close>
+                            <HeaderButton type="button" aria-label="close header" onClick={() => setIsVisible(false)}>
+                                <span>Close</span>
+                                <CloseSvg />
+                            </HeaderButton>
+                        </HeaderButtonWrapper>
+                        <ul>
+                            <li>
+                                <Link to="/">Home</Link>
+                            </li>
+                            <li>
+                                <Link to="/rent">Rent</Link>
+                            </li>
+                            <li>
+                                <Link to="/buy">Buy</Link>
+                            </li>
+                        </ul>
+                        <HeaderForm nav>
+                            <Button className="register" aria-label="register">
+                                Register
+                            </Button>
+                            <Button aria-label="Log In">Log In</Button>
+                        </HeaderForm>
+                    </HeaderNav>
+                )}
             </Wrapper>
         </HeaderWrapper>
     );
