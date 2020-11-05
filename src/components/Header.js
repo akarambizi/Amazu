@@ -32,10 +32,10 @@ const HeaderLogo = styled.div`
 
 const HeaderButtonWrapper = styled.div`
     ${mixins.inlineBlock};
-    border-bottom: ${(props) => props.close && ' 1px solid var(--divider-color)'};
-    box-shadow: ${(props) => props.close && '0 1px 6px 0 rgba(32, 33, 36, 0.28)'};
+    border-bottom: ${(props) => props.isNavVisible && ' 1px solid var(--divider-color)'};
+    box-shadow: ${(props) => props.isNavVisible && '0 1px 6px 0 rgba(32, 33, 36, 0.28)'};
     margin-right: 6px;
-    padding: ${(props) => props.close && '16px'};
+    padding: ${(props) => props.isNavVisible && '16px'};
 
     .open {
         padding: 10px 10px 10px 0;
@@ -117,14 +117,14 @@ const HeaderForm = styled.div`
 `;
 
 function Header() {
-    const [isVisible, setIsVisible] = useState(false);
+    const [isNavVisible, setIsNavVisible] = useState(false);
     return (
         <HeaderWrapper>
             <Wrapper>
                 <HeaderTop>
                     <div>
                         <HeaderButtonWrapper>
-                            <HeaderButton className="open" type="button" aria-label="open header" onClick={() => setIsVisible(true)}>
+                            <HeaderButton className="open" type="button" aria-label="open header" onClick={() => setIsNavVisible(true)}>
                                 <OpenSvg />
                             </HeaderButton>
                         </HeaderButtonWrapper>
@@ -139,10 +139,10 @@ function Header() {
                         <Button aria-label="Log In">Log In</Button>
                     </HeaderForm>
                 </HeaderTop>
-                {isVisible && (
+                {isNavVisible && (
                     <HeaderNav>
-                        <HeaderButtonWrapper close>
-                            <HeaderButton type="button" aria-label="close header" onClick={() => setIsVisible(false)}>
+                        <HeaderButtonWrapper isNavVisible={isNavVisible}>
+                            <HeaderButton type="button" aria-label="close header" onClick={() => setIsNavVisible(false)}>
                                 <span>Close</span>
                                 <CloseSvg />
                             </HeaderButton>
