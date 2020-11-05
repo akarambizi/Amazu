@@ -2,12 +2,11 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import { Button, Wrapper } from '../styles/elements';
-import { colors, mixins, media } from '../styles';
+import { mixins, media } from '../styles';
 import { ReactComponent as CloseSvg } from '../assets/images/icon-cross.svg';
 import { ReactComponent as OpenSvg } from '../assets/images/icon-bars.svg';
 
 const HeaderWrapper = styled.header`
-    background-color: ${colors.divider};
     border-bottom: 1px solid var(--divider-color);
     box-shadow: 0 1px 6px 0 rgba(32, 33, 36, 0.28);
     padding: 10px 0;
