@@ -28,7 +28,7 @@ export const Text = styled.p`
     color: ${(props) => (props.secondary ? 'var(--primary-color)' : 'var(--primary-text-color)')};
     display: ${(props) => props.display};
     width: ${(props) => props.width};
-    margin-bottom: 0 0 10px 0;
+    margin-bottom: 10px;
 `;
 
 export const Anchor = styled.a`
