@@ -6,7 +6,7 @@ import PropertyInfo from './property/PropertyInfo';
 import { mixins, media } from '../styles';
 
 const PropertyCardContainer = styled.article`
-    @media ${media.laptop} {
+    ${media.laptop} {
         ${mixins.flexBetween}
         align-items:flex-start;
     }
