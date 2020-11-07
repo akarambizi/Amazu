@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { media } from '.';
+import mixins from './mixins';
 
 export const Wrapper = styled.div`
     padding: 0 20px;
@@ -60,5 +61,26 @@ export const Button = styled.button`
         background: var(--primary-color-light);
         color: var(--primary-text-color);
         border: 1px solid var(--primary-color-light);
+    }
+`;
+
+export const List = styled.ul`
+    margin-bottom: 20px;
+`;
+
+export const ListItem = styled.li`
+    font-family: var(----font-primary);
+    font-size: 14px;
+    line-height: 26px;
+    letter-spacing: 0;
+
+    &::before {
+        ${mixins.inlineBlock}
+        border-radius: 50%;
+        content: '';
+        height: 6px;
+        width: 6px;
+        margin-right: 7px;
+        background-color: var(--primary-color);
     }
 `;
