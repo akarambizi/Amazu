@@ -8,12 +8,12 @@ import { ReactComponent as IconBathRoomSvg } from '../assets/images/icon-bathroo
 import { ReactComponent as IconBedSvg } from '../assets/images/icon-bed.svg';
 
 const CardContainer = styled.article`
-    max-width: 100%;
+    margin-bottom: 24px;
 `;
 
 const CardImageLink = styled.a`
-    position: relative;
     display: block;
+    position: relative;
 
     &:hover,
     &:focus {
@@ -23,33 +23,33 @@ const CardImageLink = styled.a`
     }
 
     &::after {
+        border-radius: 12px;
+        border: 3px solid var(--primary-color);
         content: '';
-        opacity: 0;
         height: 100%;
-        width: 100%;
+        left: -3px;
+        opacity: 0;
+        pointer-events: none;
         position: absolute;
         top: -3px;
-        left: -3px;
-        z-index: 100;
-        border: 3px solid var(--primary-color);
-        border-radius: 12px;
         transition: opacity 0.1s ease-out;
-        pointer-events: none;
+        width: 100%;
+        z-index: 100;
     }
 
     img {
-        display: block;
-        width: 100%;
-        height: 100%;
         border-radius: 10px;
-        position: relative;
+        display: block;
+        height: 100%;
         margin: 0 auto;
+        position: relative;
+        width: 100%;
     }
 `;
 
 const CardContent = styled.div`
+    border-bottom: 1px solid var(--secondary-text-color-light);
     padding: 10px 0;
-    border-bottom: 1px solid var(--divider-color);
 `;
 
 const CardLink = styled(Anchor)`
@@ -61,18 +61,27 @@ const CardLink = styled(Anchor)`
     }
 
     p {
-        transition: 0.2s ease;
+        transition: all 0.4s ease;
     }
 `;
 
 const CardIcons = styled.div`
-    padding: 10px 0;
     ${mixins.flexBetween}
+    padding: 10px 0;
 
     svg {
         height: 20px;
-        vertical-align: bottom;
         margin-right: 5px;
+        vertical-align: middle;
+
+        path {
+            fill: var(--secondary-text-color);
+        }
+    }
+
+    span {
+        ${mixins.inlineBlock}
+        color: var(--secondary-text-color);
     }
 `;
 function Card({ data }) {
@@ -101,15 +110,15 @@ function Card({ data }) {
                 <CardIcons>
                     <Text title="Bedrooms">
                         <IconBedSvg />
-                        {bedRooms}
+                        <span>{bedRooms}</span>
                     </Text>
                     <Text title="Bathrooms">
                         <IconBathRoomSvg />
-                        {bathRooms}
+                        <span>{bathRooms}</span>
                     </Text>
                     <Text title="Area">
                         <IconAreaSvg />
-                        {`${area} ft`}
+                        <span>{`${area} ft`}</span>
                         <sup>2</sup>
                     </Text>
                 </CardIcons>

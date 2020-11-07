@@ -6,25 +6,44 @@ export const Wrapper = styled.div`
     padding: 0 20px;
 
     ${media.laptop} {
-        max-width: 1200px;
+        max-width: 1240px;
         margin: 0 auto;
+        padding: 0;
     }
 `;
 
 export const Grid = styled.section`
     display: flex;
     align-items: center;
-    gap: 24px;
+    gap: 0 24px;
     flex-wrap: wrap;
 
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
 `;
 
+const titles = {
+    h2: 'font-size: 40px;',
+    h3: 'font-size: 30px;',
+    h4: 'font-size: 24px;',
+    h5: 'font-size: 20px;',
+    h6: 'font-size: 18px;',
+    p: 'font-size: 22px;',
+};
+
+export const Title = styled.h1`
+    ${(props) => (props.as in titles ? titles[props.as] : 'font-size: 50px;')};
+    font-family: var(----font-tertiary);
+    letter-spacing: 0;
+    line-height: 30px;
+    margin-bottom: 10px;
+    font-weight: 700;
+`;
+
 export const Text = styled.p`
-    font-family: var(--font-primary);
+    font-family: var(--font-tertiary);
     font-size: ${(props) => (props.bold ? 'var(--font-size-xl)' : 'var(--font-size-md)')};
-    line-height: 20px;
+    line-height: 24px;
     font-weight: ${(props) => props.bold && '700'};
     color: ${(props) => (props.secondary ? 'var(--primary-color)' : 'var(--primary-text-color)')};
     display: ${(props) => props.display};
