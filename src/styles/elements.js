@@ -27,7 +27,7 @@ const titles = {
     h4: 'font-size: 24px;',
     h5: 'font-size: 20px;',
     h6: 'font-size: 18px;',
-    p: 'font-size: 22px;'
+    p: 'font-size: 22px;',
 };
 
 export const Title = styled.h1`
