@@ -33,7 +33,7 @@ const titles = {
 
 export const Title = styled.h1`
     ${(props) => (props.as in titles ? titles[props.as] : 'font-size: 50px;')};
-    font-family: var(----font-tertiary);
+    font-family: var(--font-tertiary);
     letter-spacing: 0;
     line-height: 30px;
     margin-bottom: 10px;
