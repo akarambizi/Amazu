@@ -7,7 +7,7 @@ import { ReactComponent as IconAreaSvg } from '../assets/images/icon-area.svg';
 import { ReactComponent as IconBathRoomSvg } from '../assets/images/icon-bathroom.svg';
 import { ReactComponent as IconBedSvg } from '../assets/images/icon-bed.svg';
 
-const CardContainer = styled.article`
+const CardWrapper = styled.article`
     margin-bottom: 24px;
 `;
 
@@ -95,7 +95,7 @@ function Card({ data }) {
         price,
     } = data;
     return (
-        <CardContainer>
+        <CardWrapper>
             <CardImageLink href="/typography">
                 <img src={images[0]} alt={title} />
             </CardImageLink>
@@ -123,7 +123,7 @@ function Card({ data }) {
                     </Text>
                 </CardIcons>
             </div>
-        </CardContainer>
+        </CardWrapper>
     );
 }
 

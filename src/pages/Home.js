@@ -3,6 +3,7 @@ import { Hero, Card, ListProperty, TopCities } from '../components';
 import { Wrapper, Grid } from '../styles/elements';
 import data from '../assets/json/properties.json';
 import cities from '../assets/json/topCities.json';
+import CardSkeleton from '../components/CardSkeleton';
 
 function Home() {
     return (
@@ -12,6 +13,12 @@ function Home() {
             <ListProperty />
             <Wrapper>
                 <h2>card</h2>
+                <Grid>
+                    <CardSkeleton />
+                    <CardSkeleton />
+                    <CardSkeleton />
+                    <CardSkeleton />
+                </Grid>
                 <Grid>
                     <Card data={data[0]} />
                     <Card data={data[0]} />

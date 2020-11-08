@@ -1,4 +1,15 @@
-import { css } from 'styled-components';
+import { css, keyframes } from 'styled-components';
+
+const loadingAnimation = keyframes`
+    0% {
+        transform: translateX(0);
+    }
+
+    50%,
+    100% {
+        transform: translateX(460px);
+    }
+`;
 
 const mixins = {
     flex: css`
@@ -50,6 +61,18 @@ const mixins = {
         top: 0;
         left: 0;
         z-index: 100;
+    `,
+
+    loading: css`
+        animation: ${loadingAnimation} 2s infinite linear;
+        background: linear-gradient(90deg, var(--secondary-text-color-light) 0px, var(--divider-color) 40px, var(--secondary-text-color-light) 80px);
+        content: '';
+        height: 100%;
+        left: 0;
+        opacity: 0.1;
+        position: absolute;
+        top: 0;
+        width: 40px;
     `,
 };
 
