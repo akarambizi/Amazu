@@ -23,7 +23,7 @@ const CardSkeletonImage = styled.div`
 const CardSkeletonText = styled.p`
     background-color: var(--secondary-text-color-light);
     height: 20px;
-    margin-bottom:10px;
+    margin-bottom: 10px;
     overflow: hidden;
     position: relative;
     width: 80%;
