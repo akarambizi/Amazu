@@ -1,7 +1,7 @@
 const fonts = {
-    '--font-primary': "'Montserrat', sans-serif",
-    '--font-secondary': "'Open Sans', sans-serif",
-    '--font-tertiary': "'Roboto', sans-serif;",
+    '--font-primary': "'Open Sans', sans-serif",
+    '--font-secondary': "'Roboto', sans-serif",
+    '--font-tertiary': "'Source Serif Pro', serif",
     '--font-size-xs': '12px',
     '--font-size-sm': '14px',
     '--font-size-md': '16px',

@@ -32,7 +32,7 @@ const titles = {
 
 export const Title = styled.h1`
     ${(props) => (props.as in titles ? titles[props.as] : 'font-size: 50px;')};
-    font-family: var(--font-tertiary);
+    font-family:var(--font-secondary);
     font-weight: 700;
     letter-spacing: 0;
     line-height: 30px;
@@ -42,7 +42,6 @@ export const Title = styled.h1`
 export const Text = styled.p`
     color: ${(props) => (props.secondary ? 'var(--primary-color)' : 'var(--primary-text-color)')};
     display: ${(props) => props.display};
-    font-family: var(--font-tertiary);
     font-size: ${(props) => (props.bold ? 'var(--font-size-xl)' : 'var(--font-size-md)')};
     font-weight: ${(props) => props.bold && '700'};
     line-height: 24px;
@@ -63,7 +62,6 @@ export const Button = styled.button`
     color: ${(props) => (props.secondary ? 'var(--primary-text-color)' : 'var(--primary-color-text)')};
     cursor: pointer;
     display: ${(props) => (props.min ? 'inline-block' : 'block')};
-    font-family: var(--font-secondary);
     font-size: var(--font-size-sm);
     line-height: 16px;
     min-width: 142px;
@@ -84,7 +82,6 @@ export const List = styled.ul`
 `;
 
 export const ListItem = styled.li`
-    font-family: var(----font-primary);
     font-size: 14px;
     letter-spacing: 0;
     line-height: 26px;

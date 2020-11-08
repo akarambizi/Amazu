@@ -15,13 +15,18 @@ const GlobalStyles = createGlobalStyle`
         font-family:var(--font-primary);
     }
 
-    h1, h2, h3, h4, h5, h6, p {
+    h1, h2, h3, h4, h5, h6 {
+        margin: 0;
+        font-family:var(--font-secondary);
+    }
+
+    p {
         margin: 0;
     }
 
     a {
         text-decoration:none;
-        font-family: var(--font-tertiary);
+        font-family: var(--font-primary);
         font-size: 14px;
         letter-spacing: 0px;
         line-height: 14px;
@@ -44,7 +49,7 @@ const GlobalStyles = createGlobalStyle`
         li {
             a {
                 color: var(--primary-text-color);
-                font-family: var(--font-tertiary);
+                font-family: var(--font-secondary);
                 font-size: 14px;
                 letter-spacing: 0px;
                 line-height: 14px;

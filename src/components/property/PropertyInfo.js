@@ -21,7 +21,6 @@ const PropertyInfoSection = styled.div`
     padding-top: ${(props) => props.border && ' 20px'};
 
     p {
-        font-family: var(--secondary-text-color);
         font-size: 16px;
         line-height: 19px;
         letter-spacing: 0px;
@@ -29,7 +28,6 @@ const PropertyInfoSection = styled.div`
     }
 
     span {
-        font-family: var(--font-tertiary);
         font-size: var(--font-size-xl);
         line-height: 20px;
         font-weight: 700;

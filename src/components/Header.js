@@ -21,7 +21,6 @@ const HeaderLogo = styled.div`
 
     a {
         color: var(--primary-color);
-        font-family: var(--font-tertiary);
         font-size: 22px;
         font-weight: 700;
         letter-spacing: 0px;

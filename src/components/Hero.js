@@ -11,7 +11,6 @@ const HeroContainer = styled.section`
     justify-content: center;
 
     h1 {
-        font-family: var(--font-tertiary);
         font-size: 50px;
         line-height: 59px;
         text-shadow: 0px 0px 29px var(--primary-color);
