@@ -36,7 +36,7 @@ export const Title = styled.h1`
     font-weight: 700;
     letter-spacing: 0;
     line-height: 30px;
-    margin-bottom: 10px;
+    margin-bottom: ${(props) => props.marginBottom || '10px'};
 `;
 
 export const Text = styled.p`
@@ -52,7 +52,6 @@ export const Text = styled.p`
 
 export const Anchor = styled.a`
     display: block;
-    text-decoration: none !important;
     text-transform: capitalize;
 `;
 

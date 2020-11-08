@@ -19,6 +19,23 @@ const GlobalStyles = createGlobalStyle`
         margin: 0;
     }
 
+    a {
+        text-decoration:none;
+        font-family: var(--font-tertiary);
+        font-size: 14px;
+        letter-spacing: 0px;
+        line-height: 14px;
+        text-decoration:none;
+        transition: all .2s ease-in-out;
+        display:inline-block;
+
+        &:hover {
+            p {
+                color: var(--primary-color);
+            }
+        }
+    }
+
     ul {
         list-style: none;
         margin: 0;

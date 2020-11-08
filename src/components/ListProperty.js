@@ -9,7 +9,6 @@ const ListPropertyContainer = styled.section`
 
     .title {
         font-size: 24px;
-        line-height: 30px;
         margin-bottom: 18px;
     }
 `;
