@@ -36,7 +36,7 @@ const GlobalStyles = createGlobalStyle`
 
         &:hover {
             p {
-                color: var(--primary-color);
+                color: var(--primary-color-dark);
             }
         }
     }
