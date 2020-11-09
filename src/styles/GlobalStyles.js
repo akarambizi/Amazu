@@ -15,6 +15,7 @@ const GlobalStyles = createGlobalStyle`
 
     body {
         font-family: var(--font-primary);
+        color: var(--primary-text-color);
     }
 
     h1,

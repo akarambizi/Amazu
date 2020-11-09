@@ -6,7 +6,8 @@ import { Grid, Title, Text, Wrapper } from '../styles/elements';
 import { mixins } from '../styles';
 
 const TopCitiesWrapper = styled.section`
-    padding: 60px 0 80px;
+    padding: 30px 0 90px;
+
     h3 {
         margin-bottom: 20px;
     }
@@ -14,9 +15,23 @@ const TopCitiesWrapper = styled.section`
 
 const TopCityLink = styled(Link)`
     ${mixins.flex};
-    gap: 16px;
-    margin-bottom: 20px;
+    background-color: var(--primary-color-text);
+    border-radius: 8px;
+    box-shadow: 0 1px 6px 0 rgba(32, 33, 36, 0.28);
     font-weight: 700;
+    gap: 16px;
+    margin-bottom: 32px;
+    padding: 12px;
+
+    &:hover {
+        background-color: var(--secondary-text-color-light);
+    }
+
+    img {
+        border-radius: 5px;
+        filter: brightness(90%);
+        object-fit: cover;
+    }
 `;
 
 function TopCities({ cities }) {
