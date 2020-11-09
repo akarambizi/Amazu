@@ -1,7 +1,9 @@
 import { createGlobalStyle } from 'styled-components';
-import normalize from './normalize';
+import arrowUrl from '../assets/images/icon-angle-down.svg';
 import colors from './colors';
 import fonts from './fonts';
+import mixins from './mixins';
+import normalize from './normalize';
 
 const GlobalStyles = createGlobalStyle`
     ${normalize};
@@ -12,12 +14,17 @@ const GlobalStyles = createGlobalStyle`
     }
 
     body {
-        font-family:var(--font-primary);
+        font-family: var(--font-primary);
     }
 
-    h1, h2, h3, h4, h5, h6 {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
         margin: 0;
-        font-family:var(--font-secondary);
+        font-family: var(--font-secondary);
     }
 
     p {
@@ -25,14 +32,14 @@ const GlobalStyles = createGlobalStyle`
     }
 
     a {
-        text-decoration:none;
+        text-decoration: none;
         font-family: var(--font-primary);
         font-size: 14px;
         letter-spacing: 0px;
         line-height: 14px;
-        text-decoration:none;
-        transition: all .2s ease-in-out;
-        display:inline-block;
+        text-decoration: none;
+        transition: all 0.2s ease-in-out;
+        display: inline-block;
 
         &:hover {
             p {
@@ -54,13 +61,60 @@ const GlobalStyles = createGlobalStyle`
                 letter-spacing: 0px;
                 line-height: 14px;
                 padding: 10px;
-                text-decoration:none;
-                transition: all .2s ease-in-out;
+                text-decoration: none;
+                transition: all 0.2s ease-in-out;
 
                 &:hover {
-                    color: var(--primary-color)
+                    color: var(--primary-color);
                 }
             }
+        }
+    }
+
+    form {
+        label {
+            ${mixins.inlineBlock}
+            font-size: 14px;
+            margin-bottom: 12px;
+            text-transform: capitalize;
+        }
+
+        input,
+        select,
+        textarea {
+            border-radius: 8px;
+            border: 1px solid var(--secondary-text-color);
+            box-sizing: border-box;
+            display: block;
+            font-size: 14px;
+            margin-bottom: 20px;
+            outline-color: var(--primary-color);
+            padding: 12px;
+            text-align: left;
+            text-transform: capitalize;
+            width: 100%;
+        }
+
+        input[type='button'] {
+            ${mixins.button}
+            text-align:center;
+        }
+
+        input[type='radio'],
+        input[type='checkbox'] {
+            ${mixins.inlineBlock}
+            margin-right:20px;
+            width: 20px;
+        }
+
+        select {
+            appearance: none;
+            background: url(${arrowUrl});
+            background-position: calc(100% - 30px) 50%;
+            background-repeat: no-repeat;
+            background-size: 14px;
+            padding: 12px 36px 12px 12px;
+            width: 100%;
         }
     }
 `;

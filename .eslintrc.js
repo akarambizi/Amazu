@@ -22,5 +22,6 @@ module.exports = {
         'react/jsx-indent': ['error', 4],
         // Indent props with 4 spaces
         'react/jsx-indent-props': ['error', 4],
+        "jsx-a11y/label-has-associated-control": "off",
     },
 };

@@ -74,6 +74,29 @@ const mixins = {
         top: 0;
         width: 40px;
     `,
+
+    button: css`
+        background: ${(props) => (props.secondary ? 'var(--primary-color-text)' : 'var(--primary-color)')};
+        border-radius: 5px;
+        border: ${(props) => (props.secondary ? '1px solid var(--divider-color)' : '1px solid var(--primary-color)')};
+        box-shadow: ${(props) => (props.shadow ? '0px 10px 24px rgba(0, 0, 0, 0.19)' : null)};
+        color: ${(props) => (props.secondary ? 'var(--primary-text-color)' : 'var(--primary-color-text)')};
+        cursor: pointer;
+        display: ${(props) => (props.min ? 'inline-block' : 'block')};
+        font-size: var(--font-size-sm);
+        line-height: 16px;
+        min-width: 142px;
+        padding: 14px 20px;
+        text-transform: capitalize;
+        transition: 0.3s;
+        width: ${(props) => props.width};
+
+        &:hover {
+            background: var(--primary-color-light);
+            border: 1px solid var(--primary-color-light);
+            color: var(--primary-text-color);
+        }
+    `,
 };
 
 export default mixins;
