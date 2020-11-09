@@ -6,7 +6,7 @@ import { mixins, media } from '../styles';
 import { ReactComponent as CloseSvg } from '../assets/images/icon-cross.svg';
 import { ReactComponent as OpenSvg } from '../assets/images/icon-bars.svg';
 
-const HeaderContainer = styled.header`
+const HeaderMain = styled.header`
     background-color: var(--primary-color-text);
     border-bottom: 1px solid var(--divider-color);
     box-shadow: 0 1px 6px 0 rgba(32, 33, 36, 0.28);
@@ -154,7 +154,7 @@ const HeaderForm = styled.div`
 function Header() {
     const [isNavVisible, setIsNavVisible] = useState(false);
     return (
-        <HeaderContainer isNavVisible={isNavVisible}>
+        <HeaderMain isNavVisible={isNavVisible}>
             <HeaderWrapper>
                 <HeaderLogo>
                     <Link to="/" aria-label="home">
@@ -201,7 +201,7 @@ function Header() {
                     </HeaderForm>
                 </HeaderNav>
             </HeaderWrapper>
-        </HeaderContainer>
+        </HeaderMain>
     );
 }
 
