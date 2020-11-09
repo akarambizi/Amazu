@@ -8,7 +8,6 @@ export const Wrapper = styled.div`
     ${media.laptop} {
         margin: 0 auto;
         max-width: 1240px;
-        padding: 0;
     }
 `;
 
