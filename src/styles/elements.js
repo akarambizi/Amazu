@@ -35,7 +35,7 @@ export const Title = styled.h1`
     font-family: var(--font-secondary);
     font-weight: 700;
     letter-spacing: 0;
-    line-height: 30px;
+    line-height: 50px;
     margin-bottom: ${(props) => props.marginBottom || '10px'};
 `;
 

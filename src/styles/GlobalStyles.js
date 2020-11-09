@@ -89,13 +89,13 @@ const GlobalStyles = createGlobalStyle`
             font-size: 14px;
             margin-bottom: 20px;
             outline-color: var(--primary-color);
-            padding: 12px;
+            padding: 15px;
             text-align: left;
-            text-transform: capitalize;
             width: 100%;
         }
 
-        input[type='button'] {
+        input[type='button'],
+        button {
             ${mixins.button}
             text-align:center;
         }
