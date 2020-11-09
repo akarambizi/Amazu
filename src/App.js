@@ -1,8 +1,8 @@
 import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import { GlobalStyles } from './styles';
 import { Home, Rent, Buy, NotFound, Typography } from './pages';
 import { Footer, Header } from './components';
+import { GlobalStyles } from './styles';
 
 function App() {
     return (

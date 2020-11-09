@@ -28,7 +28,7 @@ function Hero() {
             <Wrapper>
                 <Title marginBottom="20px">Discover Your Next Rental</Title>
                 <form>
-                    <input type="text" name="search" placeholder="Search" />
+                    <input type="text" name="search" placeholder="Search" aria-label="search" />
                     <button type="submit">search</button>
                 </form>
             </Wrapper>
