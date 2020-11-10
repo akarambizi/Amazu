@@ -30,12 +30,14 @@ const titles = {
 };
 
 export const Title = styled.h1`
-    ${(props) => (props.as in titles ? titles[props.as] : 'font-size: 50px;')};
+    ${({ as: tag }) => (tag in titles ? titles[tag] : 'font-size: 50px;')};
     font-family: var(--font-secondary);
     font-weight: 700;
     letter-spacing: 0;
     line-height: 50px;
-    margin-bottom: ${(props) => props.marginBottom || '10px'};
+    margin-bottom: ${({ marginBottom }) => marginBottom || '10px'};
+    text-align: ${({ centered }) => centered && 'center'};
+    width: ${({ fullWidth }) => fullWidth && '100%'};
 `;
 
 export const Text = styled.p`
@@ -75,4 +77,26 @@ export const ListItem = styled.li`
         margin-right: 7px;
         width: 6px;
     }
+`;
+
+export const Tabs = styled.div`
+    ${mixins.flex}
+    border-bottom: .125rem solid #d8d8d8;
+    margin-bottom: ${({ marginBottom }) => marginBottom && '20px'};
+    width: 100%;
+`;
+
+export const Tab = styled.button`
+    background-color: transparent;
+    border: none;
+    border-bottom: ${({ active }) => active && '4px solid #0d9b6e'};
+    color: #0f2524;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 800;
+    line-height: 18px;
+    /* margin-bottom: -2px; */
+    padding: ${({ active }) => (active ? '6px 18px' : '8px 18px')};
+    text-transform: uppercase;
+    width: 100%;
 `;

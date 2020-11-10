@@ -3,6 +3,7 @@ export { default as CardSkeleton } from './CardSkeleton';
 export { default as Footer } from './Footer';
 export { default as Header } from './Header';
 export { default as Hero } from './Hero';
+export { default as HomepageCards } from './HomepageCards';
 export { default as ListProperty } from './ListProperty';
 export { default as PropertyCard } from './PropertyCard';
 export { default as TopCities } from './TopCities';
