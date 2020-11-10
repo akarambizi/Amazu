@@ -21,7 +21,7 @@ const TabsWrapper = styled.div`
         }
     }
 `;
-function HomepageCards() {
+function HomeCards() {
     return (
         <Wrapper>
             <h2>card</h2>
@@ -51,4 +51,4 @@ function HomepageCards() {
     );
 }
 
-export default HomepageCards;
+export default HomeCards;
