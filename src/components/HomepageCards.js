@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import Card from './Card';
-import { Wrapper, Grid, Tab, Tabs, Title } from '../styles/elements';
+import { Wrapper, Grid, Tab, Tabs, Text } from '../styles/elements';
 import data from '../assets/json/properties.json';
 import { media, mixins } from '../styles';
 
@@ -30,9 +30,9 @@ function HomepageCards() {
                     <Tab active>House</Tab>
                     <Tab>Appartment</Tab>
                 </Tabs>
-                <Title as="p" fullWidth centered marginBottom="0">
+                <Text heading fullWidth centered marginBottom="0">
                     Featured Properties
-                </Title>
+                </Text>
                 <Tabs>
                     <Tab>Rent</Tab>
                     <Tab>View All</Tab>

@@ -26,28 +26,45 @@ const titles = {
     h4: 'font-size: 24px;',
     h5: 'font-size: 20px;',
     h6: 'font-size: 18px;',
-    p: 'font-size: 22px;',
 };
 
 export const Title = styled.h1`
-    ${({ as: tag }) => (tag in titles ? titles[tag] : 'font-size: 50px;')};
+    ${({ as: tag }) => (tag in titles ? titles[tag] : 'font-size: 44px;')};
     font-family: var(--font-secondary);
     font-weight: 700;
     letter-spacing: 0;
-    line-height: 50px;
     margin-bottom: ${({ marginBottom }) => marginBottom || '10px'};
     text-align: ${({ centered }) => centered && 'center'};
     width: ${({ fullWidth }) => fullWidth && '100%'};
 `;
 
 export const Text = styled.p`
-    color: ${(props) => (props.secondary ? 'var(--primary-color)' : 'var(--primary-text-color)')};
-    display: ${(props) => props.display};
-    font-size: ${(props) => (props.bold ? 'var(--font-size-xl)' : 'var(--font-size-md)')};
-    font-weight: ${(props) => props.bold && '700'};
+    color: ${({ secondary }) => (secondary ? 'var(--primary-color)' : 'var(--primary-text-color)')};
+    display: ${({ display }) => display};
+    font-size: ${({ bold }) => (bold ? 'var(--font-size-xl)' : 'var(--font-size-md)')};
+    font-weight: ${({ bold }) => bold && '700'};
     line-height: 24px;
     margin-bottom: 10px;
-    width: ${(props) => props.width};
+    width: ${({ width }) => width};
+
+    ${({ heading, fullWidth, centered, marginBottom }) => {
+        return (
+            heading &&
+            `
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 18px;
+            line-height: 34px;
+            margin-bottom: ${marginBottom};
+            text-align: ${centered && 'center'};
+            width: ${fullWidth && '100%'};
+
+            ${media.laptop} {
+                font-size: 24px;
+            }
+            `
+        );
+    }};
 `;
 
 export const Anchor = styled.a`
@@ -95,7 +112,6 @@ export const Tab = styled.button`
     font-size: 14px;
     font-weight: 800;
     line-height: 18px;
-    /* margin-bottom: -2px; */
     padding: ${({ active }) => (active ? '6px 18px' : '8px 18px')};
     text-transform: uppercase;
     width: 100%;

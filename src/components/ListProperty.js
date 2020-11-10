@@ -1,24 +1,19 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Text, Button, List, ListItem, Wrapper, Title } from '../styles/elements';
+import { Text, Button, List, ListItem, Wrapper } from '../styles/elements';
 
 const ListPropertyContainer = styled.section`
     margin-bottom: 40px;
     background-color: var(--secondary-text-color-light);
     padding: 40px 40px 80px;
-
-    .title {
-        font-size: 24px;
-        margin-bottom: 18px;
-    }
 `;
 
 function ListProperty() {
     return (
         <ListPropertyContainer>
             <Wrapper>
-                <Text className="title">List your property on RentHouse to connect to qualified tenants across the largest rental network.</Text>
-                <Title as="p">Benefits include:</Title>
+                <Text heading>List your property on RentHouse to connect to qualified tenants across the largest rental network.</Text>
+                <Text heading>Benefits include:</Text>
                 <List>
                     <ListItem>Accept rental applications</ListItem>
                     <ListItem>Collect rent payments</ListItem>

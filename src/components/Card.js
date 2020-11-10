@@ -108,15 +108,15 @@ function Card({ data }) {
                     <Text bold secondary>{`$${price}`}</Text>
                 </CardContent>
                 <CardIcons>
-                    <Text title="Bedrooms">
+                    <Text aria-label="Bedrooms" title="Bedrooms">
                         <IconBedSvg />
                         <span>{bedRooms}</span>
                     </Text>
-                    <Text title="Bathrooms">
+                    <Text aria-label="Bathrooms" title="Bathrooms">
                         <IconBathRoomSvg />
                         <span>{bathRooms}</span>
                     </Text>
-                    <Text title="Area">
+                    <Text aria-label="Area" title="Area">
                         <IconAreaSvg />
                         <span>{`${area} ft`}</span>
                         <sup>2</sup>

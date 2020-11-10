@@ -114,7 +114,11 @@ const HeaderNav = styled.nav`
                 color: var(--primary-color);
                 display: block;
                 font-weight: 700;
-                padding: 12px 18px;
+                padding: 30px 18px;
+
+                ${media.laptop} {
+                    padding: 12px 18px;
+                }
 
                 &:hover,
                 &.active {
@@ -134,10 +138,12 @@ const HeaderForm = styled.div`
 
     button {
         width: 100%;
+        padding: 18px 20px;
 
         ${media.laptop} {
             ${mixins.inlineBlock}
             width: auto;
+            padding: 14px 20px;
         }
     }
 

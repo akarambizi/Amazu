@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
-import { Grid, Title, Text, Wrapper } from '../styles/elements';
+import { Grid, Text, Wrapper } from '../styles/elements';
 import { mixins } from '../styles';
 
 const TopCitiesWrapper = styled.section`
@@ -31,6 +31,7 @@ const TopCityLink = styled(Link)`
         border-radius: 5px;
         filter: brightness(90%);
         object-fit: cover;
+        margin-right: 10px;
     }
 `;
 
@@ -38,9 +39,9 @@ function TopCities({ cities }) {
     return (
         <TopCitiesWrapper>
             <Wrapper>
-                <Title as="p" marginBottom="24px">
+                <Text heading marginBottom="32px" centered>
                     Expand your search and check out one of these trending cities.
-                </Title>
+                </Text>
                 <Grid>
                     {cities.map(({ name, image }) => (
                         <TopCityLink to={`/cities/${name}`} key={name}>

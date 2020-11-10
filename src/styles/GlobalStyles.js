@@ -14,8 +14,9 @@ const GlobalStyles = createGlobalStyle`
     }
 
     body {
-        font-family: var(--font-primary);
         color: var(--primary-text-color);
+        font-family: var(--font-primary);
+        width: 100%;
     }
 
     h1,

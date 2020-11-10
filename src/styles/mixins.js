@@ -76,20 +76,20 @@ const mixins = {
     `,
 
     button: css`
-        background: ${(props) => (props.secondary ? 'var(--primary-color-text)' : 'var(--primary-color)')};
+        background: ${({ secondary }) => (secondary ? 'var(--primary-color-text)' : 'var(--primary-color)')};
         border-radius: 5px;
-        border: ${(props) => (props.secondary ? '1px solid var(--divider-color)' : '1px solid var(--primary-color)')};
-        box-shadow: ${(props) => (props.shadow ? '0px 10px 24px rgba(0, 0, 0, 0.19)' : null)};
-        color: ${(props) => (props.secondary ? 'var(--primary-text-color)' : 'var(--primary-color-text)')};
+        border: ${({ secondary }) => (secondary ? '1px solid var(--divider-color)' : '1px solid var(--primary-color)')};
+        box-shadow: ${({ shadow }) => (shadow ? '0px 10px 24px rgba(0, 0, 0, 0.19)' : null)};
+        color: ${({ secondary }) => (secondary ? 'var(--primary-text-color)' : 'var(--primary-color-text)')};
         cursor: pointer;
-        display: ${(props) => (props.min ? 'inline-block' : 'block')};
+        display: ${({ min }) => (min ? 'inline-block' : 'block')};
         font-size: var(--font-size-sm);
         line-height: 16px;
         min-width: 142px;
         padding: 14px 20px;
         text-transform: capitalize;
         transition: 0.3s;
-        width: ${(props) => props.width};
+        width: ${({ width }) => width};
 
         &:hover {
             background: var(--primary-color-light);
