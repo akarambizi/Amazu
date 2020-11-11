@@ -100,7 +100,14 @@ export const Tabs = styled.div`
     ${mixins.flex}
     border-bottom: .125rem solid #d8d8d8;
     margin-bottom: ${({ marginBottom }) => marginBottom && '20px'};
-    width: 100%;
+    /* width: 100%; */
+    box-sizing: border-box;
+    margin: 0 20px 32px 20px;
+
+    ${media.laptop} {
+        width: ${({ width }) => width};
+        margin: ${({ centered }) => centered && '0 auto 60px auto'};
+    }
 `;
 
 export const Tab = styled.button`
@@ -112,7 +119,12 @@ export const Tab = styled.button`
     font-size: 14px;
     font-weight: 800;
     line-height: 18px;
-    padding: ${({ active }) => (active ? '6px 18px' : '8px 18px')};
+    padding: ${({ active }) => (active ? '6px 10px' : '8px 10px')};
     text-transform: uppercase;
     width: 100%;
+    outline: none;
+
+    ${media.laptop} {
+        padding: ${({ active }) => (active ? '6px 18px' : '8px 18px')};
+    }
 `;

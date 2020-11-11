@@ -1,5 +1,6 @@
 export { default as Card } from './Card';
 export { default as CardSkeleton } from './CardSkeleton';
+export { default as CardsList } from './CardsList';
 export { default as Footer } from './Footer';
 export { default as Header } from './Header';
 export { default as Hero } from './Hero';

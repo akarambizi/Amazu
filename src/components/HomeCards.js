@@ -1,53 +1,38 @@
-import React from 'react';
-import styled from 'styled-components';
-import Card from './Card';
-import { Wrapper, Grid, Tab, Tabs, Text } from '../styles/elements';
+import React, { useState } from 'react';
+import CardsList from './CardsList';
 import data from '../assets/json/properties.json';
-import { media, mixins } from '../styles';
+import { Wrapper, Tab, Tabs, Text } from '../styles/elements';
 
-const TabsWrapper = styled.div`
-    ${mixins.flex}
-    margin-bottom: 32px;
-    align-items: flex-end;
-
-    ${media.laptop} {
-        align-items: center;
-    }
-
-    p {
-        display: none;
-        ${media.laptop} {
-            display: block;
-        }
-    }
-`;
 function HomeCards() {
-    return (
-        <Wrapper>
-            <h2>card</h2>
-            <TabsWrapper>
-                <Tabs>
-                    <Tab active>House</Tab>
-                    <Tab>Appartment</Tab>
-                </Tabs>
-                <Text heading fullWidth centered marginBottom="0">
-                    Featured Properties
-                </Text>
-                <Tabs>
-                    <Tab>Rent</Tab>
-                    <Tab>View All</Tab>
-                </Tabs>
-            </TabsWrapper>
+    const [activeTab, setActiveTab] = useState('Rent');
+    const handleTab = (e) => setActiveTab(e.target.textContent);
 
-            <Grid>
-                <Card data={data[0]} />
-                <Card data={data[0]} />
-                <Card data={data[0]} />
-                <Card data={data[0]} />
-                <Card data={data[0]} />
-                <Card data={data[0]} />
-            </Grid>
-        </Wrapper>
+    return (
+        <section>
+            <Text heading fullWidth centered marginBottom="32px">
+                Featured Properties
+            </Text>
+            <Tabs centered width="70%">
+                <Tab active={activeTab === 'Rent'} onClick={handleTab}>
+                    Rent
+                </Tab>
+                <Tab active={activeTab === 'Buy'} onClick={handleTab}>
+                    Buy
+                </Tab>
+                <Tab active={activeTab === 'House'} onClick={handleTab}>
+                    House
+                </Tab>
+                <Tab active={activeTab === 'Appartment'} onClick={handleTab}>
+                    Appartment
+                </Tab>
+            </Tabs>
+            <Wrapper>
+                {activeTab === 'Rent' && <CardsList data={data[0]} />}
+                {activeTab === 'Buy' && <CardsList data={data[1]} />}
+                {activeTab === 'House' && <CardsList data={data[2]} />}
+                {activeTab === 'Appartment' && <CardsList data={data[3]} />}
+            </Wrapper>
+        </section>
     );
 }
 
