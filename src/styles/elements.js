@@ -47,11 +47,11 @@ export const Text = styled.p`
     margin-bottom: 10px;
     width: ${({ width }) => width};
 
-    ${({ heading, fullWidth, centered, marginBottom }) => {
+    ${({ heading, fullWidth, centered, marginBottom, sm }) => {
         return (
             heading &&
             `
-            font-size: 18px;
+            font-size: ${sm ? '14px' : '18px'};
             font-weight: 700;
             margin-bottom: 18px;
             line-height: 34px;
@@ -60,7 +60,7 @@ export const Text = styled.p`
             width: ${fullWidth && '100%'};
 
             ${media.laptop} {
-                font-size: 24px;
+                font-size: ${sm ? '16px' : '24px'};
             }
             `
         );

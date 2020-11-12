@@ -2,18 +2,18 @@ import React from 'react';
 import styled from 'styled-components';
 import { Wrapper, Text } from '../styles/elements';
 
-const FooterContainer = styled.footer`
+const FooterMain = styled.footer`
     padding: 40px 0 30px;
-    background-color: var(--divider-color);
+    background-color: var(--secondary-text-color-light);
 `;
 
 function Footer() {
     return (
-        <FooterContainer>
+        <FooterMain>
             <Wrapper>
-                <Text>&copy;RentHouse - 2020</Text>
+                <Text heading sm>&copy;RentHouse - 2020</Text>
             </Wrapper>
-        </FooterContainer>
+        </FooterMain>
     );
 }
 
