@@ -11,7 +11,9 @@ function Footer() {
     return (
         <FooterMain>
             <Wrapper>
-                <Text heading sm>&copy;RentHouse - 2020</Text>
+                <Text heading sm>
+                    &copy;RentHouse - 2020
+                </Text>
             </Wrapper>
         </FooterMain>
     );
