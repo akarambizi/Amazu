@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import { Home, Rent, Buy, NotFound, Typography } from './pages';
+import { Home, Rent, Buy, NotFound, Typography, Property } from './pages';
 import { Footer, Header } from './components';
 import { GlobalStyles } from './styles';
 
@@ -15,6 +15,7 @@ function App() {
                     <Route path="/rent" component={Rent} />
                     <Route path="/buy" component={Buy} />
                     <Route path="/typography" component={Typography} />
+                    <Route path="/property" component={Property} />
                     <Route component={NotFound} />
                 </Switch>
             </main>

@@ -1,6 +1,6 @@
 import React from 'react';
 import data from '../assets/json/properties.json';
-import { Card, CardSkeleton, Hero, PropertyCard } from '../components';
+import { Card, CardSkeleton, Hero } from '../components';
 import { Button, Grid, Title, Wrapper } from '../styles/elements';
 
 function Typography() {
@@ -34,10 +34,6 @@ function Typography() {
                 </Grid>
             </Wrapper>
 
-            <Wrapper>
-                <h2>property Card</h2>
-                <PropertyCard />
-            </Wrapper>
             <Wrapper>
                 <h2>Form</h2>
                 <form>
