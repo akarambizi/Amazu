@@ -6,7 +6,7 @@ import { ReactComponent as IconBedSvg } from '../../assets/images/icon-bed.svg';
 import { mixins } from '../../styles';
 
 const PropertyInfoContainer = styled.div`
-    max-width: 885px;
+    /* max-width: 885px; */
     color: var(--secondary-text-color);
 `;
 
@@ -14,7 +14,7 @@ const PropertyInfoSection = styled.div`
     ${mixins.grid};
     ${(props) => (props.max ? mixins.flexBetween : mixins.grid)};
     grid-template-columns: repeat(3, 1fr);
-    max-width: ${(props) => (props.max ? '100%' : '570px')};
+    /* max-width: ${(props) => (props.max ? '100%' : '570px')}; */
     margin-left: auto;
     margin-bottom: 25px;
     border-top: ${(props) => props.border && ' 1px solid var(--divider-color)'};
