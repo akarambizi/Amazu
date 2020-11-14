@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { PropertyImages, PropertyOwner, PropertyInfo } from '../components';
+import { PropertyImages, PropertyOwner, PropertyInfo, Comment } from '../components';
 import { mixins, media } from '../styles';
 import { Wrapper } from '../styles/elements';
 
@@ -23,6 +23,7 @@ function Property() {
                 </section>
                 <PropertyOwner />
             </PropertyMain>
+            <Comment />
         </Wrapper>
     );
 }
