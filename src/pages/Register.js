@@ -11,11 +11,7 @@ const RegisterMain = styled(Wrapper)`
     form {
         width: 100%;
     }
-    ul {
-        li {
-            ${mixins.inlineBlock}
-        }
-    }
+
     div {
         color: white;
         height: 100%;
@@ -25,6 +21,11 @@ const RegisterMain = styled(Wrapper)`
         background-size: cover;
         background-position: center;
         background-color: green;
+        ul {
+            li {
+                ${mixins.inlineBlock}
+            }
+        }
     }
 `;
 
