@@ -1,10 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
-import { Title, Wrapper } from '../styles/elements';
+import { Title } from '../styles/elements';
 import { mixins } from '../styles';
 
-const RegisterMain = styled(Wrapper)`
+const RegisterMain = styled.section`
     ${mixins.flexBetween}
     /* background-color: red; */
     height: 100vh;

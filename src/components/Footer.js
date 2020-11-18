@@ -1,4 +1,6 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+import { withRouter } from 'react-router-dom';
 import styled from 'styled-components';
 import { Wrapper, Text } from '../styles/elements';
 
@@ -7,16 +9,27 @@ const FooterMain = styled.footer`
     background-color: var(--secondary-text-color-light);
 `;
 
-function Footer() {
+function Footer({ location }) {
     return (
-        <FooterMain>
-            <Wrapper>
-                <Text heading sm>
-                    &copy;RentHouse - 2020
-                </Text>
-            </Wrapper>
-        </FooterMain>
+        location.pathname !== '/register' && (
+            <FooterMain>
+                <Wrapper>
+                    <Text heading sm>
+                        &copy;RentHouse - 2020
+                    </Text>
+                </Wrapper>
+            </FooterMain>
+        )
     );
 }
 
-export default Footer;
+Footer.defaultProps = {
+    location: {},
+};
+
+Footer.propTypes = {
+    location: PropTypes.shape({
+        pathname: PropTypes.string.isRequired,
+    }),
+};
+export default withRouter(Footer);

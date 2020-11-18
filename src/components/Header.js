@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import { NavLink, Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
+import { NavLink, Link, withRouter } from 'react-router-dom';
 import { Button, Wrapper } from '../styles/elements';
 import { mixins, media } from '../styles';
 import { ReactComponent as CloseSvg } from '../assets/images/icon-cross.svg';
@@ -157,58 +158,70 @@ const HeaderForm = styled.div`
     }
 `;
 
-function Header() {
+function Header({ location }) {
     const [isNavVisible, setIsNavVisible] = useState(false);
-    return (
-        <HeaderMain isNavVisible={isNavVisible}>
-            <HeaderWrapper>
-                <HeaderLogo>
-                    <Link to="/" aria-label="home">
-                        RentHouse
-                    </Link>
-                </HeaderLogo>
 
-                <HeaderButtons>
-                    {!isNavVisible && (
-                        <button type="button" aria-label="open header" onClick={() => setIsNavVisible(true)}>
-                            <OpenSvg />
-                        </button>
-                    )}
-                    {isNavVisible && (
-                        <button type="button" aria-label="close header" onClick={() => setIsNavVisible(false)}>
-                            <span>Close</span>
-                            <CloseSvg />
-                        </button>
-                    )}
-                </HeaderButtons>
-                <HeaderNav isNavVisible={isNavVisible}>
-                    <ul>
-                        <li>
-                            <NavLink to="/" activeClassName="active" onClick={() => setIsNavVisible(false)}>
-                                Home
-                            </NavLink>
-                        </li>
-                        <li>
-                            <NavLink to="/rent" activeClassName="active" onClick={() => setIsNavVisible(false)}>
-                                Rent
-                            </NavLink>
-                        </li>
-                        <li>
-                            <NavLink to="/buy" activeClassName="active" onClick={() => setIsNavVisible(false)}>
-                                Buy
-                            </NavLink>
-                        </li>
-                    </ul>
-                    <HeaderForm isNavVisible={isNavVisible}>
-                        <Button className="register" aria-label="register">
-                            Register
-                        </Button>
-                        <Button aria-label="Log In">Log In</Button>
-                    </HeaderForm>
-                </HeaderNav>
-            </HeaderWrapper>
-        </HeaderMain>
+    return (
+        location.pathname !== '/register' && (
+            <HeaderMain isNavVisible={isNavVisible}>
+                <HeaderWrapper>
+                    <HeaderLogo>
+                        <Link to="/" aria-label="home">
+                            RentHouse
+                        </Link>
+                    </HeaderLogo>
+
+                    <HeaderButtons>
+                        {!isNavVisible && (
+                            <button type="button" aria-label="open header" onClick={() => setIsNavVisible(true)}>
+                                <OpenSvg />
+                            </button>
+                        )}
+                        {isNavVisible && (
+                            <button type="button" aria-label="close header" onClick={() => setIsNavVisible(false)}>
+                                <span>Close</span>
+                                <CloseSvg />
+                            </button>
+                        )}
+                    </HeaderButtons>
+                    <HeaderNav isNavVisible={isNavVisible}>
+                        <ul>
+                            <li>
+                                <NavLink to="/" activeClassName="active" onClick={() => setIsNavVisible(false)}>
+                                    Home
+                                </NavLink>
+                            </li>
+                            <li>
+                                <NavLink to="/rent" activeClassName="active" onClick={() => setIsNavVisible(false)}>
+                                    Rent
+                                </NavLink>
+                            </li>
+                            <li>
+                                <NavLink to="/buy" activeClassName="active" onClick={() => setIsNavVisible(false)}>
+                                    Buy
+                                </NavLink>
+                            </li>
+                        </ul>
+                        <HeaderForm isNavVisible={isNavVisible}>
+                            <Button className="register" aria-label="register">
+                                Register
+                            </Button>
+                            <Button aria-label="Log In">Log In</Button>
+                        </HeaderForm>
+                    </HeaderNav>
+                </HeaderWrapper>
+            </HeaderMain>
+        )
     );
 }
+Header.defaultProps = {
+    location: {},
+};
 
-export default Header;
+Header.propTypes = {
+    location: PropTypes.shape({
+        pathname: PropTypes.string.isRequired,
+    }),
+};
+
+export default withRouter(Header);
