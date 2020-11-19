@@ -5,37 +5,58 @@ import { Title, Text } from '../styles/elements';
 import { mixins } from '../styles';
 
 const RegisterMain = styled.section`
-    ${mixins.flexBetween}
-    /* background-color: red; */
-    height: 100vh;
+    ${mixins.flexBetween}/* background-color: red; */
+    /* height: 100vh; */
+`;
+
+const RegisterForm = styled.div`
+    width: 40%;
+    padding: 0 40px;
     form {
-        width: 40%;
-        padding: 0 40px;
+        button {
+            margin-bottom: 20px;
+        }
     }
+`;
 
-    div {
-        ${mixins.flexColumn}
-        justify-content:center;
-        background-color: green;
-        background-image: url('https://images.unsplash.com/photo-1542687226-54a9a41eeafd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=667&q=80');
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
-        color: var(--primary-color-text);
-        height: 100%;
+const Logo = styled.div`
+    text-align: center;
+
+    a {
+        color: var(--primary-color);
+        font-size: 22px;
+        font-weight: 700;
+        letter-spacing: 0;
+        text-decoration: none;
+        display: block;
+        padding: 12px 12px 12px 0;
         text-align: center;
-        width: 60%;
-        ul {
-            li {
-                ${mixins.inlineBlock}
-                margin:0 24px;
-                a {
-                    color: var(--primary-color-text);
-                    font-size: 18px;
+        line-height: 40px;
+    }
+`;
 
-                    &:hover {
-                        color: var(--primary-color);
-                    }
+const RegisterImage = styled.div`
+    ${mixins.flexColumn}
+    justify-content:center;
+    background-color: green;
+    background-image: url('https://images.unsplash.com/photo-1542687226-54a9a41eeafd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=667&q=80');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: var(--primary-color-text);
+    height: 100%;
+    text-align: center;
+    width: 60%;
+    ul {
+        li {
+            ${mixins.inlineBlock}
+            margin:0 24px;
+            a {
+                color: var(--primary-color-text);
+                font-size: 18px;
+
+                &:hover {
+                    color: var(--primary-color);
                 }
             }
         }
@@ -45,7 +66,7 @@ const RegisterMain = styled.section`
 function Register() {
     return (
         <RegisterMain>
-            <div>
+            <RegisterImage>
                 <Title marginBottom="20px">Discover Your Next Rental</Title>
                 <ul>
                     <li>
@@ -58,21 +79,30 @@ function Register() {
                         <Link to="/buy">Buy</Link>
                     </li>
                 </ul>
-            </div>
-            <form action="">
-                <label htmlFor="userName">Username</label>
-                <input type="text" name="userName" id="userName" placeholder="Username" />
-                <label htmlFor="userName">Password</label>
-                <input type="password" name="password" id="password" placeholder="Password" autoComplete="on" />
-                <button type="submit">Register</button>
-                <label htmlFor="rememberMe">Remember me</label>
-                <input type="checkbox" name="rememberMe" id="rememberMe" />
-                <Link to="/">Forgot Password?</Link>
-                <Text>
-                    Don’t have an account?
-                    <Link to="/">Sign up ?</Link>
-                </Text>
-            </form>
+            </RegisterImage>
+            <RegisterForm>
+                <Logo>
+                    <Link to="/" aria-label="home">
+                        RentHouse
+                    </Link>
+                </Logo>
+                <form action="/">
+                    <label htmlFor="userName">Username</label>
+                    <input type="text" name="userName" id="userName" placeholder="Username" />
+                    <label htmlFor="userName">Password</label>
+                    <input type="password" name="password" id="password" placeholder="Password" autoComplete="on" />
+                    <button type="submit">Register</button>
+                    <label htmlFor="rememberMe">Remember me</label>
+                    <input type="checkbox" name="rememberMe" id="rememberMe" />
+                </form>
+                <div>
+                    <Link to="/">Forgot Password?</Link>
+                    <Text>
+                        <span>Don’t have an account? </span>
+                        <Link to="/">Sign up ?</Link>
+                    </Text>
+                </div>
+            </RegisterForm>
         </RegisterMain>
     );
 }
