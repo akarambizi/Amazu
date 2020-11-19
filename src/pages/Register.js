@@ -5,8 +5,14 @@ import { Title, Text } from '../styles/elements';
 import { mixins } from '../styles';
 
 const RegisterMain = styled.section`
-    ${mixins.flexBetween}/* background-color: red; */
-    /* height: 100vh; */
+    ${mixins.flexBetween}
+    height:100vh;
+    p {
+        font-size: 14px;
+    }
+    a {
+        color: var(--primary-color);
+    }
 `;
 
 const RegisterForm = styled.div`
@@ -16,6 +22,21 @@ const RegisterForm = styled.div`
         button {
             margin-bottom: 20px;
         }
+    }
+`;
+
+const RegisterFormBottom = styled.div`
+    ${mixins.flexBetween}
+    margin-bottom:20px;
+
+    label,
+    input[type='checkbox'] {
+        margin-bottom: 0;
+        margin-right: 5px;
+    }
+    a {
+        color: var(--primary-color);
+        justify-self: flex-end;
     }
 `;
 
@@ -47,6 +68,7 @@ const RegisterImage = styled.div`
     height: 100%;
     text-align: center;
     width: 60%;
+
     ul {
         li {
             ${mixins.inlineBlock}
@@ -92,11 +114,16 @@ function Register() {
                     <label htmlFor="userName">Password</label>
                     <input type="password" name="password" id="password" placeholder="Password" autoComplete="on" />
                     <button type="submit">Register</button>
-                    <label htmlFor="rememberMe">Remember me</label>
-                    <input type="checkbox" name="rememberMe" id="rememberMe" />
                 </form>
                 <div>
-                    <Link to="/">Forgot Password?</Link>
+                    <RegisterFormBottom>
+                        <form action="">
+                            <input type="checkbox" name="rememberMe" id="rememberMe" />
+                            <label htmlFor="rememberMe">Remember me</label>
+                        </form>
+                        <Link to="/">Forgot Password?</Link>
+                    </RegisterFormBottom>
+
                     <Text>
                         <span>Don’t have an account? </span>
                         <Link to="/">Sign up ?</Link>
