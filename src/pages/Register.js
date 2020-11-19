@@ -126,7 +126,7 @@ function Register() {
 
                     <Text>
                         <span>Don’t have an account? </span>
-                        <Link to="/">Sign up ?</Link>
+                        <Link to="/">Sign up?</Link>
                     </Text>
                 </div>
             </RegisterForm>
