@@ -2,22 +2,34 @@ import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import { Title, Text } from '../styles/elements';
-import { mixins } from '../styles';
+import { media, mixins } from '../styles';
 
 const RegisterMain = styled.section`
-    ${mixins.flexBetween}
-    height:100vh;
+    height: 100vh;
+    overflow-x: hidden;
+    width: 100%;
+
+    ${media.laptop} {
+        ${mixins.flexBetween}
+    }
+
     p {
         font-size: 14px;
     }
+
     a {
         color: var(--primary-color);
     }
 `;
 
 const RegisterForm = styled.div`
-    width: 40%;
-    padding: 0 40px;
+    width: 90%;
+    margin: 0 auto;
+
+    ${media.laptop} {
+        padding: 0 40px;
+    }
+
     form {
         button {
             margin-bottom: 20px;
@@ -45,34 +57,40 @@ const Logo = styled.div`
 
     a {
         color: var(--primary-color);
-        font-size: 22px;
+        display: block;
+        font-size: 28px;
         font-weight: 700;
         letter-spacing: 0;
-        text-decoration: none;
-        display: block;
+        line-height: 40px;
         padding: 12px 12px 12px 0;
         text-align: center;
-        line-height: 40px;
+        text-decoration: none;
     }
 `;
 
 const RegisterImage = styled.div`
     ${mixins.flexColumn}
-    justify-content:center;
-    background-color: green;
-    background-image: url('https://images.unsplash.com/photo-1542687226-54a9a41eeafd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=667&q=80');
+    background-blend-mode: multiply;
+    background-color: var(--primary-color);
+    background-image: url('https://images.unsplash.com/photo-1513880989635-6eb491ce7f5b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=667&q=80');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     color: var(--primary-color-text);
-    height: 100%;
+    justify-content: center;
     text-align: center;
-    width: 60%;
+    width: 100%;
+    padding: 80px 0;
+
+    ${media.laptop} {
+        height: 100%;
+    }
 
     ul {
         li {
             ${mixins.inlineBlock}
-            margin:0 24px;
+            margin: 0 24px;
+
             a {
                 color: var(--primary-color-text);
                 font-size: 18px;
@@ -117,10 +135,10 @@ function Register() {
                 </form>
                 <div>
                     <RegisterFormBottom>
-                        <form action="">
+                        <div>
                             <input type="checkbox" name="rememberMe" id="rememberMe" />
                             <label htmlFor="rememberMe">Remember me</label>
-                        </form>
+                        </div>
                         <Link to="/">Forgot Password?</Link>
                     </RegisterFormBottom>
 

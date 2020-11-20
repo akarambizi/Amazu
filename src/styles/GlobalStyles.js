@@ -88,7 +88,7 @@ const GlobalStyles = createGlobalStyle`
             border: 1px solid var(--secondary-text-color);
             box-sizing: border-box;
             display: block;
-            font-size: 14px;
+            font-size: 16px;
             margin-bottom: 20px;
             outline-color: var(--primary-color);
             padding: 15px;
