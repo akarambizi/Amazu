@@ -23,8 +23,11 @@ const RegisterMain = styled.section`
 `;
 
 const RegisterForm = styled.div`
+    background-color: var(--primary-color-text);
+    border-radius: 20px;
+    margin: -40px auto 0;
+    padding: 20px 20px;
     width: 90%;
-    margin: 0 auto;
 
     ${media.laptop} {
         padding: 0 40px;
