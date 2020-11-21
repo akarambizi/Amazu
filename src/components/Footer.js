@@ -10,17 +10,18 @@ const FooterMain = styled.footer`
 `;
 
 function Footer({ location }) {
+    const isRegisterPage = ['/register', '/login'].includes(location.pathname);
+    if (isRegisterPage) {
+        return null;
+    }
     return (
-        location.pathname !== '/register' ||
-        (location.pathname !== '/login' && (
-            <FooterMain>
-                <Wrapper>
-                    <Text heading sm>
-                        &copy;RentHouse - 2020
-                    </Text>
-                </Wrapper>
-            </FooterMain>
-        ))
+        <FooterMain>
+            <Wrapper>
+                <Text heading sm>
+                    &copy;RentHouse - 2020
+                </Text>
+            </Wrapper>
+        </FooterMain>
     );
 }
 
