@@ -11,7 +11,7 @@ const FooterMain = styled.footer`
 
 function Footer({ location }) {
     return (
-        location.pathname !== '/register' && (
+        location.pathname !== '/register' || location.pathname !== '/login' && (
             <FooterMain>
                 <Wrapper>
                     <Text heading sm>

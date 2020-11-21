@@ -162,7 +162,7 @@ function Header({ location }) {
     const [isNavVisible, setIsNavVisible] = useState(false);
 
     return (
-        location.pathname !== '/register' && (
+        location.pathname !== '/register' || location.pathname !== '/login' && (
             <HeaderMain isNavVisible={isNavVisible}>
                 <HeaderWrapper>
                     <HeaderLogo>
