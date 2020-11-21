@@ -11,7 +11,8 @@ const FooterMain = styled.footer`
 
 function Footer({ location }) {
     return (
-        location.pathname !== '/register' || location.pathname !== '/login' && (
+        location.pathname !== '/register' ||
+        (location.pathname !== '/login' && (
             <FooterMain>
                 <Wrapper>
                     <Text heading sm>
@@ -19,7 +20,7 @@ function Footer({ location }) {
                     </Text>
                 </Wrapper>
             </FooterMain>
-        )
+        ))
     );
 }
 
