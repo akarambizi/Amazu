@@ -11,10 +11,8 @@ const FooterMain = styled.footer`
 
 function Footer({ location }) {
     const isRegisterPage = ['/register', '/login'].includes(location.pathname);
-    if (isRegisterPage) {
-        return null;
-    }
-    return (
+
+    return isRegisterPage ? null : (
         <FooterMain>
             <Wrapper>
                 <Text heading sm>
