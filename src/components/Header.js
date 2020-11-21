@@ -172,15 +172,14 @@ function Header({ location }) {
                 </HeaderLogo>
 
                 <HeaderButtons>
-                    {!isNavVisible && (
-                        <button type="button" aria-label="open header" onClick={() => setIsNavVisible(true)}>
-                            <OpenSvg />
-                        </button>
-                    )}
-                    {isNavVisible && (
+                    {isNavVisible ? (
                         <button type="button" aria-label="close header" onClick={() => setIsNavVisible(false)}>
                             <span>Close</span>
                             <CloseSvg />
+                        </button>
+                    ) : (
+                        <button type="button" aria-label="open header" onClick={() => setIsNavVisible(true)}>
+                            <OpenSvg />
                         </button>
                     )}
                 </HeaderButtons>
