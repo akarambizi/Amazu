@@ -6,3 +6,4 @@ export { default as Property } from './Property';
 export { default as Register } from './Register';
 export { default as Rent } from './Rent';
 export { default as Typography } from './Typography';
+export { default as SearchResults } from './SearchResults';
