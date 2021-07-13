@@ -115,6 +115,7 @@ const HeaderNav = styled.nav`
                 color: var(--primary-color);
                 display: block;
                 font-weight: 700;
+                font-size: 18px;
                 padding: 30px 18px;
 
                 ${media.laptop} {

@@ -19,6 +19,7 @@ export const Grid = styled.section`
     align-items: center;
     gap: 0 24px;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    padding: ${({spacing}) => spacing && '40px 0'};
 `;
 
 const titles = {
@@ -107,7 +108,7 @@ export const Tabs = styled.div`
 
     ${media.laptop} {
         width: ${({ width }) => width};
-        margin: ${({ centered }) => centered && '0 auto 60px auto'};
+        margin: ${({ centered }) => centered && '0 auto'};
     }
 `;
 
