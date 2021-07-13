@@ -5,7 +5,7 @@ import { Grid } from '../styles/elements';
 
 function CardsList({ data }) {
     return (
-        <Grid>
+        <Grid transition>
             <Card data={data} />
             <Card data={data} />
             <Card data={data} />

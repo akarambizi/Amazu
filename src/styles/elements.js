@@ -124,6 +124,7 @@ export const Tab = styled.button`
     text-transform: uppercase;
     width: 100%;
     outline: none;
+    transition: border-bottom 0.2s ease;
 
     ${media.laptop} {
         padding: ${({ active }) => (active ? '6px 18px' : '8px 18px')};

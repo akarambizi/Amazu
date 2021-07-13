@@ -5,7 +5,7 @@ import { Text, Button, List, ListItem, Wrapper } from '../styles/elements';
 const ListPropertyContainer = styled.section`
     margin-bottom: 40px;
     background-color: var(--secondary-text-color-light);
-    padding: 40px 40px 80px;
+    padding: 80px 40px;
 `;
 
 function ListProperty() {

@@ -6,7 +6,7 @@ import { Grid, Text, Wrapper } from '../styles/elements';
 import { mixins } from '../styles';
 
 const TopCitiesWrapper = styled.section`
-    padding: 30px 0 90px;
+    padding: 80px 0 90px;
 
     h3 {
         margin-bottom: 20px;

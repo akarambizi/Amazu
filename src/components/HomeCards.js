@@ -26,7 +26,7 @@ function HomeCards() {
                     Appartment
                 </Tab>
             </Tabs>
-            <Wrapper>
+            <Wrapper transition>
                 {activeTab === 'Rent' && <CardsList data={data[0]} />}
                 {activeTab === 'Buy' && <CardsList data={data[1]} />}
                 {activeTab === 'House' && <CardsList data={data[2]} />}

@@ -41,6 +41,8 @@ const CardImageLink = styled.a`
         border-radius: 10px;
         display: block;
         height: 100%;
+        object-fit: cover;
+        max-height: 220px;
         margin: 0 auto;
         position: relative;
         width: 100%;
