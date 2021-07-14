@@ -22,7 +22,7 @@ export const Grid = styled.section`
     padding: ${({ spacing }) => spacing && '10px 0'};
 
     ${media.laptop} {
-        padding: ${({ spacing }) => spacing && '40px 0'};
+        padding:${({ spacing }) => spacing && '40px 0'};
         ${({ transition }) => transition && mixins.opacityAnimation}
     }
 `;
