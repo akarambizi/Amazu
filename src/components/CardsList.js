@@ -5,7 +5,7 @@ import { Grid } from '../styles/elements';
 
 function CardsList({ data }) {
     return (
-        <Grid transition spacing>
+        <Grid transition spacing={1}>
             <Card data={data} />
             <Card data={data} />
             <Card data={data} />

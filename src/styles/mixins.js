@@ -11,6 +11,18 @@ const loadingAnimation = keyframes`
     }
 `;
 
+const opacityAnimation = keyframes`
+    0% {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+`;
+
 const mixins = {
     flex: css`
         display: flex;
@@ -73,6 +85,10 @@ const mixins = {
         position: absolute;
         top: 0;
         width: 40px;
+    `,
+
+    opacityAnimation: css`
+        animation: ${opacityAnimation} 0.4s ease;
     `,
 
     button: css`

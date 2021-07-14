@@ -9,6 +9,9 @@ import { ReactComponent as IconBedSvg } from '../assets/images/icon-bed.svg';
 
 const CardWrapper = styled.article`
     margin-bottom: 24px;
+    border: 1px solid var(--secondary-text-color-light);
+    padding: 4px 6px;
+    border-radius: 10px;
 `;
 
 const CardImageLink = styled.a`
@@ -32,7 +35,7 @@ const CardImageLink = styled.a`
         pointer-events: none;
         position: absolute;
         top: -3px;
-        transition: opacity 0.1s ease-out;
+        transition: opacity 0.2s ease-out;
         width: 100%;
         z-index: 100;
     }

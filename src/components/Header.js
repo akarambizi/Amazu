@@ -19,10 +19,8 @@ const HeaderMain = styled.header`
 
 const HeaderWrapper = styled(Wrapper)`
     ${mixins.flexBetween}
-    box-sizing: border-box;
-    height: 70px;
-    padding-top: 10px;
-    padding-bottom: 10px;
+    padding-top: 4px;
+    padding-bottom: 4px;
 `;
 
 const HeaderLogo = styled.div`
@@ -45,11 +43,17 @@ const HeaderButtons = styled.div`
     }
 
     button {
-        background-color: transparent;
+        background-color: rgba(255, 255, 255);
         border: none;
         cursor: pointer;
         outline-color: var(--primary-color);
-        padding: 12px 0 12px 10px;
+        padding: 12px 12px 12px 10px;
+        margin-left: -12px;
+
+        &:focus {
+            background-color: red;
+            outline: none;
+        }
 
         svg {
             ${mixins.inlineBlock}
@@ -76,14 +80,14 @@ const HeaderNav = styled.nav`
     background-color: var(--primary-color-text);
     left: -100%;
     opacity: 0.95;
-    top: 70px;
-    transition: all 0.6s ease;
+    top: 56px;
 
     ${media.laptop} {
         ${mixins.flex}
         opacity:1;
         position: static;
         width: auto;
+        height: auto;
     }
 
     ${({ isNavVisible }) => {
