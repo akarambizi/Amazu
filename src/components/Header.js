@@ -13,12 +13,16 @@ const HeaderMain = styled.header`
     box-shadow: 0 1px 6px 0 rgba(32, 33, 36, 0.28);
 
     ${media.laptopMax} {
+        background-color: rgba(0, 0, 0, 0.4);
+        transition: all 1s ease;
+        /* TODO: fix hero moving up when the nav is visible */
         ${({ isNavVisible }) => isNavVisible && mixins.positionFixed};
     }
 `;
 
 const HeaderWrapper = styled(Wrapper)`
     ${mixins.flexBetween}
+    background-color: var(--primary-color-text);
     padding-top: 4px;
     padding-bottom: 4px;
 `;
@@ -50,11 +54,6 @@ const HeaderButtons = styled.div`
         padding: 12px 12px 12px 10px;
         margin-left: -12px;
 
-        &:focus {
-            background-color: red;
-            outline: none;
-        }
-
         svg {
             ${mixins.inlineBlock}
             height: 24px;
@@ -79,16 +78,8 @@ const HeaderNav = styled.nav`
     ${mixins.positionFixed};
     background-color: var(--primary-color-text);
     left: -100%;
-    opacity: 0.95;
     top: 56px;
-
-    ${media.laptop} {
-        ${mixins.flex}
-        opacity:1;
-        position: static;
-        width: auto;
-        height: auto;
-    }
+    transition: all 1s ease;
 
     ${({ isNavVisible }) => {
         return (
@@ -97,13 +88,20 @@ const HeaderNav = styled.nav`
             ${media.laptopMax} {
                 ${mixins.flexColumn};
                 background-color: var(--primary-color-text);
-                border-top: 1px solid var(--divider-color);
                 left: 0;
-                width: 100%;
+                width: 80%;
             }
             `
         );
     }};
+
+    ${media.laptop} {
+        ${mixins.flex}
+        opacity:1;
+        position: static;
+        width: auto;
+        height: auto;
+    }
 
     ul {
         li {

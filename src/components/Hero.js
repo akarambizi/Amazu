@@ -11,8 +11,9 @@ const HeroContainer = styled.section`
     background-position: center;
     background-size: cover;
     color: var(--primary-color-text);
-    height: 500px;
-
+    min-height: 500px;
+    max-height: 500px;
+    margin-top: 50px;
     form {
         ${mixins.flex}
 
