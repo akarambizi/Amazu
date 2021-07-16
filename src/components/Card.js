@@ -37,7 +37,7 @@ const CardImageLink = styled.a`
         top: -3px;
         transition: opacity 0.2s ease-out;
         width: 100%;
-        z-index: 100;
+        z-index: 0;
     }
 
     img {

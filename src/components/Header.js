@@ -13,10 +13,10 @@ const HeaderMain = styled.header`
     box-shadow: 0 1px 6px 0 rgba(32, 33, 36, 0.28);
 
     ${media.laptopMax} {
-        background-color: rgba(0, 0, 0, 0.4);
-        transition: all 1s ease;
+        background-color: rgba(0, 0, 0, 0.6);
         /* TODO: fix hero moving up when the nav is visible */
-        ${({ isNavVisible }) => isNavVisible && mixins.positionFixed};
+        ${({ isNavVisible }) => isNavVisible && mixins.positionFixed}
+        z-index: 300;
     }
 `;
 
@@ -76,10 +76,11 @@ const HeaderButtons = styled.div`
 
 const HeaderNav = styled.nav`
     ${mixins.positionFixed};
-    background-color: var(--primary-color-text);
+    width: 80%;
     left: -100%;
     top: 56px;
-    transition: all 1s ease;
+    background-color: var(--primary-color-text);
+    transition: left 1s ease;
 
     ${({ isNavVisible }) => {
         return (
@@ -87,9 +88,8 @@ const HeaderNav = styled.nav`
             `
             ${media.laptopMax} {
                 ${mixins.flexColumn};
-                background-color: var(--primary-color-text);
                 left: 0;
-                width: 80%;
+                border-top: 1px solid var(--divider-color);
             }
             `
         );
@@ -97,7 +97,6 @@ const HeaderNav = styled.nav`
 
     ${media.laptop} {
         ${mixins.flex}
-        opacity:1;
         position: static;
         width: auto;
         height: auto;
@@ -114,19 +113,17 @@ const HeaderNav = styled.nav`
             }
 
             a {
-                color: var(--primary-color);
+                color: var(--primary-text-color);
                 display: block;
-                font-weight: 700;
-                font-size: 18px;
+                font-size: 16px;
                 padding: 30px 18px;
 
                 ${media.laptop} {
                     padding: 12px 18px;
                 }
 
-                &:hover,
                 &.active {
-                    background-color: var(--secondary-text-color-light);
+                    color: var(--primary-color);
                 }
             }
         }
