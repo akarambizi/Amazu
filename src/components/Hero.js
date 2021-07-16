@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { mixins } from '../styles';
+import { mixins, media } from '../styles';
 import { Title, Wrapper } from '../styles/elements';
 
 const HeroContainer = styled.section`
@@ -14,11 +14,21 @@ const HeroContainer = styled.section`
     height: 500px;
 
     form {
-        ${mixins.flex}
+        ${media.tablet} {
+            ${mixins.flex}
 
-        input {
-            margin-bottom: 0;
-            margin-right: 14px;
+            input {
+                margin-bottom: 0;
+                margin-right: 14px;
+            }
+        }
+
+        button {
+            width: 100%;
+
+            ${media.tablet} {
+                width: auto;
+            }
         }
     }
 `;
