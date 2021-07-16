@@ -186,7 +186,7 @@ function Header({ location }) {
                 <HeaderNav isNavVisible={isNavVisible}>
                     <ul>
                         <li>
-                            <NavLink to="/" activeClassName="active" onClick={() => setIsNavVisible(false)}>
+                            <NavLink to="/" exact activeClassName="active" onClick={() => setIsNavVisible(false)}>
                                 Home
                             </NavLink>
                         </li>
