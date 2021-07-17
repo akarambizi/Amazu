@@ -10,7 +10,7 @@ const FooterMain = styled.footer`
 `;
 
 function Footer({ location }) {
-    const isRegisterPage = ['/register', '/login'].includes(location.pathname);
+    const isRegisterPage = ['/signup', '/signin'].includes(location.pathname);
 
     return isRegisterPage ? null : (
         <FooterMain>

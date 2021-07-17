@@ -106,7 +106,7 @@ const RegisterImage = styled.div`
     }
 `;
 
-function Register() {
+function SignUp() {
     return (
         <RegisterMain>
             <RegisterImage>
@@ -134,7 +134,7 @@ function Register() {
                     <input type="text" name="userName" id="userName" placeholder="Username" />
                     <label htmlFor="userName">Password</label>
                     <input type="password" name="password" id="password" placeholder="Password" autoComplete="on" />
-                    <button type="submit">Register</button>
+                    <button type="submit">SignUp</button>
                 </form>
                 <div>
                     <RegisterFormBottom>
@@ -155,4 +155,4 @@ function Register() {
     );
 }
 
-export default Register;
+export default SignUp;

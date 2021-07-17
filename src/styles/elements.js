@@ -67,7 +67,7 @@ export const Text = styled.p`
             width: ${fullWidth && '100%'};
 
             ${media.laptop} {
-                font-size: ${sm ? '16px' : '24px'};
+                font-size: ${sm ? '18px' : '24px'};
             }
             `
         );

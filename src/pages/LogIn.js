@@ -147,7 +147,7 @@ function LogIn() {
 
                     <Text>
                         <span>Don’t have an account? </span>
-                        <Link to="/register">Sign up?</Link>
+                        <Link to="/signup">Sign up?</Link>
                     </Text>
                 </div>
             </LogInForm>

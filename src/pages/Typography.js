@@ -61,13 +61,13 @@ function Typography() {
                 </form>
                 <Button shadow>Join Group</Button>
                 <Button secondary>login</Button>
-                <Button>Register</Button>
+                <Button>Sign Up</Button>
             </Wrapper>
             <Wrapper>
                 <h2>buttons</h2>
                 <Button shadow>Join Group</Button>
                 <Button secondary>login</Button>
-                <Button>Register</Button>
+                <Button>Sign Up</Button>
             </Wrapper>
         </>
     );

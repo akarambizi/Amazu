@@ -158,7 +158,7 @@ const HeaderAuth = styled.div`
 
 function Header({ location }) {
     const [isNavVisible, setIsNavVisible] = useState(false);
-    const isRegisterPage = ['/register', '/login'].includes(location.pathname);
+    const isRegisterPage = ['/signup', '/signin'].includes(location.pathname);
 
     return isRegisterPage ? null : (
         <HeaderMain isNavVisible={isNavVisible}>
@@ -200,11 +200,11 @@ function Header({ location }) {
                         </li>
                     </ul>
                     <HeaderAuth isNavVisible={isNavVisible}>
-                        <NavLink to="/register" className="register" aria-label="register">
-                            Register
+                        <NavLink to="/signup" className="register" aria-label="register">
+                            Sign Up
                         </NavLink>
-                        <NavLink to="/login" aria-label="Log In">
-                            Log In
+                        <NavLink to="/signin" aria-label="Sign In">
+                            Sign In
                         </NavLink>
                     </HeaderAuth>
                 </HeaderNav>
