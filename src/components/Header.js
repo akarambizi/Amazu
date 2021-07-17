@@ -146,7 +146,7 @@ const HeaderAuth = styled.div`
         }
     }
 
-    .register {
+    .sign-in {
         margin-bottom: 20px;
 
         ${media.laptop} {
@@ -200,11 +200,11 @@ function Header({ location }) {
                         </li>
                     </ul>
                     <HeaderAuth isNavVisible={isNavVisible}>
-                        <NavLink to="/signup" className="register" aria-label="register">
-                            Sign Up
-                        </NavLink>
-                        <NavLink to="/signin" aria-label="Sign In">
+                        <NavLink to="/signin" className="sign-in" aria-label="Sign In">
                             Sign In
+                        </NavLink>
+                        <NavLink to="/signup" aria-label="Sign Up">
+                            Sign Up
                         </NavLink>
                     </HeaderAuth>
                 </HeaderNav>

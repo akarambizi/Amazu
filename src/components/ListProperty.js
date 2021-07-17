@@ -25,7 +25,7 @@ function ListProperty() {
                 <List>
                     <ListItem>Accept rental applications</ListItem>
                     <ListItem>Collect rent payments</ListItem>
-                    <ListItem>To get started, you&apos;ll be asked to sign in or register for a Amazu account.</ListItem>
+                    <ListItem>To get started, you&apos;ll be asked to sign in or sign up for a Amazu account.</ListItem>
                 </List>
                 <Link to="/signup" aria-label="Sign In">
                     Sign Up
