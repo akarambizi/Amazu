@@ -126,7 +126,7 @@ function LogIn() {
             <LogInForm>
                 <Logo>
                     <Link to="/" aria-label="home">
-                        RentHouse
+                        Amazu
                     </Link>
                 </Logo>
                 <form action="/">
@@ -147,7 +147,7 @@ function LogIn() {
 
                     <Text>
                         <span>Don’t have an account? </span>
-                        <Link to="/">Sign up?</Link>
+                        <Link to="/register">Sign up?</Link>
                     </Text>
                 </div>
             </LogInForm>

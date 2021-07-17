@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import { NavLink, Link, withRouter } from 'react-router-dom';
-import { Button, Wrapper } from '../styles/elements';
+import { Wrapper } from '../styles/elements';
 import { mixins, media } from '../styles';
 import { ReactComponent as CloseSvg } from '../assets/images/icon-cross.svg';
 import { ReactComponent as OpenSvg } from '../assets/images/icon-bars.svg';
@@ -130,29 +130,27 @@ const HeaderNav = styled.nav`
     }
 `;
 
-const HeaderForm = styled.div`
+const HeaderAuth = styled.div`
     margin: 20px 20px 0;
 
     ${media.laptop} {
         margin: 0;
     }
 
-    button {
-        width: 100%;
-        padding: 18px 20px;
+    a {
+        ${mixins.button}
 
         ${media.laptop} {
             ${mixins.inlineBlock}
-            width: auto;
-            padding: 14px 20px;
+            min-width: unset;
         }
     }
 
     .register {
-        margin-right: 20px;
         margin-bottom: 20px;
 
         ${media.laptop} {
+            margin-right: 20px;
             margin-bottom: 0;
         }
     }
@@ -167,7 +165,7 @@ function Header({ location }) {
             <HeaderWrapper>
                 <HeaderLogo>
                     <Link to="/" aria-label="home">
-                        RentHouse
+                        Amazu
                     </Link>
                 </HeaderLogo>
 
@@ -201,12 +199,14 @@ function Header({ location }) {
                             </NavLink>
                         </li>
                     </ul>
-                    <HeaderForm isNavVisible={isNavVisible}>
-                        <Button className="register" aria-label="register">
+                    <HeaderAuth isNavVisible={isNavVisible}>
+                        <NavLink to="/register" className="register" aria-label="register">
                             Register
-                        </Button>
-                        <Button aria-label="Log In">Log In</Button>
-                    </HeaderForm>
+                        </NavLink>
+                        <NavLink to="/login" aria-label="Log In">
+                            Log In
+                        </NavLink>
+                    </HeaderAuth>
                 </HeaderNav>
             </HeaderWrapper>
         </HeaderMain>

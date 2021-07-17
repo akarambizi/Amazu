@@ -104,6 +104,7 @@ const mixins = {
         min-width: 142px;
         padding: 14px 20px;
         text-transform: capitalize;
+        text-align: center;
         transition: 0.3s;
         width: ${({ width }) => width};
 

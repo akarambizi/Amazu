@@ -12,12 +12,12 @@ function ListProperty() {
     return (
         <ListPropertyContainer>
             <Wrapper>
-                <Text heading>List your property on RentHouse to connect to qualified tenants across the largest rental network.</Text>
+                <Text heading>List your property on Amazu to connect to qualified tenants across the largest rental network.</Text>
                 <Text heading>Benefits include:</Text>
                 <List>
                     <ListItem>Accept rental applications</ListItem>
                     <ListItem>Collect rent payments</ListItem>
-                    <ListItem>To get started, you&apos;ll be asked to sign in or register for a RentHouse account.</ListItem>
+                    <ListItem>To get started, you&apos;ll be asked to sign in or register for a Amazu account.</ListItem>
                 </List>
                 <Button aria-label="Sign In">Log In / Register</Button>
             </Wrapper>

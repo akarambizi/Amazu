@@ -16,7 +16,7 @@ function Footer({ location }) {
         <FooterMain>
             <Wrapper>
                 <Text heading sm>
-                    &copy;RentHouse - 2020
+                    &copy;Amazu - 2020
                 </Text>
             </Wrapper>
         </FooterMain>

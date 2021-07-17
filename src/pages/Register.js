@@ -126,7 +126,7 @@ function Register() {
             <RegisterForm>
                 <Logo>
                     <Link to="/" aria-label="home">
-                        RentHouse
+                        Amazu
                     </Link>
                 </Logo>
                 <form action="/">
