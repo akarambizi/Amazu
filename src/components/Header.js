@@ -139,6 +139,8 @@ const HeaderAuth = styled.div`
 
     a {
         ${mixins.button}
+        background-color: var(--secondary-text-color-light);
+        color: var(--primary-text-color);
 
         ${media.laptop} {
             ${mixins.inlineBlock}
@@ -150,7 +152,7 @@ const HeaderAuth = styled.div`
         margin-bottom: 20px;
 
         ${media.laptop} {
-            margin-right: 20px;
+            margin-right: 10px;
             margin-bottom: 0;
         }
     }
