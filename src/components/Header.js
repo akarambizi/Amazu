@@ -200,10 +200,10 @@ function Header({ location }) {
                         </li>
                     </ul>
                     <HeaderAuth isNavVisible={isNavVisible}>
-                        <NavLink to="/signin" className="sign-in" aria-label="Sign In">
+                        <NavLink to="/signin" className="sign-in" aria-label="Sign In" onClick={() => setIsNavVisible(false)}>
                             Sign In
                         </NavLink>
-                        <NavLink to="/signup" aria-label="Sign Up">
+                        <NavLink to="/signup" aria-label="Sign Up" onClick={() => setIsNavVisible(false)}>
                             Sign Up
                         </NavLink>
                     </HeaderAuth>
