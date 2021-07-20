@@ -19,6 +19,8 @@ export const Grid = styled.section`
     align-items: center;
     gap: 0 24px;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    /* horizontal-card */
+    /* grid-template-columns: 1fr 1fr; */
     padding: ${({ spacing }) => spacing && '10px 0'};
 
     ${media.laptop} {

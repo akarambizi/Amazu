@@ -27,6 +27,7 @@ const mixins = {
     flex: css`
         display: flex;
         align-items: center;
+        gap: 30px;
     `,
 
     flexCenter: css`
