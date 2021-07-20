@@ -12,8 +12,7 @@ const CardWrapper = styled.article`
     border: 1px solid var(--secondary-text-color-light);
     padding: 4px 6px;
     border-radius: 10px;
-
-    /* horizontal-card */
+    ${mixins.boxShadow}/* horizontal-card */
     /* ${mixins.flex}
     align-items: flex-start */
 `;

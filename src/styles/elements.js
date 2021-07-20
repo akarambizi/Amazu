@@ -111,11 +111,11 @@ export const Tabs = styled.div`
     margin-bottom: ${({ marginBottom }) => marginBottom && '20px'};
     /* width: 100%; */
     box-sizing: border-box;
-    margin: 0 20px 32px 20px;
+    margin: 0 20px 32px;
 
     ${media.laptop} {
-        width: ${({ width }) => width};
         margin: ${({ centered }) => centered && '0 auto'};
+        max-width: 1240px;
     }
 `;
 
@@ -125,7 +125,7 @@ export const Tab = styled.button`
     border-bottom: ${({ active }) => active && '4px solid #0d9b6e'};
     color: #0f2524;
     cursor: pointer;
-    font-size: 14px;
+    font-size: 12px;
     font-weight: 800;
     line-height: 18px;
     padding: ${({ active }) => (active ? '6px 10px' : '8px 10px')};
@@ -136,5 +136,6 @@ export const Tab = styled.button`
 
     ${media.laptop} {
         padding: ${({ active }) => (active ? '6px 18px' : '8px 18px')};
+        font-size: 14px;
     }
 `;

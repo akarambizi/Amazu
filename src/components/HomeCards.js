@@ -12,7 +12,7 @@ function HomeCards() {
             <Text heading fullWidth centered marginBottom="32px">
                 Featured Properties
             </Text>
-            <Tabs centered width="70%">
+            <Tabs centered>
                 <Tab active={activeTab === 'Rent'} onClick={handleTab}>
                     Rent
                 </Tab>
