@@ -18,7 +18,7 @@ const PropertyInfoSection = styled.div`
     margin-left: auto;
     margin-bottom: 25px;
     border-top: ${({ border }) => border && ' 1px solid var(--divider-color)'};
-    padding-top: ${(border) => border && ' 20px'};
+    padding-top: ${({ border }) => border && ' 20px'};
 
     p {
         font-size: 16px;
