@@ -12,13 +12,13 @@ const PropertyInfoContainer = styled.div`
 
 const PropertyInfoSection = styled.div`
     ${mixins.grid};
-    ${(props) => (props.max ? mixins.flexBetween : mixins.grid)};
+    ${({ max }) => (max ? mixins.flexBetween : mixins.grid)};
     grid-template-columns: repeat(3, 1fr);
     /* max-width: ${(props) => (props.max ? '100%' : '570px')}; */
     margin-left: auto;
     margin-bottom: 25px;
-    border-top: ${(props) => props.border && ' 1px solid var(--divider-color)'};
-    padding-top: ${(props) => props.border && ' 20px'};
+    border-top: ${({ border }) => border && ' 1px solid var(--divider-color)'};
+    padding-top: ${(border) => border && ' 20px'};
 
     p {
         font-size: 16px;
