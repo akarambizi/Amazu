@@ -19,10 +19,10 @@ function Comment() {
                 <Text>Dorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor aliqua. Ut enim ad minim veniam, quis nostrud exercitation</Text>
             </div>
             <div>
-                <Button type="button" aria-label="Like">
+                <Button inlineBlock type="button" aria-label="Like">
                     Like
                 </Button>
-                <Button type="button" aria-label="Reply">
+                <Button inlineBlock type="button" aria-label="Reply">
                     Reply
                 </Button>
             </div>

@@ -99,7 +99,7 @@ const mixins = {
         box-shadow: ${({ shadow }) => (shadow ? '0px 10px 24px rgba(0, 0, 0, 0.19)' : null)};
         color: ${({ secondary }) => (secondary ? 'var(--primary-text-color)' : 'var(--primary-color-text)')};
         cursor: pointer;
-        display: ${({ min }) => (min ? 'inline-block' : 'block')};
+        display: ${({ inlineBlock }) => (inlineBlock ? 'inline-block' : 'block')};
         font-size: var(--font-size-sm);
         line-height: 16px;
         min-width: 142px;
