@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Text } from '../../styles/elements';
+import { Text, Button } from '../../styles/elements';
 
 const CommentMain = styled.section`
     img {
@@ -19,12 +19,12 @@ function Comment() {
                 <Text>Dorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor aliqua. Ut enim ad minim veniam, quis nostrud exercitation</Text>
             </div>
             <div>
-                <button type="button" aria-label="Like">
+                <Button type="button" aria-label="Like">
                     Like
-                </button>
-                <button type="button" aria-label="Reply">
+                </Button>
+                <Button type="button" aria-label="Reply">
                     Reply
-                </button>
+                </Button>
             </div>
         </CommentMain>
     );
