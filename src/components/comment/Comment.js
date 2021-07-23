@@ -18,14 +18,14 @@ function Comment() {
                 <Text>2 Days Ago</Text>
                 <Text>Dorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor aliqua. Ut enim ad minim veniam, quis nostrud exercitation</Text>
             </div>
-            <div>
+            <form>
                 <Button inlineBlock type="button" aria-label="Like">
                     Like
                 </Button>
                 <Button inlineBlock type="button" aria-label="Reply">
                     Reply
                 </Button>
-            </div>
+            </form>
         </CommentMain>
     );
 }
