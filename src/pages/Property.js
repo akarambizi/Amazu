@@ -9,7 +9,7 @@ const PropertyMain = styled.article`
 
     ${media.laptop} {
         ${mixins.flexBetween}
-        align-items:flex-start;
+        align-items: flex-start;
     }
 `;
 

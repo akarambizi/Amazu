@@ -59,33 +59,33 @@ const mixins = {
 
     positionFixed: css`
         position: fixed;
-        width: 100%;
-        height: 100%;
         top: 0;
         left: 0;
-        z-index: 100;
+        height: 100%;
+        width: 100%;
         overflow: hidden;
+        z-index: 100;
     `,
 
     positionAbsolute: css`
         position: absolute;
-        width: 100%;
-        height: 100%;
         top: 0;
         left: 0;
+        height: 100%;
+        width: 100%;
         z-index: 100;
     `,
 
     loading: css`
-        animation: ${loadingAnimation} 2s infinite linear;
-        background: linear-gradient(90deg, var(--secondary-text-color-light) 0px, var(--divider-color) 40px, var(--secondary-text-color-light) 80px);
         content: '';
-        height: 100%;
-        left: 0;
-        opacity: 0.1;
         position: absolute;
         top: 0;
+        left: 0;
+        height: 100%;
         width: 40px;
+        animation: ${loadingAnimation} 2s infinite linear;
+        background: linear-gradient(90deg, var(--secondary-text-color-light) 0px, var(--divider-color) 40px, var(--secondary-text-color-light) 80px);
+        opacity: 0.1;
     `,
 
     opacityAnimation: css`
@@ -93,21 +93,21 @@ const mixins = {
     `,
 
     button: css`
-        background: ${({ secondary }) => (secondary ? 'var(--primary-color-text)' : 'var(--primary-color)')};
-        border-radius: 5px;
-        border: ${({ secondary }) => (secondary ? '1px solid var(--divider-color)' : '1px solid var(--primary-color)')};
-        box-shadow: ${({ shadow }) => (shadow ? '0px 10px 24px rgba(0, 0, 0, 0.19)' : null)};
-        color: ${({ secondary }) => (secondary ? 'var(--primary-text-color)' : 'var(--primary-color-text)')};
-        cursor: pointer;
         display: ${({ inlineBlock }) => (inlineBlock ? 'inline-block' : 'block')};
+        border: ${({ secondary }) => (secondary ? '1px solid var(--divider-color)' : '1px solid var(--primary-color)')};
+        padding: 14px 20px;
+        width: ${({ width }) => width};
+        min-width: 142px;
+        border-radius: 5px;
+        color: ${({ secondary }) => (secondary ? 'var(--primary-text-color)' : 'var(--primary-color-text)')};
+        background: ${({ secondary }) => (secondary ? 'var(--primary-color-text)' : 'var(--primary-color)')};
+        box-shadow: ${({ shadow }) => (shadow ? '0px 10px 24px rgba(0, 0, 0, 0.19)' : null)};
+        cursor: pointer;
         font-size: var(--font-size-sm);
         line-height: 16px;
-        min-width: 142px;
-        padding: 14px 20px;
         text-transform: capitalize;
         text-align: center;
         transition: 0.3s;
-        width: ${({ width }) => width};
 
         &:hover {
             background: var(--primary-color-light);
