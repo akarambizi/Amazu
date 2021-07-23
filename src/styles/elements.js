@@ -7,8 +7,8 @@ export const Wrapper = styled.div`
 
     ${media.laptop} {
         margin: 0 auto;
-        max-width: 1240px;
         padding: 0;
+        max-width: 1240px;
     }
 `;
 
@@ -39,34 +39,34 @@ const titles = {
 
 export const Title = styled.h1`
     ${({ as: tag }) => (tag in titles ? titles[tag] : 'font-size: 44px;')};
+    margin-bottom: ${({ marginBottom }) => marginBottom || '10px'};
+    width: ${({ fullWidth }) => fullWidth && '100%'};
     font-family: var(--font-secondary);
     font-weight: 700;
     letter-spacing: 0;
-    margin-bottom: ${({ marginBottom }) => marginBottom || '10px'};
     text-align: ${({ centered }) => centered && 'center'};
-    width: ${({ fullWidth }) => fullWidth && '100%'};
 `;
 
 export const Text = styled.p`
-    color: ${({ secondary }) => (secondary ? 'var(--primary-color)' : 'var(--primary-text-color)')};
     display: ${({ display }) => display};
+    margin-bottom: 10px;
+    width: ${({ width }) => width};
+    color: ${({ secondary }) => (secondary ? 'var(--primary-color)' : 'var(--primary-text-color)')};
     font-size: ${({ bold }) => (bold ? 'var(--font-size-xl)' : 'var(--font-size-md)')};
     font-weight: ${({ bold }) => bold && '700'};
     line-height: 24px;
-    margin-bottom: 10px;
-    width: ${({ width }) => width};
 
     ${({ heading, fullWidth, centered, marginBottom, sm }) => {
         return (
             heading &&
             `
+            margin-bottom: 18px;
+            margin-bottom: ${marginBottom};
+            width: ${fullWidth && '100%'};
+            text-align: ${centered && 'center'};
             font-size: ${sm ? '14px' : '18px'};
             font-weight: 700;
-            margin-bottom: 18px;
             line-height: 34px;
-            margin-bottom: ${marginBottom};
-            text-align: ${centered && 'center'};
-            width: ${fullWidth && '100%'};
 
             ${media.laptop} {
                 font-size: ${sm ? '18px' : '24px'};
@@ -96,22 +96,22 @@ export const ListItem = styled.li`
 
     &::before {
         ${mixins.inlineBlock}
-        background-color: var(--primary-color);
-        border-radius: 50%;
         content: '';
         height: 6px;
-        margin-right: 7px;
         width: 6px;
+        margin-right: 7px;
+        border-radius: 50%;
+        background-color: var(--primary-color);
     }
 `;
 
 export const Tabs = styled.div`
     ${mixins.flex}
-    border-bottom: .125rem solid #d8d8d8;
+    margin: 0 20px 32px;
     margin-bottom: ${({ marginBottom }) => marginBottom && '20px'};
+    border-bottom: 0.125rem solid #d8d8d8;
     /* width: 100%; */
     box-sizing: border-box;
-    margin: 0 20px 32px;
 
     ${media.laptop} {
         margin: ${({ centered }) => centered && '0 auto'};
