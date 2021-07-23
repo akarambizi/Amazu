@@ -120,17 +120,17 @@ export const Tabs = styled.div`
 `;
 
 export const Tab = styled.button`
-    background-color: transparent;
+    width: 100%;
     border: none;
     border-bottom: ${({ active }) => active && '4px solid #0d9b6e'};
+    padding: ${({ active }) => (active ? '6px 10px' : '8px 10px')};
     color: #0f2524;
-    cursor: pointer;
+    background-color: transparent;
     font-size: 12px;
     font-weight: 800;
     line-height: 18px;
-    padding: ${({ active }) => (active ? '6px 10px' : '8px 10px')};
     text-transform: uppercase;
-    width: 100%;
+    cursor: pointer;
     outline: none;
     transition: border-bottom 0.2s ease;
 
