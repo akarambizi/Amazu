@@ -5,8 +5,8 @@ const colors = {
     '--primary-color-light': '#C8E6C9',
     '--primary-color-text': '#FFFFFF',
     '--primary-color': '#00bd70',
-    '--primary-text-color': '#212121',
-    '--secondary-text-color-light': '#f7f7f7',
+    '--primary-text-color': '#39364f',
+    '--secondary-text-color-light': '#f8f7fa',
     '--secondary-text-color': '#717171',
 };
 
