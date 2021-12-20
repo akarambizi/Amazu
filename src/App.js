@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import { Home, Rent, Buy, NotFound, Typography, Property, SignUp, LogIn, SearchResults } from './pages';
+import { Home, Rent, Buy, NotFound, Typography, Property, SignUp, SignIn, SearchResults } from './pages';
 import { Footer, Header } from './components';
 import { GlobalStyles } from './styles';
 
@@ -17,7 +17,7 @@ function App() {
                     <Route path="/typography" component={Typography} />
                     <Route path="/property" component={Property} />
                     <Route path="/signup" component={SignUp} />
-                    <Route path="/signin" component={LogIn} />
+                    <Route path="/signin" component={SignIn} />
                     <Route path="/search" component={SearchResults} />
                     <Route component={NotFound} />
                 </Switch>

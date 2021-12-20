@@ -1,17 +1,14 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
-import { Title, Text } from '../styles/elements';
+import { Title, Text, Form } from '../styles/elements';
 import { media, mixins } from '../styles';
 
 const LogInMain = styled.section`
     height: 100vh;
-    overflow-x: hidden;
+    overflow: hidden;
     width: 100%;
-
-    ${media.laptop} {
-        ${mixins.flexBetween}
-    }
+    ${mixins.flexBetween}
 
     p {
         font-size: 14px;
@@ -56,7 +53,7 @@ const LogInFormBottom = styled.div`
 `;
 
 const Logo = styled.div`
-    text-align: center;
+    /* text-align: center; */
 
     a {
         color: var(--primary-color);
@@ -67,12 +64,11 @@ const Logo = styled.div`
         line-height: 40px;
         padding: 12px 12px 12px 0;
         text-align: center;
-        text-decoration: none;
+        /* text-decoration: none; */
     }
 `;
 
 const LogInImage = styled.div`
-    ${mixins.flexColumn}
     background-blend-mode: multiply;
     background-color: var(--primary-color);
     background-image: url('https://images.unsplash.com/photo-1513880989635-6eb491ce7f5b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=667&q=80');
@@ -83,10 +79,12 @@ const LogInImage = styled.div`
     justify-content: center;
     text-align: center;
     width: 100%;
-    padding: 80px 0;
+    /* padding: 80px 0; */
+    display: none;
 
     ${media.laptop} {
         height: 100%;
+        ${mixins.flexColumn}
     }
 
     ul {
@@ -106,9 +104,37 @@ const LogInImage = styled.div`
     }
 `;
 
-function LogIn() {
+function SignIn() {
     return (
         <LogInMain>
+            <LogInForm>
+                <Logo>
+                    <Link to="/" aria-label="home">
+                        Amazu
+                    </Link>
+                </Logo>
+                <Text heading>Log in</Text>
+                <Form action="/">
+                    <label htmlFor="userName">Username</label>
+                    <input type="text" name="userName" id="userName" placeholder="Username" />
+                    <label htmlFor="userName">Password</label>
+                    <input type="password" name="password" id="password" placeholder="Password" autoComplete="on" />
+                    <button type="submit">SignIn</button>
+                </Form>
+                <div>
+                    <LogInFormBottom>
+                        <div>
+                            <input type="checkbox" name="rememberMe" id="rememberMe" />
+                            <label htmlFor="rememberMe">Remember me</label>
+                        </div>
+                        <Link to="/">Forgot Password?</Link>
+                    </LogInFormBottom>
+                    <Text>
+                        <span>Don’t have an account? </span>
+                        <Link to="/signup">Sign up</Link>
+                    </Text>
+                </div>
+            </LogInForm>
             <LogInImage>
                 <Title marginBottom="20px">Discover Your Next Rental</Title>
                 <ul>
@@ -123,36 +149,8 @@ function LogIn() {
                     </li>
                 </ul>
             </LogInImage>
-            <LogInForm>
-                <Logo>
-                    <Link to="/" aria-label="home">
-                        Amazu
-                    </Link>
-                </Logo>
-                <form action="/">
-                    <label htmlFor="userName">Username</label>
-                    <input type="text" name="userName" id="userName" placeholder="Username" />
-                    <label htmlFor="userName">Password</label>
-                    <input type="password" name="password" id="password" placeholder="Password" autoComplete="on" />
-                    <button type="submit">LogIn</button>
-                </form>
-                <div>
-                    <LogInFormBottom>
-                        <div>
-                            <input type="checkbox" name="rememberMe" id="rememberMe" />
-                            <label htmlFor="rememberMe">Remember me</label>
-                        </div>
-                        <Link to="/">Forgot Password?</Link>
-                    </LogInFormBottom>
-
-                    <Text>
-                        <span>Don’t have an account? </span>
-                        <Link to="/signup">Sign up?</Link>
-                    </Text>
-                </div>
-            </LogInForm>
         </LogInMain>
     );
 }
 
-export default LogIn;
+export default SignIn;

@@ -7,7 +7,7 @@ import { Text, List, ListItem, Wrapper } from '../styles/elements';
 const ListPropertyContainer = styled.section`
     margin-bottom: 40px;
     background-color: var(--secondary-text-color-light);
-    padding: 80px 40px;
+    padding: 80px 0;
 
     a {
         ${mixins.button}
