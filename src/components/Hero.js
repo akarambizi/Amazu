@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { mixins, media } from '../styles';
-import { Title, Wrapper } from '../styles/elements';
+import { Title, Wrapper, Form } from '../styles/elements';
 
 const HeroContainer = styled.section`
     ${mixins.flexCenter}
@@ -13,13 +13,12 @@ const HeroContainer = styled.section`
     color: var(--primary-color-text);
     height: 500px;
 
-    form {
+    ${Form} {
         ${media.tablet} {
             ${mixins.flex}
 
             input {
                 margin-bottom: 0;
-                margin-right: 14px;
             }
         }
 
@@ -37,10 +36,10 @@ function Hero() {
         <HeroContainer>
             <Wrapper>
                 <Title marginBottom="20px">Discover Your Next Rental</Title>
-                <form>
+                <Form>
                     <input type="text" name="search" placeholder="Enter a state, city, or ZIP code" aria-label="search" />
                     <button type="submit">search</button>
-                </form>
+                </Form>
             </Wrapper>
         </HeroContainer>
     );

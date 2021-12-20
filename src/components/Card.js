@@ -9,46 +9,29 @@ import { ReactComponent as IconBedSvg } from '../assets/images/icon-bed.svg';
 
 const CardWrapper = styled.article`
     margin-bottom: 24px;
-    border: 1px solid var(--secondary-text-color-light);
-    padding: 4px 6px;
-    border-radius: 10px;
-    ${mixins.boxShadow}/* horizontal-card */
+    /* border: 1px solid var(--secondary-text-color-light); */
+    /* padding: 4px 10px; */
+    border-radius: 5px;
+    /*  horizontal-card */
     /* ${mixins.flex}
     align-items: flex-start */
+    box-shadow: 0 16px 64px -16px rgb(46 55 77 / 10%);
+
+    &:hover {
+        box-shadow: 0 16px 64px -16px rgb(46 55 77 / 24%);
+    }
 `;
 
 const CardImageLink = styled.a`
     display: block;
     position: relative;
 
-    &:hover,
-    &:focus {
-        &::after {
-            opacity: 1;
-        }
-    }
-
-    &::after {
-        border-radius: 12px;
-        border: 3px solid var(--primary-color);
-        content: '';
-        height: 100%;
-        left: -3px;
-        opacity: 0;
-        pointer-events: none;
-        position: absolute;
-        top: -3px;
-        transition: opacity 0.2s ease-out;
-        width: 100%;
-        z-index: 0;
-    }
-
     img {
-        border-radius: 10px;
+        /* border-radius: 10px; */
         display: block;
         height: 100%;
         object-fit: cover;
-        max-height: 220px;
+        max-height: 180px;
         margin: 0 auto;
         position: relative;
         width: 100%;
@@ -57,7 +40,7 @@ const CardImageLink = styled.a`
 
 const CardContent = styled.div`
     border-bottom: 1px solid var(--secondary-text-color-light);
-    padding: 10px 0;
+    padding: 5px 10px;
 `;
 
 const CardLink = styled(Anchor)`
@@ -75,7 +58,9 @@ const CardLink = styled(Anchor)`
 
 const CardIcons = styled.div`
     ${mixins.flex}
-    padding: 10px 0;
+    /* justify-content: flex-between; */
+    gap: 24px;
+    padding: 10px;
 
     svg {
         height: 20px;
@@ -94,39 +79,33 @@ const CardIcons = styled.div`
 `;
 function Card({ data }) {
     const {
-        title,
-        images,
         location: { fullAdress },
-        bedRooms,
-        bathRooms,
-        area,
-        price,
     } = data;
     return (
         <CardWrapper>
             <CardImageLink href="/typography">
-                <img src={images[0]} alt={title} />
+                <img src={data.images[0]} alt={data.title} />
             </CardImageLink>
             <div>
                 <CardContent>
                     <CardLink href="/">
-                        <Text bold>{title}</Text>
+                        <Text bold>{data.title}</Text>
                     </CardLink>
                     <Text>{fullAdress}</Text>
-                    <Text bold secondary>{`$${price}`}</Text>
+                    <Text bold secondary>{`$${data.price}`}</Text>
                 </CardContent>
                 <CardIcons>
                     <Text aria-label="Bedrooms" title="Bedrooms">
                         <IconBedSvg />
-                        <span>{bedRooms}</span>
+                        <span>{data.bedRooms}</span>
                     </Text>
                     <Text aria-label="Bathrooms" title="Bathrooms">
                         <IconBathRoomSvg />
-                        <span>{bathRooms}</span>
+                        <span>{data.bathRooms}</span>
                     </Text>
                     <Text aria-label="Area" title="Area">
                         <IconAreaSvg />
-                        <span>{`${area} ft`}</span>
+                        <span>{`${data.area} ft`}</span>
                         <sup>2</sup>
                     </Text>
                 </CardIcons>

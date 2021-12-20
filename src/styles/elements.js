@@ -1,6 +1,7 @@
 import styled from 'styled-components';
-import { media } from '.';
 import mixins from './mixins';
+import media from './media';
+import arrowUrl from '../assets/images/icon-angle-down.svg';
 
 export const Wrapper = styled.div`
     padding: 0 20px;
@@ -49,10 +50,10 @@ export const Title = styled.h1`
 
 export const Text = styled.p`
     display: ${({ display }) => display};
-    margin-bottom: 10px;
+    margin-bottom: 5px;
     width: ${({ width }) => width};
     color: ${({ secondary }) => (secondary ? 'var(--primary-color)' : 'var(--primary-text-color)')};
-    font-size: ${({ bold }) => (bold ? 'var(--font-size-xl)' : 'var(--font-size-md)')};
+    font-size: ${({ bold }) => (bold ? 'var(--font-size-md)' : 'var(--font-size-sm)')};
     font-weight: ${({ bold }) => bold && '700'};
     line-height: 24px;
 
@@ -61,8 +62,8 @@ export const Text = styled.p`
             heading &&
             `
             margin-bottom: 18px;
-            margin-bottom: ${marginBottom};
-            width: ${fullWidth && '100%'};
+            margin-bottom: ${marginBottom || '10px'};
+            width: ${fullWidth ? '100%' : 'auto'};
             text-align: ${centered && 'center'};
             font-size: ${sm ? '14px' : '18px'};
             font-weight: 700;
@@ -109,7 +110,7 @@ export const Tabs = styled.div`
     ${mixins.flex}
     margin: 0 20px 32px;
     margin-bottom: ${({ marginBottom }) => marginBottom && '20px'};
-    border-bottom: 0.125rem solid #d8d8d8;
+    border-bottom: 1px solid #d8d8d8;
     /* width: 100%; */
     box-sizing: border-box;
 
@@ -122,20 +123,73 @@ export const Tabs = styled.div`
 export const Tab = styled.button`
     width: 100%;
     border: none;
-    border-bottom: ${({ active }) => active && '4px solid #0d9b6e'};
+    border-bottom: ${({ active }) => active && '2px solid #0d9b6e'};
     padding: ${({ active }) => (active ? '6px 10px' : '8px 10px')};
     color: #0f2524;
     background-color: transparent;
     font-size: 12px;
     font-weight: 800;
     line-height: 18px;
-    text-transform: uppercase;
     cursor: pointer;
     outline: none;
     transition: border-bottom 0.2s ease;
+    margin-bottom: -2px;
 
     ${media.laptop} {
         padding: ${({ active }) => (active ? '6px 18px' : '8px 18px')};
         font-size: 14px;
+    }
+`;
+
+export const Form = styled.form`
+    label {
+        ${mixins.inlineBlock}
+        font-size: 14px;
+        margin-bottom: 12px;
+        text-transform: capitalize;
+    }
+
+    input,
+    select,
+    textarea {
+        border-radius: 8px;
+        border: 1px solid var(--secondary-text-color);
+        box-sizing: border-box;
+        display: block;
+        font-size: 16px;
+        margin-bottom: 20px;
+        outline: none;
+        padding: 15px;
+        text-align: left;
+        width: 100%;
+    }
+
+    input[type='button'],
+    button {
+        ${mixins.button}
+        text-align:center;
+    }
+
+    input[type='radio'],
+    input[type='checkbox'] {
+        ${mixins.inlineBlock}
+        margin-right:20px;
+        width: 20px;
+    }
+
+    input[type='text'] {
+        &:focus {
+            border: 1px solid var(--primary-color);
+        }
+    }
+
+    select {
+        appearance: none;
+        background: url(${arrowUrl});
+        background-position: calc(100% - 30px) 50%;
+        background-repeat: no-repeat;
+        background-size: 14px;
+        padding: 12px 36px 12px 12px;
+        width: 100%;
     }
 `;

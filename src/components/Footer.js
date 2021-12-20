@@ -1,7 +1,7 @@
 import React from 'react';
+import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import { withRouter } from 'react-router-dom';
-import styled from 'styled-components';
 import { Wrapper, Text } from '../styles/elements';
 
 const FooterMain = styled.footer`
@@ -11,12 +11,15 @@ const FooterMain = styled.footer`
 
 function Footer({ location }) {
     const isRegisterPage = ['/signup', '/signin'].includes(location.pathname);
+    const yearNow = new Date().getFullYear();
 
     return isRegisterPage ? null : (
         <FooterMain>
             <Wrapper>
                 <Text heading sm>
-                    &copy;Amazu - 2020
+                    &copy;Amazu - 
+                    {' '}
+                    <span>{yearNow}</span>
                 </Text>
             </Wrapper>
         </FooterMain>
@@ -32,4 +35,6 @@ Footer.propTypes = {
         pathname: PropTypes.string.isRequired,
     }),
 };
+
+// used withRouter to get location.pathname
 export default withRouter(Footer);

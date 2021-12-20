@@ -17,11 +17,11 @@ const HeaderMain = styled.header`
         z-index: 300;
         padding: 10px 0;
     }
-`;
 
-const HeaderWrapper = styled(Wrapper)`
-    ${mixins.flexBetween}
-    background-color: var(--primary-color-text);
+    ${Wrapper} {
+        ${mixins.flexBetween}
+        background-color: var(--primary-color-text);
+    }
 `;
 
 const HeaderLogo = styled.div`
@@ -132,7 +132,7 @@ function Header({ location }) {
 
     return isRegisterPage ? null : (
         <HeaderMain isNavVisible={isNavVisible}>
-            <HeaderWrapper>
+            <Wrapper>
                 <HeaderLogo>
                     <Link to="/" aria-label="home">
                         Amazu
@@ -170,7 +170,7 @@ function Header({ location }) {
                         </li>
                     </ul>
                 </HeaderNav>
-            </HeaderWrapper>
+            </Wrapper>
         </HeaderMain>
     );
 }
