@@ -21,7 +21,7 @@ const TopCityLink = styled(Link)`
     font-weight: 700;
     gap: var(--space-md);
     margin-bottom: 32px;
-    padding: var(--space-xxl);
+    padding: var(--space-xs);
 
     &:hover {
         background-color: var(--secondary-text-color-light);

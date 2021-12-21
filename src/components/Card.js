@@ -15,10 +15,11 @@ const CardWrapper = styled.article`
     /*  horizontal-card */
     /* ${mixins.flex}
     align-items: flex-start */
-    box-shadow: 0 var(--space-md) 64px -var(--space-md) rgb(46 55 77 / 10%);
+    transition: all 0.2s ease;
+    box-shadow: 0 var(--space-md) 64px -16px rgb(46 55 77 / 10%);
 
     &:hover {
-        box-shadow: 0 var(--space-md) 64px -var(--space-md) rgb(46 55 77 / 24%);
+        box-shadow: 0 var(--space-md) 64px -16px rgb(46 55 77 / 24%);
     }
 `;
 
