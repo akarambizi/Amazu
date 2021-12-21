@@ -1,6 +1,5 @@
 import { createGlobalStyle } from 'styled-components';
-import colors from './colors';
-import fonts from './fonts';
+import { colors, fonts, spaces } from './variables';
 import normalize from './normalize';
 
 const GlobalStyles = createGlobalStyle`
@@ -9,6 +8,7 @@ const GlobalStyles = createGlobalStyle`
     :root {
         ${colors};
         ${fonts};
+        ${spaces};
     }
 
     body {
@@ -34,9 +34,9 @@ const GlobalStyles = createGlobalStyle`
     a {
         text-decoration: none;
         font-family: var(--font-primary);
-        font-size: 14px;
+        font-size: var(--space-sm);
         letter-spacing: 0px;
-        line-height: 14px;
+        line-height: var(--space-sm);
         text-decoration: none;
         transition: all 0.2s ease-in-out;
         display: inline-block;
@@ -57,9 +57,9 @@ const GlobalStyles = createGlobalStyle`
             a {
                 color: var(--primary-text-color);
                 font-family: var(--font-secondary);
-                font-size: 14px;
+                font-size: var(--space-sm);
                 letter-spacing: 0px;
-                line-height: 14px;
+                line-height: var(--space-sm);
                 padding: 10px;
                 text-decoration: none;
                 transition: all 0.2s ease-in-out;

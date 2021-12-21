@@ -8,19 +8,19 @@ const PropertyOwnerContainer = styled.section`
     min-width: 250px;
 `;
 const PropertyOwnerTop = styled.div`
-    padding: 18px 15px 12px;
+    padding: var(--space-lg) 15px var(--space-xxl);
 
     img {
         height: 50px;
         width: 50px;
         border-radius: 50%;
-        margin-bottom: 12px;
+        margin-bottom: var(--space-xxl);
     }
 
     a {
         background-color: var(--primary-color-light);
         display: block;
-        padding: 12px 0;
+        padding: var(--space-xxl) 0;
         color: var(--primary-text-color);
         text-decoration: none;
     }

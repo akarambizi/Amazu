@@ -29,10 +29,10 @@ const HeaderLogo = styled.div`
 
     a {
         display: block;
-        padding: 12px 12px 12px 0;
+        padding: var(--space-xxl) var(--space-xxl) var(--space-xxl) 0;
         color: var(--primary-color);
         text-decoration: none;
-        font-size: var(--font-size-xl);
+        font-size: var(--space-xl);
         font-weight: 700;
         letter-spacing: 0;
     }
@@ -44,8 +44,8 @@ const HeaderButtonsMobile = styled.div`
     }
 
     button {
-        margin-left: -12px;
-        padding: 12px 12px 12px 10px;
+        margin-left: -var(--space-xxl);
+        padding: var(--space-xxl) var(--space-xxl) var(--space-xxl) 10px;
         border: none;
         background-color: var(--primary-color-text);
         outline-color: var(--primary-color);
@@ -53,8 +53,8 @@ const HeaderButtonsMobile = styled.div`
 
         svg {
             ${mixins.inlineBlock}
-            height: 24px;
-            width: 24px;
+            height: var(--space-xxl);
+            width: var(--space-xxl);
 
             path {
                 fill: var(--primary-color);
@@ -101,12 +101,12 @@ const HeaderNav = styled.nav`
 
             a {
                 display: block;
-                padding: 30px 18px;
-                font-size: var(--font-size-sm);
+                padding: 30px var(--space-lg);
+                font-size: var(--space-sm);
                 color: var(--primary-text-color);
 
                 ${media.laptop} {
-                    padding: 28px 20px;
+                    padding: 28px var(--space-xl);
                 }
 
                 &:hover {

@@ -1,10 +1,13 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import { Home, Rent, Buy, NotFound, Typography, Property, SignUp, SignIn, SearchResults } from './pages';
 import { Footer, Header } from './components';
 import { GlobalStyles } from './styles';
 
 function App() {
+    useEffect(() => {
+        document.title = 'new title';
+    }, []);
     return (
         <BrowserRouter>
             <GlobalStyles />

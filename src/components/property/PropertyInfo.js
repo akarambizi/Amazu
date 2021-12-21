@@ -18,18 +18,18 @@ const PropertyInfoSection = styled.div`
     margin-left: auto;
     margin-bottom: 25px;
     border-top: ${({ border }) => border && ' 1px solid var(--divider-color)'};
-    padding-top: ${({ border }) => border && ' 20px'};
+    padding-top: ${({ border }) => border && ' var(--space-xl)'};
 
     p {
-        font-size: 16px;
+        font-size: var(--space-md);
         line-height: 19px;
         letter-spacing: 0px;
         margin-bottom: 10px;
     }
 
     span {
-        font-size: var(--font-size-xl);
-        line-height: 20px;
+        font-size: var(--space-xl);
+        line-height: var(--space-xl);
         font-weight: 700;
         color: var(--primary-text-color);
         display: inline-block;
@@ -38,19 +38,19 @@ const PropertyInfoSection = styled.div`
     }
 
     svg {
-        height: 20px;
+        height: var(--space-xl);
         display: inline-block;
         vertical-align: middle;
     }
 
     h4 {
         align-self: start;
-        font-size: 24px;
+        font-size: var(--space-xxl);
     }
 
     .description {
         grid-column: span 2;
-        line-height: 24px;
+        line-height: var(--space-xxl);
         color: var(--secondary-text-color);
     }
 

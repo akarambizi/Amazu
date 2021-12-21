@@ -11,7 +11,7 @@ const PropertyImagesContainer = styled.div`
 
 const ImageSection = styled.div`
     height: 100%;
-    margin-right: 12px;
+    margin-right: var(--space-xxl);
     img {
         max-width: 280px;
         height: 80px;

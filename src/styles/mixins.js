@@ -95,16 +95,16 @@ const mixins = {
     button: css`
         display: ${({ inlineBlock }) => (inlineBlock ? 'inline-block' : 'block')};
         border: ${({ secondary }) => (secondary ? '1px solid var(--divider-color)' : '1px solid var(--primary-color)')};
-        padding: 14px 20px;
+        padding: var(--space-sm) var(--space-xl);
         width: ${({ width }) => width};
         min-width: 142px;
         border-radius: 5px;
         color: ${({ secondary }) => (secondary ? 'var(--primary-text-color)' : 'var(--primary-color-text)')};
         background: ${({ secondary }) => (secondary ? 'var(--primary-color-text)' : 'var(--primary-color)')};
-        box-shadow: ${({ shadow }) => (shadow ? '0px 10px 24px rgba(0, 0, 0, 0.19)' : null)};
+        box-shadow: ${({ shadow }) => (shadow ? '0px 10px var(--space-xxl) rgba(0, 0, 0, 0.19)' : null)};
         cursor: pointer;
-        font-size: var(--font-size-sm);
-        line-height: 16px;
+        font-size: var(--space-sm);
+        line-height: var(--space-md);
         text-transform: capitalize;
         text-align: center;
         transition: 0.3s;

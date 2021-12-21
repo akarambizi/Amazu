@@ -4,7 +4,7 @@ import media from './media';
 import arrowUrl from '../assets/images/icon-angle-down.svg';
 
 export const Wrapper = styled.div`
-    padding: 0 20px;
+    padding: 0 var(--space-lg);
 
     ${media.laptop} {
         margin: 0 auto;
@@ -18,11 +18,11 @@ export const Grid = styled.section`
     flex-wrap: wrap;
     display: grid;
     align-items: center;
-    gap: 0 24px;
+    gap: 0 var(--space-xxl);
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     /* horizontal-card */
     /* grid-template-columns: 1fr 1fr; */
-    padding: ${({ spacing }) => spacing && '10px 0'};
+    padding: ${({ spacing }) => spacing && 'var(---space-sm) 0'};
 
     ${media.laptop} {
         padding: ${({ spacing }) => spacing && '40px 0'};
@@ -33,14 +33,14 @@ export const Grid = styled.section`
 const titles = {
     h2: 'font-size: 40px;',
     h3: 'font-size: 30px;',
-    h4: 'font-size: 24px;',
-    h5: 'font-size: 20px;',
-    h6: 'font-size: 18px;',
+    h4: 'font-size: var(--space-xxl);',
+    h5: 'font-size: var(--space-xl);',
+    h6: 'font-size: var(--space-lg);',
 };
 
 export const Title = styled.h1`
     ${({ as: tag }) => (tag in titles ? titles[tag] : 'font-size: 44px;')};
-    margin-bottom: ${({ marginBottom }) => marginBottom || '10px'};
+    margin-bottom: ${({ marginBottom }) => marginBottom || 'var(---space-sm)'};
     width: ${({ fullWidth }) => fullWidth && '100%'};
     font-family: var(--font-secondary);
     font-weight: 700;
@@ -53,24 +53,24 @@ export const Text = styled.p`
     margin-bottom: 5px;
     width: ${({ width }) => width};
     color: ${({ secondary }) => (secondary ? 'var(--primary-color)' : 'var(--primary-text-color)')};
-    font-size: ${({ bold }) => (bold ? 'var(--font-size-md)' : 'var(--font-size-sm)')};
+    font-size: ${({ bold }) => (bold ? 'var(--space-md)' : 'var(--space-sm)')};
     font-weight: ${({ bold }) => bold && '700'};
-    line-height: 24px;
+    line-height: var(--space-xxl);
 
     ${({ heading, fullWidth, centered, marginBottom, sm }) => {
         return (
             heading &&
             `
-            margin-bottom: 18px;
-            margin-bottom: ${marginBottom || '10px'};
+            margin-bottom: var(--space-lg);
+            margin-bottom: ${marginBottom || 'var(---space-sm)'};
             width: ${fullWidth ? '100%' : 'auto'};
             text-align: ${centered && 'center'};
-            font-size: ${sm ? '14px' : '18px'};
+            font-size: ${sm ? 'var(--space-sm)' : 'var(--space-lg)'};
             font-weight: 700;
             line-height: 34px;
 
             ${media.laptop} {
-                font-size: ${sm ? '18px' : '24px'};
+                font-size: ${sm ? 'var(--space-lg)' : 'var(--space-xxl)'};
             }
             `
         );
@@ -87,11 +87,11 @@ export const Button = styled.button`
 `;
 
 export const List = styled.ul`
-    margin-bottom: 20px;
+    margin-bottom: var(--space-lg);
 `;
 
 export const ListItem = styled.li`
-    font-size: 14px;
+    font-size: var(--space-sm);
     letter-spacing: 0;
     line-height: 26px;
 
@@ -108,8 +108,8 @@ export const ListItem = styled.li`
 
 export const Tabs = styled.div`
     ${mixins.flex}
-    margin: 0 20px 32px;
-    margin-bottom: ${({ marginBottom }) => marginBottom && '20px'};
+    margin: 0 var(--space-lg) 32px;
+    margin-bottom: ${({ marginBottom }) => marginBottom && 'var(--space-lg)'};
     border-bottom: 1px solid #d8d8d8;
     /* width: 100%; */
     box-sizing: border-box;
@@ -124,28 +124,28 @@ export const Tab = styled.button`
     width: 100%;
     border: none;
     border-bottom: ${({ active }) => active && '2px solid #0d9b6e'};
-    padding: ${({ active }) => (active ? '6px 10px' : '8px 10px')};
+    padding: ${({ active }) => (active ? '6px var(---space-sm)' : '8px var(---space-sm)')};
     color: #0f2524;
     background-color: transparent;
-    font-size: 12px;
+    font-size: var(--space-xxl);
     font-weight: 800;
-    line-height: 18px;
+    line-height: var(--space-lg);
     cursor: pointer;
     outline: none;
     transition: border-bottom 0.2s ease;
     margin-bottom: -2px;
 
     ${media.laptop} {
-        padding: ${({ active }) => (active ? '6px 18px' : '8px 18px')};
-        font-size: 14px;
+        padding: ${({ active }) => (active ? '6px var(--space-lg)' : '8px var(--space-lg)')};
+        font-size: var(--space-sm);
     }
 `;
 
 export const Form = styled.form`
     label {
         ${mixins.inlineBlock}
-        font-size: 14px;
-        margin-bottom: 12px;
+        font-size: var(--space-sm);
+        margin-bottom: var(--space-xxl);
         text-transform: capitalize;
     }
 
@@ -156,8 +156,8 @@ export const Form = styled.form`
         border: 1px solid var(--secondary-text-color);
         box-sizing: border-box;
         display: block;
-        font-size: 16px;
-        margin-bottom: 20px;
+        font-size: var(--space-md);
+        margin-bottom: var(--space-lg);
         outline: none;
         padding: 15px;
         text-align: left;
@@ -173,8 +173,8 @@ export const Form = styled.form`
     input[type='radio'],
     input[type='checkbox'] {
         ${mixins.inlineBlock}
-        margin-right:20px;
-        width: 20px;
+        margin-right:var(--space-lg);
+        width: var(--space-lg);
     }
 
     input[type='text'] {
@@ -188,8 +188,8 @@ export const Form = styled.form`
         background: url(${arrowUrl});
         background-position: calc(100% - 30px) 50%;
         background-repeat: no-repeat;
-        background-size: 14px;
-        padding: 12px 36px 12px 12px;
+        background-size: var(--space-sm);
+        padding: var(--space-xxl) 36px var(--space-xxl) var(--space-xxl);
         width: 100%;
     }
 `;

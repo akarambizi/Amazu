@@ -8,17 +8,17 @@ import { ReactComponent as IconBathRoomSvg } from '../assets/images/icon-bathroo
 import { ReactComponent as IconBedSvg } from '../assets/images/icon-bed.svg';
 
 const CardWrapper = styled.article`
-    margin-bottom: 24px;
+    margin-bottom: var(--space-xxl);
     /* border: 1px solid var(--secondary-text-color-light); */
     /* padding: 4px 10px; */
     border-radius: 5px;
     /*  horizontal-card */
     /* ${mixins.flex}
     align-items: flex-start */
-    box-shadow: 0 16px 64px -16px rgb(46 55 77 / 10%);
+    box-shadow: 0 var(--space-md) 64px -var(--space-md) rgb(46 55 77 / 10%);
 
     &:hover {
-        box-shadow: 0 16px 64px -16px rgb(46 55 77 / 24%);
+        box-shadow: 0 var(--space-md) 64px -var(--space-md) rgb(46 55 77 / 24%);
     }
 `;
 
@@ -59,11 +59,11 @@ const CardLink = styled(Anchor)`
 const CardIcons = styled.div`
     ${mixins.flex}
     /* justify-content: flex-between; */
-    gap: 24px;
+    gap: var(--space-xxl);
     padding: 10px;
 
     svg {
-        height: 20px;
+        height: var(--space-xl);
         margin-right: 5px;
         vertical-align: middle;
 

@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { mixins } from '../styles';
 
 const CardSkeletonWrapper = styled.article`
-    margin-bottom: 20px;
+    margin-bottom: var(--space-xl);
 `;
 
 const CardSkeletonImage = styled.div`
@@ -22,7 +22,7 @@ const CardSkeletonImage = styled.div`
 
 const CardSkeletonText = styled.p`
     background-color: var(--secondary-text-color-light);
-    height: 20px;
+    height: var(--space-xl);
     margin-bottom: 10px;
     overflow: hidden;
     position: relative;

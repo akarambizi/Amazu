@@ -11,7 +11,7 @@ const LogInMain = styled.section`
     ${mixins.flexBetween}
 
     p {
-        font-size: 14px;
+        font-size: var(--space-sm);
     }
 
     a {
@@ -21,9 +21,9 @@ const LogInMain = styled.section`
 
 const LogInForm = styled.div`
     background-color: var(--primary-color-text);
-    border-radius: 20px;
+    border-radius: var(--space-xl);
     margin: -40px auto 0;
-    padding: 20px 20px;
+    padding: var(--space-xl) var(--space-xl);
     width: 90%;
 
     ${media.laptop} {
@@ -32,14 +32,14 @@ const LogInForm = styled.div`
 
     form {
         button {
-            margin-bottom: 20px;
+            margin-bottom: var(--space-xl);
         }
     }
 `;
 
 const LogInFormBottom = styled.div`
     ${mixins.flexBetween}
-    margin-bottom:20px;
+    margin-bottom:var(--space-xl);
 
     label,
     input[type='checkbox'] {
@@ -62,7 +62,7 @@ const Logo = styled.div`
         font-weight: 700;
         letter-spacing: 0;
         line-height: 40px;
-        padding: 12px 12px 12px 0;
+        padding: var(--space-xxl) var(--space-xxl) var(--space-xxl) 0;
         text-align: center;
         /* text-decoration: none; */
     }
@@ -90,11 +90,11 @@ const LogInImage = styled.div`
     ul {
         li {
             ${mixins.inlineBlock}
-            margin: 0 24px;
+            margin: 0 var(--space-xxl);
 
             a {
                 color: var(--primary-color-text);
-                font-size: 18px;
+                font-size: var(--space-lg);
 
                 &:hover {
                     color: var(--primary-color);
@@ -136,7 +136,7 @@ function SignIn() {
                 </div>
             </LogInForm>
             <LogInImage>
-                <Title marginBottom="20px">Discover Your Next Rental</Title>
+                <Title marginBottom="var(--space-xl)">Discover Your Next Rental</Title>
                 <ul>
                     <li>
                         <Link to="/">Home</Link>
