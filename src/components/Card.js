@@ -79,9 +79,7 @@ const CardIcons = styled.div`
     }
 `;
 function Card({ data }) {
-    const {
-        location: { fullAdress },
-    } = data;
+      const { location: { fullAdress }} = data;
     return (
         <CardWrapper>
             <CardImageLink href="/typography">
