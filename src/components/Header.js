@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import PropTypes from 'prop-types';
 import { NavLink, Link, withRouter } from 'react-router-dom';
 import { ReactComponent as CloseSvg } from '../assets/images/icon-cross.svg';
@@ -76,12 +76,12 @@ const HeaderNav = styled.nav`
     ${({ isNavVisible }) => {
         return (
             isNavVisible &&
-            `
-            ${media.laptopMax} {
-                ${mixins.flexColumn};
-                left: 0;
-                border-top: 1px solid var(--divider-color);
-            }
+            css`
+                ${media.laptopMax} {
+                    ${mixins.flexColumn};
+                    left: 0;
+                    border-top: 1px solid var(--divider-color);
+                }
             `
         );
     }};
