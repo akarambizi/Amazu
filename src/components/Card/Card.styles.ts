@@ -73,3 +73,34 @@ export const CardIcons = styled.div`
         color: var(--secondary-text-color);
     }
 `;
+
+export const CardSkeletonWrapper = styled.article`
+    margin-bottom: var(--space-xl);
+`;
+
+export const CardSkeletonImage = styled.div`
+    background-color: var(--secondary-text-color-light);
+    border-radius: 10px;
+    height: 218px;
+    margin-bottom: 10px;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+
+    &::before {
+        ${mixins.loading}
+    }
+`;
+
+export const CardSkeletonText = styled.p`
+    background-color: var(--secondary-text-color-light);
+    height: var(--space-xl);
+    margin-bottom: 10px;
+    overflow: hidden;
+    position: relative;
+    width: 80%;
+
+    &::before {
+        ${mixins.loading}
+    }
+`;
