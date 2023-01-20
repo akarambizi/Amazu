@@ -1,0 +1,134 @@
+[
+    {
+        "area": 1000,
+        "areaSafety": 4,
+        "availableDate": "10-11-2020",
+        "bathRooms": 2,
+        "bedRooms": 3,
+        "description": "From the outside this house looks warm and cozy. It has been built with spruce wood and has sandstone decorations. Small, rectangular windows let in plenty of light and have been added to the house in a mostly asymmetric way. The house is equipped with an old-fashioned kitchen and two bathrooms, it also has a small living room, three bedrooms, a grand dining area and a large storage room. The building is square shaped. The house is partially surrounded by glass overhanging panels on two sides. The second floor is bigger than the first, which creates a stylish overhang around half the house. This floor has a very different style than the floor below.",
+        "images": [
+            "https://images.unsplash.com/photo-1580587771525-78b9dba3b914?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=667&q=80"
+        ],
+        "listingType": "Rent",
+        "location": {
+            "address": "567 Marconi Dr.Pasadena",
+            "city": "city",
+            "country": "country",
+            "fullAdress": "567 Marconi Dr.Pasadena, MD 21122",
+            "state": "MD",
+            "zip": 21122
+        },
+        "owner": {
+            "name": "owner name",
+            "telephone": "0123456789"
+        },
+        "parking": 1,
+        "price": 500,
+        "publishDate": "10-11-2020",
+        "rating": 4,
+        "status": "active",
+        "tags": [],
+        "title": "house 1",
+        "type": "Apartment",
+        "year": 2017
+    },
+    {
+        "area": 1000,
+        "areaSafety": 4,
+        "availableDate": "10-11-2020",
+        "bathRooms": 2,
+        "bedRooms": 3,
+        "description": "From the outside this house looks warm and cozy. It has been built with spruce wood and has sandstone decorations. Small, rectangular windows let in plenty of light and have been added to the house in a mostly asymmetric way. The house is equipped with an old-fashioned kitchen and two bathrooms, it also has a small living room, three bedrooms, a grand dining area and a large storage room. The building is square shaped. The house is partially surrounded by glass overhanging panels on two sides. The second floor is bigger than the first, which creates a stylish overhang around half the house. This floor has a very different style than the floor below.",
+        "images": [
+            "https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80"
+        ],
+        "listingType": "Buy",
+        "location": {
+            "address": "567 Marconi Dr.Pasadena",
+            "city": "city",
+            "country": "country",
+            "fullAdress": "567 Marconi Dr.Pasadena, MD 21122",
+            "state": "MD",
+            "zip": 21122
+        },
+        "owner": {
+            "name": "owner name",
+            "telephone": "0123456789"
+        },
+        "parking": 1,
+        "price": 500,
+        "publishDate": "10-11-2020",
+        "rating": 4,
+        "status": "active",
+        "tags": [],
+        "title": "house 1",
+        "type": "House",
+        "year": 2012
+    },
+    {
+        "area": 1000,
+        "areaSafety": 4,
+        "availableDate": "10-11-2020",
+        "bathRooms": 2,
+        "bedRooms": 3,
+        "description": "From the outside this house looks warm and cozy. It has been built with spruce wood and has sandstone decorations. Small, rectangular windows let in plenty of light and have been added to the house in a mostly asymmetric way. The house is equipped with an old-fashioned kitchen and two bathrooms, it also has a small living room, three bedrooms, a grand dining area and a large storage room. The building is square shaped. The house is partially surrounded by glass overhanging panels on two sides. The second floor is bigger than the first, which creates a stylish overhang around half the house. This floor has a very different style than the floor below.",
+        "images": [
+            "https://images.unsplash.com/photo-1513584684374-8bab748fbf90?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=746&q=80"
+        ],
+        "listingType": "Rent",
+        "location": {
+            "address": "567 Marconi Dr.Pasadena",
+            "city": "city",
+            "country": "country",
+            "fullAdress": "567 Marconi Dr.Pasadena, MD 21122",
+            "state": "MD",
+            "zip": 21122
+        },
+        "owner": {
+            "name": "owner name",
+            "telephone": "0123456789"
+        },
+        "parking": 1,
+        "price": 500,
+        "publishDate": "10-11-2020",
+        "rating": 4,
+        "status": "active",
+        "tags": [],
+        "title": "house 1",
+        "type": "Apartment",
+        "year": 2017
+    },
+    {
+        "area": 1000,
+        "areaSafety": 4,
+        "availableDate": "10-11-2020",
+        "bathRooms": 2,
+        "bedRooms": 3,
+        "description": "From the outside this house looks warm and cozy. It has been built with spruce wood and has sandstone decorations. Small, rectangular windows let in plenty of light and have been added to the house in a mostly asymmetric way. The house is equipped with an old-fashioned kitchen and two bathrooms, it also has a small living room, three bedrooms, a grand dining area and a large storage room. The building is square shaped. The house is partially surrounded by glass overhanging panels on two sides. The second floor is bigger than the first, which creates a stylish overhang around half the house. This floor has a very different style than the floor below.",
+        "images": [
+            "https://images.unsplash.com/photo-1523217582562-09d0def993a6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80"
+        ],
+        "listingType": "Buy",
+        "location": {
+            "address": "567 Marconi Dr.Pasadena",
+            "city": "city",
+            "country": "country",
+            "fullAdress": "567 Marconi Dr.Pasadena, MD 21122",
+            "state": "MD",
+            "zip": 21122
+        },
+        "owner": {
+            "name": "owner name",
+            "telephone": "0123456789"
+        },
+        "parking": 1,
+        "price": 500,
+        "publishDate": "10-11-2020",
+        "rating": 4,
+        "status": "active",
+        "tags": [],
+        "title": "house 1",
+        "type": "House",
+        "year": 2012
+    }
+]
