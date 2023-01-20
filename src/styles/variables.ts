@@ -17,7 +17,7 @@ export const fonts = {
 };
 
 export const spaces = {
-  "--space-xs": "12px",
+      "--space-xs": "12px",
   "--space-sm": "14px",
   "--space-md": "16px",
   "--space-lg": "18px",
