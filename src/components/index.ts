@@ -1,0 +1,15 @@
+// export { default as Card } from './Card/Card';
+// export { default as CardSkeleton } from './Card/CardSkeleton';
+// export { default as CardsList } from './Card/CardsList';
+// export { default as Comment } from './Comment/Comment';
+// export { default as Filter } from './Filter/Filter';
+// export { default as Footer } from './Footer/Footer';
+// export { default as Header } from './Header/Header';
+// export { default as Hero } from './Hero/Hero';
+// export { default as HomeCards } from './HomeCards/HomeCards';
+// export { default as ListProperty } from './ListProperty/ListProperty';
+// export { default as Pagination } from './Pagination/Pagination';
+// export { default as PropertyImages } from './Property/PropertyImages';
+// export { default as PropertyInfo } from './Property/PropertyInfo';
+// export { default as PropertyOwner } from './Property/PropertyOwner';
+// export { default as TopCities } from './TopCities/TopCities';

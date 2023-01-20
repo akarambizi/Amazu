@@ -7,6 +7,12 @@
     "settings": {
         "react": {
             "version": "detect" // React version. "detect" automatically picks the version you have installed.
+        },
+        "import/resolver": {
+            "node": {
+                "extensions": [".js", ".jsx", ".ts", ".tsx"]
+            },
+            "typescript": {} // this loads <rootdir>/tsconfig.json to eslint
         }
     },
     "env": {
@@ -15,15 +21,27 @@
         "node": true
     },
     "rules": {
-        "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
-        "import/prefer-default-export": "off",
-        "no-console": "off",
+        "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx", ".ts", ".tsx"] }],
+        "import/extensions": [
+            "error",
+            "ignorePackages",
+            {
+                "js": "never",
+                "mjs": "never",
+                "jsx": "never",
+                "ts": "never",
+                "tsx": "never"
+            }
+        ],
+        "react/prop-types": "off", // Since we do not use prop-types
+        "react/require-default-props": "off", // Since we do not use prop-types
+        "react/react-in-jsx-scope": "off",
+        "react/jsx-props-no-spreading": "off",
         // Indent with 4 spaces
         "indent": ["error", 4],
         // Indent JSX with 4 spaces
         "react/jsx-indent": ["error", 4],
-        // Indent props with 4 spaces
-        "react/jsx-indent-props": ["error", 4],
-        "jsx-a11y/label-has-associated-control": "off"
+        "no-unused-vars": ["warn", { "vars": "all", "args": "after-used", "ignoreRestSiblings": false }],
+        "no-undef": "off"
     }
 }
