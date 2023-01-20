@@ -1,33 +1,26 @@
-import React, { useEffect } from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import { Home, Rent, Buy, NotFound, Typography, Property, SignUp, SignIn, SearchResults } from './pages';
-import { Footer, Header } from './components';
-// import { GlobalStyles } from './styles';
+import React from 'react';
+import logo from './logo.svg';
+import './App.css';
 
 function App() {
-    useEffect(() => {
-        document.title = 'new title';
-    }, []);
-    return (
-        <Router>
-            {/* <GlobalStyles /> */}
-            <Header />
-            <main>
-                <Routes>
-                    <Route path="/" element={<Home />} />
-                    <Route path="/rent" element={<Rent />} />
-                    <Route path="/buy" element={<Buy />} />
-                    <Route path="/typography" element={<Typography />} />
-                    <Route path="/property" element={<Property />} />
-                    <Route path="/signup" element={<SignUp />} />
-                    <Route path="/signin" element={<SignIn />} />
-                    <Route path="/search" element={<SearchResults />} />
-                    <Route element={<NotFound />} />
-                </Routes>
-            </main>
-            <Footer />
-        </Router>
-    );
+  return (
+    <div className="App">
+      <header className="App-header">
+        <img src={logo} className="App-logo" alt="logo" />
+        <p>
+          Edit <code>src/App.tsx</code> and save to reload.
+        </p>
+        <a
+          className="App-link"
+          href="https://reactjs.org"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Learn React
+        </a>
+      </header>
+    </div>
+  );
 }
 
 export default App;
