@@ -1,6 +1,6 @@
-import { createGlobalStyle } from "styled-components";
-import { colors, fonts, spaces } from "./variables";
-import normalize from "./normalize";
+import { createGlobalStyle } from 'styled-components';
+import { colors, fonts, spaces } from './variables';
+import normalize from './normalize';
 
 const GlobalStyles = createGlobalStyle`
     ${normalize};

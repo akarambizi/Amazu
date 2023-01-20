@@ -24,7 +24,7 @@
         "eject": "react-scripts eject",
         "lint": "eslint ./ --ext js,jsx,ts,tsx",
         "lint:fix": "eslint --fix --ext .js,.jsx,.ts,.tsx .",
-        "format": "prettier-eslint --eslint-config-path ./.eslintrc.js --write \"$(pwd)/**/*.js\" --list-different",
+        "prettier-format": "prettier --config .prettierrc 'src/**/*.tsx' --write",
         "prepare": "husky install",
         "precommit": "lint-staged"
     },
