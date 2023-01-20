@@ -9,6 +9,7 @@ export { Hero } from './Hero/Hero';
 export { HomeCards } from './HomeCards/HomeCards';
 export { ListProperty } from './ListProperty/ListProperty';
 export { Pagination } from './Pagination/Pagination';
+export { Property } from './Property/Property';
 export { PropertyImages } from './Property/PropertyImages';
 export { PropertyInfo } from './Property/PropertyInfo';
 export { PropertyOwner } from './Property/PropertyOwner';

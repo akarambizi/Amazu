@@ -2,7 +2,7 @@ import { PropertyImages, PropertyOwner, PropertyInfo, Comment } from '../index';
 import { Wrapper } from '../../styles/elements';
 import * as Styles from './Property.styles';
 
-const Property = () => {
+export const Property = () => {
     return (
         <Wrapper>
             <Styles.PropertyMain>
@@ -16,5 +16,3 @@ const Property = () => {
         </Wrapper>
     );
 };
-
-export default Property;
