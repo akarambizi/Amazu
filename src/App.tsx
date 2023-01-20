@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { Home, Rent, Buy, NotFound, Typography, Property, SignUp, SignIn, SearchResults } from './pages';
-import { Footer, Header } from './components';
+// import { Footer, Header } from './components';
 // import { GlobalStyles } from './styles';
 
 function App() {
@@ -11,7 +11,7 @@ function App() {
     return (
         <Router>
             {/* <GlobalStyles /> */}
-            <Header />
+            {/* <Header /> */}
             <main>
                 <Routes>
                     <Route path="/" element={<Home />} />
@@ -25,7 +25,7 @@ function App() {
                     <Route element={<NotFound />} />
                 </Routes>
             </main>
-            <Footer />
+            {/* <Footer /> */}
         </Router>
     );
 }

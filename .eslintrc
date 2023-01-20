@@ -1,8 +1,9 @@
 {
+    "parser": "@babel/eslint-parser",
     "parserOptions": {
         "parser": "@babel/eslint-parser"
     },
-    "extends": ["airbnb", "prettier"],
+    "extends": ["plugin:react/recommended", "airbnb", "prettier"],
     "plugins": ["react", "prettier"],
     "settings": {
         "react": {
@@ -17,7 +18,7 @@
     },
     "env": {
         "browser": true,
-        "amd": true,
+        "es2021": true,
         "node": true
     },
     "rules": {

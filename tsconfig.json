@@ -102,6 +102,6 @@
         "skipLibCheck": true /* Skip type checking all .d.ts files. */
     },
     "include": ["**/*.ts", "**/*.tsx", "src/App.test.js", "src/serviceWorker.js", "src/index.js", "src/setupTests.js"],
-    "exclude": ["node_modules"],
+    "exclude": ["node_modules"]
     // "jsx": "preserve"
 }

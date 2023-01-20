@@ -3,8 +3,8 @@
 // export { default as CardsList } from './Card/CardsList';
 // export { default as Comment } from './Comment/Comment';
 // export { default as Filter } from './Filter/Filter';
-export { default as Footer } from './Footer/Footer';
-export { default as Header } from './Header/Header';
+// export { default as Footer } from './Footer/Footer';
+// export { default as Header } from './Header/Header';
 // export { default as Hero } from './Hero/Hero';
 // export { default as HomeCards } from './HomeCards/HomeCards';
 // export { default as ListProperty } from './ListProperty/ListProperty';
