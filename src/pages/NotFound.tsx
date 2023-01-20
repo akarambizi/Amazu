@@ -1,4 +1,4 @@
-// import React from 'react';
+import React from 'react';
 // import styled from 'styled-components';
 // import { Link } from 'react-router-dom';
 // import { Text, Title, Wrapper } from '../styles/elements';
@@ -25,18 +25,19 @@
 //         color: var(--primary-color-dark);
 //     }
 // `;
-// function NotFound() {
-//     return (
-//         <NotFoundMain>
-//             <Wrapper>
-//                 <Title>404</Title>
-//                 <Text>This Page was not found. you may have mistyped the adress or the page may have moved</Text>
-//                 <Link to="/" aria-label="home page">
-//                     Take me to the home page
-//                 </Link>
-//             </Wrapper>
-//         </NotFoundMain>
-//     );
-// }
+function NotFound() {
+    return (
+        <p>Not found</p>
+        // <NotFoundMain>
+        //     <Wrapper>
+        //         <Title>404</Title>
+        //         <Text>This Page was not found. you may have mistyped the adress or the page may have moved</Text>
+        //         <Link to="/" aria-label="home page">
+        //             Take me to the home page
+        //         </Link>
+        //     </Wrapper>
+        // </NotFoundMain>
+    );
+}
 
-// export default NotFound;
+export default NotFound;

@@ -1,16 +1,17 @@
-// import React from 'react';
+import React from 'react';
 // import data from '../assets/json/properties.json';
 // import { CardsList } from '../components';
 // import { Wrapper } from '../styles/elements';
 
-// function Buy() {
-//     return (
-//         <section>
-//             <Wrapper>
-//                 <CardsList data={data[0]} />
-//             </Wrapper>
-//         </section>
-//     );
-// }
+function Buy() {
+    return (
+        <p>Buy</p>
+        // <section>
+        //     <Wrapper>
+        //         <CardsList data={data[0]} />
+        //     </Wrapper>
+        // </section>
+    );
+}
 
-// export default Buy;
+export default Buy;

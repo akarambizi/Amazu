@@ -1,5 +1,5 @@
-// import React from 'react';
-// import styled from 'styled-components';
+import React from 'react';
+import styled from 'styled-components';
 // import { Link } from 'react-router-dom';
 // import { Title, Text, Form } from '../styles/elements';
 // import { media, mixins } from '../styles';
@@ -104,54 +104,55 @@
 //     }
 // `;
 
-// function SignUp() {
-//     return (
-//         <RegisterMain>
-//             <RegisterForm>
-//                 <Logo>
-//                     <Link to="/" aria-label="home">
-//                         Amazu
-//                     </Link>
-//                 </Logo>
-//                 <Text heading>Create an account</Text>
-//                 <Form action="/">
-//                     <label htmlFor="userName">Username</label>
-//                     <input type="text" name="userName" id="userName" placeholder="Username" />
-//                     <label htmlFor="userName">Password</label>
-//                     <input type="password" name="password" id="password" placeholder="Password" autoComplete="on" />
-//                     <button type="submit">SignUp</button>
-//                 </Form>
-//                 <div>
-//                     <RegisterFormBottom>
-//                         <div>
-//                             <input type="checkbox" name="rememberMe" id="rememberMe" />
-//                             <label htmlFor="rememberMe">Remember me</label>
-//                         </div>
-//                         <Link to="/">Forgot Password?</Link>
-//                     </RegisterFormBottom>
+function SignUp() {
+    return (
+        <p>SignUp</p>
+        // <RegisterMain>
+        //     <RegisterForm>
+        //         <Logo>
+        //             <Link to="/" aria-label="home">
+        //                 Amazu
+        //             </Link>
+        //         </Logo>
+        //         <Text heading>Create an account</Text>
+        //         <Form action="/">
+        //             <label htmlFor="userName">Username</label>
+        //             <input type="text" name="userName" id="userName" placeholder="Username" />
+        //             <label htmlFor="userName">Password</label>
+        //             <input type="password" name="password" id="password" placeholder="Password" autoComplete="on" />
+        //             <button type="submit">SignUp</button>
+        //         </Form>
+        //         <div>
+        //             <RegisterFormBottom>
+        //                 <div>
+        //                     <input type="checkbox" name="rememberMe" id="rememberMe" />
+        //                     <label htmlFor="rememberMe">Remember me</label>
+        //                 </div>
+        //                 <Link to="/">Forgot Password?</Link>
+        //             </RegisterFormBottom>
 
-//                     <Text>
-//                         <span>Do you have an account? </span>
-//                         <Link to="/signin">Sign In</Link>
-//                     </Text>
-//                 </div>
-//             </RegisterForm>
-//             <RegisterImage>
-//                 <Title marginBottom="var(--space-xl)">Discover Your Next Rental</Title>
-//                 <ul>
-//                     <li>
-//                         <Link to="/">Home</Link>
-//                     </li>
-//                     <li>
-//                         <Link to="/rent">Rent</Link>
-//                     </li>
-//                     <li>
-//                         <Link to="/buy">Buy</Link>
-//                     </li>
-//                 </ul>
-//             </RegisterImage>
-//         </RegisterMain>
-//     );
-// }
+    //             <Text>
+    //                 <span>Do you have an account? </span>
+    //                 <Link to="/signin">Sign In</Link>
+    //             </Text>
+    //         </div>
+    //     </RegisterForm>
+    //     <RegisterImage>
+    //         <Title marginBottom="var(--space-xl)">Discover Your Next Rental</Title>
+    //         <ul>
+    //             <li>
+    //                 <Link to="/">Home</Link>
+    //             </li>
+    //             <li>
+    //                 <Link to="/rent">Rent</Link>
+    //             </li>
+    //             <li>
+    //                 <Link to="/buy">Buy</Link>
+    //             </li>
+    //         </ul>
+    //     </RegisterImage>
+    // </RegisterMain>
+    );
+}
 
-// export default SignUp;
+export default SignUp;

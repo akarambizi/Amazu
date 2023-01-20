@@ -1,5 +1,5 @@
-// import React from 'react';
-// import styled from 'styled-components';
+import React from 'react';
+import styled from 'styled-components';
 // import { PropertyImages, PropertyOwner, PropertyInfo, Comment } from '../components';
 // import { mixins, media } from '../styles';
 // import { Wrapper } from '../styles/elements';
@@ -13,19 +13,20 @@
 //     }
 // `;
 
-// function Property() {
-//     return (
-//         <Wrapper>
-//             <PropertyMain>
-//                 <section>
-//                     <PropertyImages />
-//                     <PropertyInfo />
-//                 </section>
-//                 <PropertyOwner />
-//             </PropertyMain>
-//             <Comment />
-//         </Wrapper>
-//     );
-// }
+function Property() {
+    return (
+        <p>Property Page</p>
+        // <Wrapper>
+        //     <PropertyMain>
+        //         <section>
+        //             <PropertyImages />
+        //             <PropertyInfo />
+        //         </section>
+        //         <PropertyOwner />
+        //     </PropertyMain>
+        //     <Comment />
+        // </Wrapper>
+    );
+}
 
-// export default Property;
+export default Property;
