@@ -5,7 +5,7 @@ const size = {
   desktop: "1440px",
 };
 
-    const media = {
+const media = {
   mobile: `@media (min-width: ${size.mobile})`,
   mobileMax: `@media (max-width: ${size.mobile})`,
   tablet: `@media (min-width: ${size.tablet})`,
