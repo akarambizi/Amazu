@@ -1,9 +1,9 @@
 import { ICardProps } from './Card.types';
 import { Text } from '../../styles/elements';
 import { CardWrapper, CardImageLink, CardContent, CardLink, CardIcons } from './Card.styles';
-import { ReactComponent as IconAreaSvg } from '../assets/images/icon-area.svg';
-import { ReactComponent as IconBathRoomSvg } from '../assets/images/icon-bathroom.svg';
-import { ReactComponent as IconBedSvg } from '../assets/images/icon-bed.svg';
+import { ReactComponent as IconAreaSvg } from '../../assets/images/icon-area.svg';
+import { ReactComponent as IconBathRoomSvg } from '../../assets/images/icon-bathroom.svg';
+import { ReactComponent as IconBedSvg } from '../../assets/images/icon-bed.svg';
 
 export const Card = ({ data }: ICardProps) => {
     const {

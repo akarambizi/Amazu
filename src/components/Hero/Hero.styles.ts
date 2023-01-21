@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { mixins, media } from '../../styles';
+import { Form } from '../../styles/elements';
 
 export const HeroContainer = styled.section`
     ${mixins.flexCenter}
@@ -10,22 +11,19 @@ export const HeroContainer = styled.section`
     background-size: cover;
     color: var(--primary-color-text);
     height: 500px;
-`;
 
-export const HeroForm = styled.section`
-    ${media.tablet} {
-        ${mixins.flex}
-
-        input {
-            margin-bottom: 0;
-        }
-    }
-
-    button {
-        width: 100%;
-
+    ${Form} {
         ${media.tablet} {
-            width: auto;
+            ${mixins.flex}
+            input {
+                margin-bottom: 0;
+            }
+        }
+        button {
+            width: 100%;
+            ${media.tablet} {
+                width: auto;
+            }
         }
     }
 `;

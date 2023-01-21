@@ -1,21 +1,33 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { useEffect } from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { Home, Rent, Buy, NotFound, Typography, PropertyPage, SignUp, SignIn, SearchResults } from './pages';
+import { Footer, Header } from './components';
+import { GlobalStyles } from './styles';
 
-function App() {
+const App = () => {
+    useEffect(() => {
+        document.title = 'new title';
+    }, []);
+
     return (
-        <div className="App">
-            <header className="App-header">
-                <img src={logo} className="App-logo" alt="logo" />
-                <p>
-                    Edit <code>src/App.tsx</code> and save to reload.
-                </p>
-                <a className="App-link" href="https://reactjs.org" target="_blank" rel="noopener noreferrer">
-                    Learn React
-                </a>
-            </header>
-        </div>
+        <Router>
+            <GlobalStyles />
+            <Header location={{ pathname: 'home' }} />
+            <main>
+                <Routes>
+                    <Route path="/" element={<Home />} />
+                    <Route path="/rent" element={<Rent />} />
+                    <Route path="/buy" element={<Buy />} />
+                    <Route path="/typography" element={<Typography />} />
+                    <Route path="/property" element={<PropertyPage />} />
+                    <Route path="/signup" element={<SignUp />} />
+                    <Route path="/signin" element={<SignIn />} />
+                    <Route path="/search" element={<SearchResults />} />
+                    <Route element={<NotFound />} />
+                </Routes>
+            </main>
+            <Footer location={{ pathname: 'home' }} />
+        </Router>
     );
-}
-
+};
 export default App;

@@ -3,6 +3,7 @@ import mixins from './mixins';
 import media from './media';
 import { IGridStylesProps, ITitleStylesProps, ITextStylesProps, ITabsStylesProps, ITabStylesProps } from './styles.types';
 // const arrowUrl = require('../assets/images/icon-angle-down.svg') as string;
+import arrowUrl from '../assets/images/icon-angle-down.svg';
 
 export const Wrapper = styled.div`
     padding: 0 var(--space-lg);
@@ -31,7 +32,7 @@ export const Grid = styled.section<IGridStylesProps>`
     }
 `;
 
-const titles = {
+const titles: { [key: string]: string } = {
     h2: 'font-size: 40px;',
     h3: 'font-size: 30px;',
     h4: 'font-size: var(--space-xxl);',

@@ -1,6 +1,6 @@
 import data from '../assets/json/properties.json';
 import { Card, CardSkeleton, Hero } from '../components';
-import { Button, Grid, Title, Wrapper } from '../styles/elements';
+import { Button, Form, Grid, Title, Wrapper } from '../styles/elements';
 
 export const Typography = () => {
     return (
@@ -35,7 +35,7 @@ export const Typography = () => {
 
             <Wrapper>
                 <h2>Form</h2>
-                <form>
+                <Form>
                     <label htmlFor="fullName">Full Name</label>
                     <input type="text" placeholder="Full Name" id="fullName" />
                     <label htmlFor="emailAddress">Email Address</label>
@@ -57,7 +57,7 @@ export const Typography = () => {
                         <option value="option"> option 5</option>
                     </select>
                     <textarea name="textarea" id="textarea" placeholder="Text Area" />
-                </form>
+                </Form>
                 <Button shadow>Join Group</Button>
                 <Button secondary>login</Button>
                 <Button>Sign Up</Button>

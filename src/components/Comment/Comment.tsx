@@ -1,5 +1,5 @@
 import { CommentMain } from './Comment.styles';
-import { Text, Button } from '../../styles/elements.js';
+import { Text, Button } from '../../styles/elements';
 
 export const Comment = () => {
     return (
