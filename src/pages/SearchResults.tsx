@@ -1,8 +1,12 @@
-import data from '../assets/json/properties.json';
 import { CardsList, Pagination } from '../components';
 import { Title, Wrapper } from '../styles/elements';
+import { useQuery } from 'react-query';
 
 export const SearchResults = () => {
+    const { isLoading, data } = useQuery('propertiesData', () => fetch('http://localhost:4200/properties').then((res) => res.json()));
+
+    if (isLoading) return <p>Loading...</p>;
+
     return (
         <section>
             <Wrapper>

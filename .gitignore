@@ -7,6 +7,9 @@
 
 # testing
 /coverage
+/server/bin
+/server/obj
+/server/.vs
 
 # production
 /build

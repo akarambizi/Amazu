@@ -1,14 +1,17 @@
 import React, { useState } from 'react';
 import { CardsList } from '../Card/CardsList';
-import data from '../../assets/json/properties.json';
 import { Wrapper, Tab, Tabs, Text } from '../../styles/elements';
+import { useQuery } from 'react-query';
 
 export const HomeCards = () => {
+    const { isLoading, data } = useQuery('propertiesData', () => fetch('http://localhost:4200/properties').then((res) => res.json()));
     const [activeTab, setActiveTab] = useState('Rent');
     const handleTab = (event: React.MouseEvent<HTMLButtonElement>) => {
         const button = event.target as HTMLElement;
         setActiveTab(button.textContent || '');
     };
+
+    if (isLoading) return <p>Loading...</p>;
 
     return (
         <section>
