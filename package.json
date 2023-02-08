@@ -20,7 +20,7 @@
     },
     "scripts": {
         "start": "react-scripts start",
-        "mock-server": "json-server --watch src/mock-server/index.js --port 4200",
+        "mock-server": "json-server --watch src/assets/mock-server/index.js --port 4200",
         "build": "react-scripts build",
         "test": "react-scripts test",
         "eject": "react-scripts eject",
