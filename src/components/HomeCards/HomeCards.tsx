@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import { CardsList } from '../Card/CardsList';
-import { Wrapper, Tab, Tabs, Text } from '../../styles/elements';
 import { useQuery } from 'react-query';
+import { CardsList, CardsListLoading } from '../';
+import { Tab, Tabs, Text, Wrapper } from '../../styles/elements';
 
 export const HomeCards = () => {
     const { isLoading, data } = useQuery('propertiesData', () => fetch('http://localhost:4200/properties').then((res) => res.json()));
@@ -10,8 +10,6 @@ export const HomeCards = () => {
         const button = event.target as HTMLElement;
         setActiveTab(button.textContent || '');
     };
-
-    if (isLoading) return <p>Loading...</p>;
 
     return (
         <section>
@@ -33,10 +31,10 @@ export const HomeCards = () => {
                 </Tab>
             </Tabs>
             <Wrapper>
-                {activeTab === 'Rent' && <CardsList data={data[0]} />}
-                {activeTab === 'Buy' && <CardsList data={data[1]} />}
-                {activeTab === 'House' && <CardsList data={data[2]} />}
-                {activeTab === 'Appartment' && <CardsList data={data[3]} />}
+                {activeTab === 'Rent' && (isLoading ? <CardsListLoading /> : <CardsList data={data[1]} />)}
+                {activeTab === 'Buy' && (isLoading ? <CardsListLoading /> : <CardsList data={data[1]} />)}
+                {activeTab === 'House' && (isLoading ? <CardsListLoading /> : <CardsList data={data[1]} />)}
+                {activeTab === 'Appartment' && (isLoading ? <CardsListLoading /> : <CardsList data={data[1]} />)}
             </Wrapper>
         </section>
     );

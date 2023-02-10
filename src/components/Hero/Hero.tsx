@@ -1,5 +1,5 @@
+import { Form, Title, Wrapper } from '../../styles/elements';
 import * as Styles from './Hero.styles';
-import { Title, Wrapper, Form } from '../../styles/elements';
 
 export const Hero = () => {
     return (

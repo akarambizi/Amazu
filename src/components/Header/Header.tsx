@@ -1,10 +1,10 @@
 import { useState } from 'react';
-import { NavLink, Link } from 'react-router-dom';
-import { IHeaderProps } from './Header.types';
-import { ReactComponent as CloseSvg } from '../../assets/images/icon-cross.svg';
+import { Link, NavLink } from 'react-router-dom';
 import { ReactComponent as OpenSvg } from '../../assets/images/icon-bars.svg';
+import { ReactComponent as CloseSvg } from '../../assets/images/icon-cross.svg';
 import { Wrapper } from '../../styles/elements';
 import * as Styles from './Header.styles';
+import { IHeaderProps } from './Header.types';
 
 export const Header = ({ location }: IHeaderProps) => {
     const [isNavVisible, setIsNavVisible] = useState(false);

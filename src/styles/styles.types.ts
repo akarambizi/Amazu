@@ -1,6 +1,6 @@
 export interface IGridStylesProps {
-    spacing?: boolean;
-    transition?: boolean;
+    spacing?: boolean | string;
+    transition?: boolean | string;
 }
 
 export interface ITitleStylesProps {

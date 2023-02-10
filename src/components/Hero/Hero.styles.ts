@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { mixins, media } from '../../styles';
+import { media, mixins } from '../../styles';
 import { Form } from '../../styles/elements';
 
 export const HeroContainer = styled.section`

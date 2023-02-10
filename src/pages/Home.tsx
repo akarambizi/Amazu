@@ -1,10 +1,8 @@
-import { Hero, HomeCards, ListProperty, TopCities } from '../components';
 import { useQuery } from 'react-query';
+import { Hero, HomeCards, ListProperty, TopCities } from '../components';
 
 export const Home = () => {
-    const { isLoading, data } = useQuery('propertiesData', () => fetch('http://localhost:4200/top-cities').then((res) => res.json()));
-
-    if (isLoading) return <p>Loading...</p>;
+    const { data } = useQuery('citiesData', () => fetch('http://localhost:4200/top-cities').then((res) => res.json()));
 
     return (
         <>

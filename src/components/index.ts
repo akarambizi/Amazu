@@ -1,6 +1,8 @@
 export { Card } from './Card/Card';
+export type { ICardData, ICardProps } from './Card/Card.types';
 export { CardSkeleton } from './Card/CardSkeleton';
 export { CardsList } from './Card/CardsList';
+export { CardsListLoading } from './Card/CardsListLoading';
 export { Comment } from './Comment/Comment';
 export { Filter } from './Filter/Filter';
 export { Footer } from './Footer/Footer';

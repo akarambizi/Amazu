@@ -1,6 +1,6 @@
 import styled from 'styled-components';
-import { Anchor } from '../../styles/elements';
 import { mixins } from '../../styles';
+import { Anchor } from '../../styles/elements';
 
 export const CardWrapper = styled.article`
     margin-bottom: var(--space-xxl);
@@ -21,6 +21,8 @@ export const CardWrapper = styled.article`
 export const CardImageLink = styled.a`
     display: block;
     position: relative;
+    background: var(--divider-color);
+    min-height: 180px;
 
     img {
         /* border-radius: 10px; */

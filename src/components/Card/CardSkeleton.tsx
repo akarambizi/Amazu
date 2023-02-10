@@ -1,4 +1,4 @@
-import { CardSkeletonWrapper, CardSkeletonImage, CardSkeletonText } from './Card.styles';
+import { CardSkeletonImage, CardSkeletonText, CardSkeletonWrapper } from './Card.styles';
 
 export const CardSkeleton = () => {
     return (

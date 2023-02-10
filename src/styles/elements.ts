@@ -24,7 +24,7 @@ export const Grid = styled.section<IGridStylesProps>`
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     /* horizontal-card */
     /* grid-template-columns: 1fr 1fr; */
-    padding: ${({ spacing }) => spacing && 'var(---space-sm) 0'};
+    padding: ${({ spacing }) => (spacing ? 'var(---space-sm) 0' : '0')};
 
     ${media.laptop} {
         padding: ${({ spacing }) => spacing && '40px 0'};

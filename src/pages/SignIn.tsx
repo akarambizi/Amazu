@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Title, Text, Form } from '../styles/elements';
+import { Form, Text, Title } from '../styles/elements';
 import * as Styles from './pages.styles';
 
 export const SignIn = () => {

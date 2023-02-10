@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components';
-import { mixins, media } from '../../styles';
-import { IIsNavVisible } from './Header.types';
+import { media, mixins } from '../../styles';
 import { Wrapper } from '../../styles/elements';
+import { IIsNavVisible } from './Header.types';
 
 export const HeaderMain = styled.header`
     background-color: var(--primary-color-text);

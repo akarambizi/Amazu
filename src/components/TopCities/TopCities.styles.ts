@@ -1,6 +1,6 @@
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import { mixins } from '../../styles';
-import { Link } from 'react-router-dom';
 
 export const TopCitiesWrapper = styled.section`
     padding: 80px 0 90px;

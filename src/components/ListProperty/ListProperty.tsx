@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Text, List, ListItem, Wrapper } from '../../styles/elements';
+import { List, ListItem, Text, Wrapper } from '../../styles/elements';
 import * as Styles from './ListProperty.styles';
 
 export const ListProperty = () => {

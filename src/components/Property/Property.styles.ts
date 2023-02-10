@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { mixins, media } from '../../styles';
+import { media, mixins } from '../../styles';
 import { IPropertyInfoSectionProps } from './Property.types';
 
 export const PropertyMain = styled.article`

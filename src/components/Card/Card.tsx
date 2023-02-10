@@ -1,14 +1,11 @@
-import { ICardProps } from './Card.types';
-import { Text } from '../../styles/elements';
-import { CardWrapper, CardImageLink, CardContent, CardLink, CardIcons } from './Card.styles';
 import { ReactComponent as IconAreaSvg } from '../../assets/images/icon-area.svg';
 import { ReactComponent as IconBathRoomSvg } from '../../assets/images/icon-bathroom.svg';
 import { ReactComponent as IconBedSvg } from '../../assets/images/icon-bed.svg';
+import { Text } from '../../styles/elements';
+import { CardContent, CardIcons, CardImageLink, CardLink, CardWrapper } from './Card.styles';
+import { ICardProps } from './Card.types';
 
 export const Card = ({ data }: ICardProps) => {
-    const {
-        location: { fullAdress },
-    } = data;
     return (
         <CardWrapper>
             <CardImageLink href="/typography">
@@ -19,7 +16,7 @@ export const Card = ({ data }: ICardProps) => {
                     <CardLink href="/">
                         <Text bold>{data.title}</Text>
                     </CardLink>
-                    <Text>{fullAdress}</Text>
+                    <Text>{data.location.fullAdress}</Text>
                     <Text bold secondary>{`$${data.price}`}</Text>
                 </CardContent>
                 <CardIcons>

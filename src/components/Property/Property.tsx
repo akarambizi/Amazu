@@ -1,5 +1,5 @@
-import { PropertyImages, PropertyOwner, PropertyInfo, Comment } from '../index';
 import { Wrapper } from '../../styles/elements';
+import { Comment, PropertyImages, PropertyInfo, PropertyOwner } from '../index';
 import * as Styles from './Property.styles';
 
 export const Property = () => {
