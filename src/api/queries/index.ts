@@ -1,7 +1,7 @@
 import { UseQueryOptions, useQuery } from 'react-query';
-import { getSearchResultsData } from '../api';
+import { getSearchResultsData } from '..';
 import { AxiosError } from 'axios';
-import { IProperty } from '../api/model/property';
+import { IProperty } from '../model/property';
 
 const getSearchResultsKey = (query: string) => ['searchResultsData', query];
 
