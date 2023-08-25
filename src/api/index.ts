@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { IProperty } from '../queries/model/property';
+import { IProperty } from './model/property';
 
 export const getUrl = (path: string, environment?: string) => `http://localhost:4200${path}`;
 
