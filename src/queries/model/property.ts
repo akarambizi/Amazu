@@ -13,7 +13,7 @@ export enum PropertyStatus {
     Inactive = 'inactive',
 }
 
-export interface Property {
+export interface IProperty {
     area: number;
     areaSafety: number;
     availableDate: string;
