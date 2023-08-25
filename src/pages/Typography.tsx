@@ -1,9 +1,13 @@
-import { useQuery } from 'react-query';
+import { useMemo } from 'react';
+import { usePropertiesData } from '../api/queries';
 import { Card, CardSkeleton, Hero } from '../components';
 import { Button, Form, Grid, Title, Wrapper } from '../styles/elements';
 
 export const Typography = () => {
-    const { data } = useQuery('propertiesData', () => fetch('http://localhost:4200/properties').then((res) => res.json()));
+    const { data } = usePropertiesData('');
+    const propertiesData = useMemo(() => {
+        return data && data.length > 0 ? data : [];
+    }, [data]);
 
     return (
         <>
@@ -11,14 +15,14 @@ export const Typography = () => {
             <Wrapper>
                 <Title as="h2">Cards</Title>
                 <Grid>
-                    <Card data={data[0]} />
-                    <Card data={data[0]} />
-                    <Card data={data[0]} />
-                    <Card data={data[0]} />
-                    <Card data={data[0]} />
-                    <Card data={data[0]} />
-                    <Card data={data[0]} />
-                    <Card data={data[0]} />
+                    <Card data={propertiesData[0]} />
+                    <Card data={propertiesData[0]} />
+                    <Card data={propertiesData[0]} />
+                    <Card data={propertiesData[0]} />
+                    <Card data={propertiesData[0]} />
+                    <Card data={propertiesData[0]} />
+                    <Card data={propertiesData[0]} />
+                    <Card data={propertiesData[0]} />
                 </Grid>
             </Wrapper>
             <Wrapper>

@@ -1,13 +1,16 @@
+import { useMemo } from 'react';
+import { usePropertiesData } from '../api/queries';
 import { CardsList, CardsListLoading } from '../components';
 import { Wrapper } from '../styles/elements';
-import { useQuery } from 'react-query';
 
 export const Buy = () => {
-    const { isLoading, data } = useQuery('propertiesData', () => fetch('http://localhost:4200/properties').then((res) => res.json()));
-
+    const { isLoading, data } = usePropertiesData('');
+    const propertiesData = useMemo(() => {
+        return data && data.length > 0 ? data : [];
+    }, [data]);
     return (
         <section>
-            <Wrapper>{isLoading ? <CardsListLoading /> : <CardsList data={data[0]} />}</Wrapper>
+            <Wrapper>{isLoading ? <CardsListLoading /> : <CardsList data={propertiesData[0]} />}</Wrapper>
         </section>
     );
 };

@@ -1,5 +1,5 @@
 import { UseQueryOptions, useQuery } from 'react-query';
-import { getSearchResultsData } from '..';
+import { getPropertiesData } from '..';
 import { AxiosError } from 'axios';
 import { IProperty } from '../model/property';
 
@@ -11,10 +11,10 @@ const getSearchResultsKey = (query: string) => ['searchResultsData', query];
  * @param [options] - Optional options for the `useQuery` hook.
  * @returns {QueryObserverResult<IProperty[], AxiosError>} The result of the `useQuery` hook.
  */
-export const useSearchResultsData = (query: string, options?: UseQueryOptions<IProperty[], AxiosError, IProperty[], ReturnType<typeof getSearchResultsKey>>) => {
+export const usePropertiesData = (query: string, options?: UseQueryOptions<IProperty[], AxiosError, IProperty[], ReturnType<typeof getSearchResultsKey>>) => {
     return useQuery({
         queryKey: getSearchResultsKey(query),
-        queryFn: () => getSearchResultsData(query),
+        queryFn: () => getPropertiesData(query),
         refetchOnWindowFocus: false,
         retry: false,
         ...options,

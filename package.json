@@ -23,6 +23,7 @@
     "scripts": {
         "start": "react-scripts start",
         "mock-server": "json-server --watch src/assets/mock-server/index.js --port 4200",
+        "dev": "yarn start & yarn mock-server",
         "build": "react-scripts build",
         "test": "react-scripts test",
         "coverage": "react-scripts test --coverage --watchAll",

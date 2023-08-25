@@ -1,10 +1,14 @@
-import React, { useState } from 'react';
-import { useQuery } from 'react-query';
+import React, { useMemo, useState } from 'react';
 import { CardsList, CardsListLoading } from '../';
+import { usePropertiesData } from '../../api/queries';
 import { Tab, Tabs, Text, Wrapper } from '../../styles/elements';
 
 export const HomeCards = () => {
-    const { isLoading, data } = useQuery('propertiesData', () => fetch('http://localhost:4200/properties').then((res) => res.json()));
+    const { isLoading, data } = usePropertiesData('');
+    const propertiesData = useMemo(() => {
+        return data && data.length > 0 ? data : [];
+    }, [data]);
+
     const [activeTab, setActiveTab] = useState('Rent');
     const handleTab = (event: React.MouseEvent<HTMLButtonElement>) => {
         const button = event.target as HTMLElement;
@@ -31,10 +35,10 @@ export const HomeCards = () => {
                 </Tab>
             </Tabs>
             <Wrapper>
-                {activeTab === 'Rent' && (isLoading ? <CardsListLoading /> : <CardsList data={data[1]} />)}
-                {activeTab === 'Buy' && (isLoading ? <CardsListLoading /> : <CardsList data={data[1]} />)}
-                {activeTab === 'House' && (isLoading ? <CardsListLoading /> : <CardsList data={data[1]} />)}
-                {activeTab === 'Appartment' && (isLoading ? <CardsListLoading /> : <CardsList data={data[1]} />)}
+                {activeTab === 'Rent' && (isLoading ? <CardsListLoading /> : <CardsList data={propertiesData[1]} />)}
+                {activeTab === 'Buy' && (isLoading ? <CardsListLoading /> : <CardsList data={propertiesData[1]} />)}
+                {activeTab === 'House' && (isLoading ? <CardsListLoading /> : <CardsList data={propertiesData[1]} />)}
+                {activeTab === 'Appartment' && (isLoading ? <CardsListLoading /> : <CardsList data={propertiesData[1]} />)}
             </Wrapper>
         </section>
     );
