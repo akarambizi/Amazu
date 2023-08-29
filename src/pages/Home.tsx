@@ -1,13 +1,16 @@
-import { useQuery } from 'react-query';
+import { useMemo } from 'react';
+import { useCitiesData } from '../api/queries';
 import { Hero, HomeCards, ListProperty, TopCities } from '../components';
 
 export const Home = () => {
-    const { data } = useQuery('citiesData', () => fetch('http://localhost:4200/top-cities').then((res) => res.json()));
-
+    const { data } = useCitiesData('');
+    const citiesData = useMemo(() => {
+        return data && data.length > 0 ? data : [];
+    }, [data]);
     return (
         <>
             <Hero />
-            <TopCities cities={data} />
+            <TopCities cities={citiesData} />
             <ListProperty />
             <HomeCards />
         </>
