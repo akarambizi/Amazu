@@ -1,6 +1,6 @@
 import { useMemo } from 'react';
-import { usePropertiesData } from '../api/queries';
 import { CardsList, CardsListLoading } from '../components';
+import { usePropertiesData } from '../hooks';
 import { Wrapper } from '../styles/elements';
 
 export const Rent = () => {

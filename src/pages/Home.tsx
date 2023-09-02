@@ -1,6 +1,6 @@
 import { useMemo } from 'react';
-import { useCitiesData } from '../api/queries';
 import { Hero, HomeCards, ListProperty, TopCities } from '../components';
+import { useCitiesData } from '../hooks';
 
 export const Home = () => {
     const { data } = useCitiesData('');

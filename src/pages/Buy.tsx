@@ -1,5 +1,5 @@
 import { useMemo } from 'react';
-import { usePropertiesData } from '../api/queries';
+import { usePropertiesData } from '../hooks/useQueryHooks';
 import { CardsList, CardsListLoading } from '../components';
 import { Wrapper } from '../styles/elements';
 

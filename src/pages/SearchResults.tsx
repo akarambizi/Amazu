@@ -1,6 +1,6 @@
 import { useMemo } from 'react';
-import { usePropertiesData } from '../api/queries';
 import { CardsList, CardsListLoading, Pagination } from '../components';
+import { usePropertiesData } from '../hooks';
 import { Title, Wrapper } from '../styles/elements';
 
 export const SearchResults = () => {

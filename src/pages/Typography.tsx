@@ -1,6 +1,6 @@
 import { useMemo } from 'react';
-import { usePropertiesData } from '../api/queries';
 import { Card, CardSkeleton, Hero } from '../components';
+import { usePropertiesData } from '../hooks';
 import { Button, Form, Grid, Title, Wrapper } from '../styles/elements';
 
 export const Typography = () => {

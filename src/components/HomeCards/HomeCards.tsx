@@ -1,6 +1,6 @@
 import React, { useMemo, useState } from 'react';
 import { CardsList, CardsListLoading } from '../';
-import { usePropertiesData } from '../../api/queries';
+import { usePropertiesData } from '../../hooks/useQueryHooks';
 import { Tab, Tabs, Text, Wrapper } from '../../styles/elements';
 
 export const HomeCards = () => {
