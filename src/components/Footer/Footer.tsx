@@ -1,6 +1,5 @@
 import { FooterMain } from './Footer.styles';
 import { IFooterProps } from './Footer.types';
-// import { withRouter } from 'react-router-dom';
 import { Text, Wrapper } from '../../styles/elements';
 
 export const Footer = ({ location }: IFooterProps) => {

@@ -2,7 +2,6 @@ import styled from 'styled-components';
 import mixins from './mixins';
 import media from './media';
 import { IGridStylesProps, ITitleStylesProps, ITextStylesProps, ITabsStylesProps, ITabStylesProps } from './styles.types';
-// const arrowUrl = require('../assets/images/icon-angle-down.svg') as string;
 import arrowUrl from '../assets/images/icon-angle-down.svg';
 
 export const Wrapper = styled.div`

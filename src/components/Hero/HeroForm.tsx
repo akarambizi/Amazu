@@ -1,11 +1,15 @@
 import { Form } from '../../styles/elements';
+import { useNavigate } from 'react-router-dom';
 
 export const HeroForm = () => {
+    const navigate = useNavigate();
+
     const handleForm = (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
         const formData = new FormData(event.currentTarget);
         const searchValue = formData.get('heroSearch') as string;
         console.log(searchValue);
+        navigate(`/search?searchValue=${searchValue}`);
     };
 
     return (
