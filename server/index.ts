@@ -1,4 +1,3 @@
-// import express from 'express';
 import express from 'express';
 import cors from 'cors';
 import morgan from 'morgan';
@@ -14,7 +13,7 @@ app.get('/', (req, res) => {
     res.send('Hello, world!');
 });
 
-const port = process.env.PORT || 8000;
+const port = process.env.PORT || '8000';
 
 app.listen(port, () => {
     console.log(`Server listening on port ${port}`);
