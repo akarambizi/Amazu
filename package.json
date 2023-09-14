@@ -24,9 +24,9 @@
     },
     "scripts": {
         "start": "react-scripts start",
-        "start:server": "nodemon dist/server/index.js",
+        "serve": "cd server && yarn serve",
         "mock-server": "json-server --watch src/mock-server/index.js --port 4200",
-        "dev:mock-server": "yarn start & yarn mock-server",
+        "dev": "yarn start & yarn mock-server",
         "build": "react-scripts build",
         "test": "react-scripts test",
         "coverage": "react-scripts test --coverage --watchAll",
