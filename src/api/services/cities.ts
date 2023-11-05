@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { ICity } from '../model';
+import { ICity } from '@server/models';
 import { getUrl } from './utils';
 
 /**

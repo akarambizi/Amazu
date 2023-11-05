@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { IProperty } from '../model';
+import { IProperty } from '../../../server/src/models';
 import { getUrl } from './utils';
 
 /**
