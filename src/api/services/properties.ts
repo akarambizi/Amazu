@@ -1,5 +1,5 @@
+import { IProperty } from '@server/types';
 import axios from 'axios';
-import { IProperty } from '../../../server/src/models';
 import { getUrl } from './utils';
 
 /**
