@@ -1,2 +1,2 @@
-export * from './Property';
+export * from './properties.model';
 export * from './city';

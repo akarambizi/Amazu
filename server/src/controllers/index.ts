@@ -1,1 +1,1 @@
-export * as propertyController from './propertyController';
+export * as propertiesController from './properties.controller';

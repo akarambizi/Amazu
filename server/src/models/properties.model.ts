@@ -1,5 +1,5 @@
 import mongoose from 'mongoose';
-import { IProperty, ListingType, PropertyStatus, PropertyType } from '../types/property';
+import { IProperty, ListingType, PropertyStatus, PropertyType } from '../types/properties.types';
 
 const PropertySchema = new mongoose.Schema<IProperty>({
     area: { type: Number, required: true },

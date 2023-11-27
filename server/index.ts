@@ -2,7 +2,7 @@ import cors from 'cors';
 import 'dotenv/config';
 import express from 'express';
 import morgan from 'morgan';
-import { propertyRoutes } from './src/routes';
+import routes from './src/routes';
 import { connectDB } from './src/server';
 
 const app = express();
@@ -24,15 +24,14 @@ connectDB().then(() => {
     app.use(express.urlencoded({ extended: true }));
 
     app.get('/', (req, res) => {
-        res.send('Hello, world!');
+        res.send('Amazu!');
     });
 
-    app.use(propertyRoutes);
+    app.use(routes);
 
     const port = process.env.PORT || '8000';
 
     app.listen(port, () => {
-        console.log(`process ${process.env.PORT}`);
         console.log(`Server listening on port ${port}`);
     });
 });
