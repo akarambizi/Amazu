@@ -1,6 +1,7 @@
+import { ICity, IProperty } from '@server/types';
 import { AxiosError } from 'axios';
 import { UseQueryOptions, useQuery } from 'react-query';
-import { ICity, IProperty, getCitiesData, getPropertiesData } from '../api';
+import { getCitiesData, getPropertiesData } from '../api';
 import { getCitiesKey, getPropertiesKey } from './utils';
 
 /**
