@@ -4,6 +4,7 @@ import express from 'express';
 import morgan from 'morgan';
 import routes from './src/routes';
 import { connectDB } from './src/server';
+import { swaggerDocs, swaggerUi } from './swagger';
 
 const app = express();
 
@@ -22,6 +23,8 @@ connectDB().then(() => {
 
     // Use the express.urlencoded middleware to parse incoming requests with URL-encoded payloads. ex:key=value&key2=value2.
     app.use(express.urlencoded({ extended: true }));
+
+    app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocs, { explorer: true }));
 
     app.get('/', (req, res) => {
         res.send('Amazu!');
