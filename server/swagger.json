@@ -1,0 +1,93 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Amazu API",
+        "description": "Amazu API is a RESTful API for managing properties. This is a simple CRUD API application made with Express and documented with Swagger",
+        "version": "1.0.0"
+    },
+    "paths": {
+        "/properties": {
+            "get": {
+                "tags": [
+                    "Properties"
+                ],
+                "summary": "Retrieve a list of properties",
+                "responses": {
+                    "200": {
+                        "description": "A list of properties."
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Properties"
+                ],
+                "summary": "Create a new property",
+                "responses": {
+                    "201": {
+                        "description": "The created property."
+                    }
+                }
+            }
+        },
+        "/properties/{id}": {
+            "get": {
+                "tags": [
+                    "Properties"
+                ],
+                "summary": "Retrieve a property by its ID",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "required": true,
+                        "description": "Property ID"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "The requested property."
+                    }
+                }
+            },
+            "patch": {
+                "tags": [
+                    "Properties"
+                ],
+                "summary": "Update a property by its ID",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "required": true,
+                        "description": "Property ID"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "The updated property."
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "Properties"
+                ],
+                "summary": "Delete a property by its ID",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "required": true,
+                        "description": "Property ID"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "The deleted property."
+                    }
+                }
+            }
+        }
+    }
+}
