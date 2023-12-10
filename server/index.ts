@@ -24,6 +24,7 @@ connectDB().then(() => {
     // Use the express.urlencoded middleware to parse incoming requests with URL-encoded payloads. ex:key=value&key2=value2.
     app.use(express.urlencoded({ extended: true }));
 
+    // Set up Swagger UI at the /api-docs route. The explorer option is enabled, allowing users to interact with the API documentation.
     app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocs, { explorer: true }));
 
     app.get('/', (req, res) => {
