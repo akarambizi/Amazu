@@ -4,13 +4,11 @@ import { ReactComponent as OpenSvg } from '../../assets/images/icon-bars.svg';
 import { ReactComponent as CloseSvg } from '../../assets/images/icon-cross.svg';
 import { Wrapper } from '../../styles/elements';
 import * as Styles from './Header.styles';
-import { IHeaderProps } from './Header.types';
 
-export const Header = ({ location }: IHeaderProps) => {
+export const Header = () => {
     const [isNavVisible, setIsNavVisible] = useState(false);
-    const isRegisterPage = ['/signup', '/signin'].includes(location.pathname);
 
-    return isRegisterPage ? null : (
+    return (
         <Styles.HeaderMain isNavVisible={isNavVisible}>
             <Wrapper>
                 <Styles.HeaderLogo>
@@ -54,6 +52,3 @@ export const Header = ({ location }: IHeaderProps) => {
         </Styles.HeaderMain>
     );
 };
-
-// used withRouter to get location.pathname
-// export default withRouter(Header);

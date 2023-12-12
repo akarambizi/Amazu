@@ -1,12 +1,10 @@
 import { FooterMain } from './Footer.styles';
-import { IFooterProps } from './Footer.types';
 import { Text, Wrapper } from '../../styles/elements';
 
-export const Footer = ({ location }: IFooterProps) => {
-    const isRegisterPage = ['/signup', '/signin'].includes(location.pathname);
+export const Footer = () => {
     const yearNow = new Date().getFullYear();
 
-    return isRegisterPage ? null : (
+    return (
         <FooterMain>
             <Wrapper>
                 <Text heading sm>
@@ -16,6 +14,3 @@ export const Footer = ({ location }: IFooterProps) => {
         </FooterMain>
     );
 };
-
-// used withRouter to get location.pathname
-// export default withRouter(Footer);

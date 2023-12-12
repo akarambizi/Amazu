@@ -16,7 +16,7 @@ const App = () => {
         <QueryClientProvider client={queryClient}>
             <Router>
                 <GlobalStyles />
-                <Header location={{ pathname: 'home' }} />
+                <Header />
                 <main>
                     <Routes>
                         <Route path="/" element={<Home />} />
@@ -30,7 +30,7 @@ const App = () => {
                         <Route element={<NotFound />} />
                     </Routes>
                 </main>
-                <Footer location={{ pathname: 'home' }} />
+                <Footer />
             </Router>
         </QueryClientProvider>
     );
