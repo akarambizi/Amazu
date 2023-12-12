@@ -5,7 +5,7 @@ import { Text } from '../../styles/elements';
 import { CardContent, CardIcons, CardImageLink, CardLink, CardWrapper } from './Card.styles';
 import { ICardProps } from './Card.types';
 
-export const Card = ({ data }: ICardProps) => {
+export const Card = ({ data }: ICardProps): JSX.Element => {
     return (
         <CardWrapper>
             <CardImageLink href="/typography">
