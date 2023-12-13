@@ -29,7 +29,7 @@
         "dev": "yarn start & yarn serve",
         "dev:mock": "yarn start & yarn mock-server",
         "build": "react-scripts build",
-        "test": "react-scripts test --coverage --detectOpenHandles",
+        "test": "react-scripts test --coverage --watchAll --detectOpenHandles",
         "eject": "react-scripts eject",
         "lint": "eslint ./ --ext js,jsx,ts,tsx --ignore-path .gitignore",
         "lint:fix": "eslint --fix --ext .js,.jsx,.ts,.tsx . --ignore-path .gitignore",

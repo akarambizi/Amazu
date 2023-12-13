@@ -7,7 +7,7 @@ export const Footer = () => {
     return (
         <FooterMain>
             <Wrapper>
-                <Text heading sm>
+                <Text data-testid="footer-content" heading sm>
                     &copy;Amazu - <span>{yearNow}</span>
                 </Text>
             </Wrapper>

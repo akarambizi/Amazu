@@ -8,12 +8,11 @@ export const HeroForm = () => {
         event.preventDefault();
         const formData = new FormData(event.currentTarget);
         const searchValue = formData.get('heroSearch') as string;
-        console.log(searchValue);
         navigate(`/search?searchValue=${searchValue}`);
     };
 
     return (
-        <Form onSubmit={handleForm}>
+        <Form data-testid="hero-form" onSubmit={handleForm}>
             <input type="text" name="heroSearch" placeholder="Enter a state, city, or ZIP code" aria-label="search" />
             <button type="submit">search</button>
         </Form>
