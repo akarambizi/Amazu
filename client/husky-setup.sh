@@ -11,3 +11,6 @@ echo '#!/bin/sh
 . "$(dirname "$0")/_/husky.sh"
 
 npx lint-staged' > client/.husky/pre-commit
+
+# Make the 'pre-commit' file executable
+chmod +x client/.husky/pre-commit
