@@ -4,14 +4,14 @@ import { ITopCitiesProps } from './TopCities.types';
 
 export const TopCities = (props: ITopCitiesProps) => {
     return (
-        <Styles.TopCitiesWrapper>
+        <Styles.TopCitiesWrapper data-testid="top-cities">
             <Wrapper>
                 <Text heading marginBottom="32px" centered>
                     Expand your search and check out one of these trending cities.
                 </Text>
                 <Grid>
                     {props.cities?.map(({ name, image }) => (
-                        <Styles.TopCityLink to={`/cities/${name}`} key={name}>
+                        <Styles.TopCityLink to={`/cities/${name}`} key={name} aria-label={`${name} link`}>
                             <img src={image} alt={name} height="64px" width="64px" />
                             <Text>{name}</Text>
                         </Styles.TopCityLink>

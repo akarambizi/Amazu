@@ -4,7 +4,7 @@ import * as Styles from './ListProperty.styles';
 
 export const ListProperty = () => {
     return (
-        <Styles.ListPropertyContainer>
+        <Styles.ListPropertyContainer data-testid="list-property">
             <Wrapper>
                 <Text heading>List your property on Amazu to connect to qualified tenants across the largest rental network.</Text>
                 <Text heading sm>
