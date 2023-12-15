@@ -34,7 +34,7 @@
         "lint": "eslint ./ --ext js,jsx,ts,tsx --ignore-path .gitignore",
         "lint:fix": "eslint --fix --ext .js,.jsx,.ts,.tsx",
         "prettier-format": "prettier --config .prettierrc 'src/**/*.tsx' --write",
-        "prepare": "cd .. && husky install client/.husky | chmod ug+x client/.husky/*",
+        "prepare": "cd .. && husky install .husky | chmod ug+x .husky/*",
         "precommit": "lint-staged"
     },
     "eslintConfig": {
