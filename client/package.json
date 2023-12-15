@@ -34,7 +34,7 @@
         "lint": "eslint ./ --ext js,jsx,ts,tsx --ignore-path .gitignore",
         "lint:fix": "eslint --fix --ext .js,.jsx,.ts,.tsx . --ignore-path .gitignore",
         "prettier-format": "prettier --config .prettierrc 'src/**/*.tsx' --write",
-        "postinstall": "./husky-setup.sh",
+        "prepare": "cd .. && husky install client/.husky",
         "precommit": "lint-staged"
     },
     "eslintConfig": {
