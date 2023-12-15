@@ -9,6 +9,7 @@ const queryClient = new QueryClient();
 
 const App = () => {
     useEffect(() => {
+        console.log('App mounted');
         document.title = 'new title';
     }, []);
 
