@@ -1,5 +1,5 @@
 import React, { useMemo, useState } from 'react';
-import { CardsList, CardsListLoading } from '../';
+import { CardsList, CardsListLoading } from '..';
 import { usePropertiesData } from '../../hooks/useQueryHooks';
 import { Tab, Tabs, Text, Wrapper } from '../../styles/elements';
 
