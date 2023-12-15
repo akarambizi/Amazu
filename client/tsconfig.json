@@ -18,8 +18,8 @@
         "baseUrl": ".",
         "paths": {
             "@server/*": ["server/src/*"],
-            "@app/*": ["client/src/*"]
+            "@app/*": ["src/*"]
         }
     },
-    "include": ["./client", "./server"]
+    "include": ["src", "server"]
 }

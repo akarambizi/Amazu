@@ -8,7 +8,7 @@ import { GlobalStyles } from './styles';
 const queryClient = new QueryClient();
 
 const App = () => {
-    useEffect(() => {
+         useEffect(() => {
         document.title = 'new title';
     }, []);
 
