@@ -9,28 +9,28 @@ export const Card = ({ data }: ICardProps): JSX.Element => {
     return (
         <CardWrapper>
             <CardImageLink href="/typography">
-                <img src={data.images[0]} alt={data.title} />
+                <img src={data?.images[0]} alt={data?.title} />
             </CardImageLink>
             <div>
                 <CardContent>
                     <CardLink href="/">
-                        <Text bold>{data.title}</Text>
+                        <Text bold>{data?.title}</Text>
                     </CardLink>
-                    <Text>{data.location.fullAdress}</Text>
-                    <Text bold secondary>{`$${data.price}`}</Text>
+                    <Text>{data?.location?.fullAdress}</Text>
+                    <Text bold secondary>{`$${data?.price ?? 0}`}</Text>
                 </CardContent>
                 <CardIcons>
                     <Text aria-label="Bedrooms" title="Bedrooms">
                         <IconBedSvg />
-                        <span>{data.bedRooms}</span>
+                        <span>{data?.bedRooms}</span>
                     </Text>
                     <Text aria-label="Bathrooms" title="Bathrooms">
                         <IconBathRoomSvg />
-                        <span>{data.bathRooms}</span>
+                        <span>{data?.bathRooms}</span>
                     </Text>
                     <Text aria-label="Area" title="Area">
                         <IconAreaSvg />
-                        <span>{`${data.area} ft`}</span>
+                        <span>{`${data?.area ?? 0} ft`}</span>
                         <sup>2</sup>
                     </Text>
                 </CardIcons>
