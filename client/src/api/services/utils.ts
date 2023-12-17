@@ -5,7 +5,6 @@
  */
 export const getUrl = (path: string) => {
     let baseUrl;
-    console.log('process.env.REACT_APP_API_ENV', process.env.REACT_APP_API_ENV);
     switch (process.env.REACT_APP_API_ENV) {
         case 'dev':
             baseUrl = 'http://localhost:5000'; // MongoDB
