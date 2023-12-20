@@ -1,8 +1,7 @@
-import { ICity, IProperty } from '@server/types';
+import { ICity, IProperty, getCitiesData, getPropertiesData } from '../api';
+import { getCitiesKey, getPropertiesKey } from './utils';
 import { AxiosError } from 'axios';
 import { UseQueryOptions, useQuery } from 'react-query';
-import { getCitiesData, getPropertiesData } from '../api';
-import { getCitiesKey, getPropertiesKey } from './utils';
 
 /**
  * A custom hook that fetches properties data.
