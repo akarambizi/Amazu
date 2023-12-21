@@ -2,6 +2,7 @@ import cors from 'cors';
 import 'dotenv/config';
 import express from 'express';
 import morgan from 'morgan';
+import logger from './logger';
 import routes from './src/routes';
 import { connectDB } from './src/server';
 import { swaggerDocs, swaggerUi } from './swagger';
@@ -36,6 +37,6 @@ connectDB().then(() => {
     const port = process.env.PORT || '8000';
 
     app.listen(port, () => {
-        console.log(`Server listening on port ${port}`);
+        logger.info(`Server listening on port ${port}`);
     });
 });

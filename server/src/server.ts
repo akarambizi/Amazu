@@ -1,6 +1,7 @@
 import dotenv from 'dotenv';
 import mongoose from 'mongoose';
 import path from 'path';
+import logger from '../logger';
 
 dotenv.config({ path: path.resolve(__dirname, '../.env') });
 
@@ -8,9 +9,9 @@ dotenv.config({ path: path.resolve(__dirname, '../.env') });
 export const connectDB = async () => {
     try {
         await mongoose.connect(process?.env?.MONGO_URI ?? '');
-        console.log('MongoDB Connected');
+        logger.info('MongoDB Connected');
     } catch (error) {
-        console.error('Error connecting to MongoDB:', error);
+        logger.error('Error connecting to MongoDB:', error);
 
         // Exit process with failure
         process.exit(1);
