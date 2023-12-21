@@ -30,6 +30,11 @@
     "typescript": "^5.2.2"
   },
   "dependencies": {
+    "@opentelemetry/api": "^1.7.0",
+    "@opentelemetry/exporter-collector-proto": "^0.25.0",
+    "@opentelemetry/metrics": "^0.24.0",
+    "@opentelemetry/node": "^0.24.0",
+    "@opentelemetry/tracing": "^0.24.0",
     "dotenv": "^16.3.1",
     "mongodb": "^6.3.0",
     "mongoose": "^8.0.1",

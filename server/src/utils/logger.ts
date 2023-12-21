@@ -2,7 +2,7 @@ import winston from 'winston';
 
 const customFormat = winston.format.printf((info) => `${info.timestamp} - ${info.level}: ${info.message}`);
 
-const logger = winston.createLogger({
+export const logger = winston.createLogger({
     level: 'info',
     format: winston.format.combine(
         winston.format.timestamp({
@@ -29,5 +29,3 @@ if (process.env.NODE_ENV !== 'production') {
         })
     );
 }
-
-export default logger;

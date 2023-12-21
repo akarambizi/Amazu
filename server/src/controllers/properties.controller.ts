@@ -1,6 +1,6 @@
 import { Request, Response } from 'express';
-import { Property } from '../models';
-import logger from '../../logger';
+import { Property } from '../database';
+import logger from '../utils/logger';
 
 export const getAllProperties = async (req: Request, res: Response) => {
     try {

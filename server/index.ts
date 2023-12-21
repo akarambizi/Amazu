@@ -2,10 +2,14 @@ import cors from 'cors';
 import 'dotenv/config';
 import express from 'express';
 import morgan from 'morgan';
-import logger from './logger';
+import { connectDB } from './src/database';
+import { latencyMiddleware } from './src/middleware';
 import routes from './src/routes';
-import { connectDB } from './src/server';
+import { logger, setupTracer } from './src/utils';
 import { swaggerDocs, swaggerUi } from './swagger';
+
+// Set up OpenTelemetry
+setupTracer();
 
 const app = express();
 
@@ -27,6 +31,9 @@ connectDB().then(() => {
 
     // Set up Swagger UI at the /api-docs route. The explorer option is enabled, allowing users to interact with the API documentation.
     app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocs, { explorer: true }));
+
+    // Use the latencyMiddleware to measure the time taken to process each request.
+    app.use(latencyMiddleware);
 
     app.get('/', (req, res) => {
         res.send('Amazu!');

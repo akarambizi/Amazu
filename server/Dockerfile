@@ -12,7 +12,7 @@ COPY package.json yarn.lock ./
 # Install dependencies
 RUN yarn install --ignore-scripts
 
-# Copy the rest of your app's source code
+# Copy the rest of the app's source code
 COPY . ./
 
 # Build the app
