@@ -1,23 +1,43 @@
 import { Request, Response } from 'express';
 import { Property } from '../models';
+import logger from '../../logger';
 
 export const getAllProperties = async (req: Request, res: Response) => {
-    const properties = await Property.find({});
-    res.send(properties);
+    try {
+        const properties = await Property.find({});
+        logger.info('All properties retrieved successfully');
+        res.send(properties);
+    } catch (error) {
+        logger.error('Error retrieving all properties:', error);
+        res.status(500).send();
+    }
 };
 
 export const createProperty = async (req: Request, res: Response) => {
-    const property = new Property(req.body);
-    await property.save();
-    res.status(201).send(property);
+    try {
+        const property = new Property(req.body);
+        await property.save();
+        logger.info(`Property created successfully: ${property._id}`);
+        res.status(201).send(property);
+    } catch (error) {
+        logger.error('Error creating property:', error);
+        res.status(500).send();
+    }
 };
 
 export const getProperty = async (req: Request, res: Response) => {
-    const property = await Property.findById(req.params.id);
-    if (!property) {
-        return res.status(404).send();
+    try {
+        const property = await Property.findById(req.params.id);
+        if (!property) {
+            logger.warn(`Property not found: ${req.params.id}`);
+            return res.status(404).send();
+        }
+        logger.info(`Property retrieved successfully: ${req.params.id}`);
+        res.send(property);
+    } catch (error) {
+        logger.error(`Error retrieving property: ${req.params.id}`, error);
+        res.status(500).send();
     }
-    res.send(property);
 };
 
 export const updateProperty = async (req: Request, res: Response) => {
@@ -26,24 +46,39 @@ export const updateProperty = async (req: Request, res: Response) => {
     const isValidOperation = updates.every((update) => allowedUpdates.includes(update));
 
     if (!isValidOperation) {
+        logger.warn(`Invalid updates attempted for property: ${req.params.id}`, req.body);
         return res.status(400).send({ error: 'Invalid updates!' });
     }
 
-    const property = await Property.findByIdAndUpdate(req.params.id, req.body, { new: true, runValidators: true });
+    try {
+        const property = await Property.findByIdAndUpdate(req.params.id, req.body, { new: true, runValidators: true });
 
-    if (!property) {
-        return res.status(404).send();
+        if (!property) {
+            logger.warn(`Property not found: ${req.params.id}`);
+            return res.status(404).send();
+        }
+
+        logger.info(`Property updated successfully: ${req.params.id}`);
+        res.send(property);
+    } catch (error) {
+        logger.error(`Error updating property: ${req.params.id}`, error);
+        res.status(500).send();
     }
-
-    res.send(property);
 };
 
 export const deleteProperty = async (req: Request, res: Response) => {
-    const property = await Property.findByIdAndDelete(req.params.id);
+    try {
+        const property = await Property.findByIdAndDelete(req.params.id);
 
-    if (!property) {
-        return res.status(404).send();
+        if (!property) {
+            logger.warn(`Property not found: ${req.params.id}`);
+            return res.status(404).send();
+        }
+
+        logger.info(`Property deleted successfully: ${req.params.id}`);
+        res.send(property);
+    } catch (error) {
+        logger.error(`Error deleting property: ${req.params.id}`, error);
+        res.status(500).send();
     }
-
-    res.send(property);
 };
