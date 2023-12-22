@@ -2,7 +2,7 @@ import cors from 'cors';
 import 'dotenv/config';
 import express from 'express';
 import morgan from 'morgan';
-import { connectDB } from './src/database';
+import { connectDB } from './src/database/dbConnect';
 import { latencyMiddleware } from './src/middleware';
 import routes from './src/routes';
 import { logger, setupTracer } from './src/utils';
