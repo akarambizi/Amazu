@@ -4,7 +4,7 @@
 FROM node:16
 
 # Set working directory
-WORKDIR /app
+WORKDIR /app/client
 
 # Copy package.json and yarn.lock
 COPY package.json yarn.lock ./

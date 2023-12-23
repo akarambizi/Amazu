@@ -6,11 +6,14 @@ services:
             - 3000:3000
         volumes:
             - ./client:/app
-            - /app/node_modules
+            - /app/client/node_modules
         environment:
             - NODE_ENV=development
             - REACT_APP_API_ENV=dev
+            - DOCKER_ENV=true
         command: yarn start
+        depends_on:
+            - server
 
     server:
         build: ./server
@@ -18,13 +21,16 @@ services:
             - 5000:5000
         volumes:
             - ./server:/app
-            - /app/node_modules
+            - /app/server/node_modules
         environment:
             - NODE_ENV=development
             - REACT_APP_API_ENV=dev
+            - DOCKER_ENV=true
         command: yarn serve
 
     zipkin:
         image: openzipkin/zipkin
         ports:
             - '9411:9411'
+        depends_on:
+            - server

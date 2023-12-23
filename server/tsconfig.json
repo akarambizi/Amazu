@@ -1,6 +1,9 @@
 {
     "ts-node": {
-        "swc": true,
+        // "swc": true, // Use SWC for faster TypeScript compilation ( having issues with Docker)
+        // It is faster to skip typechecking.
+        // Remove if you want ts-node to do typechecking.
+        "transpileOnly": true,
     },
     "compilerOptions": {
         /* Visit https://aka.ms/tsconfig to read more about this file */
