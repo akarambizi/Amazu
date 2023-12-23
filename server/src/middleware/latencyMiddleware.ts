@@ -3,7 +3,7 @@ import { NextFunction, Request, Response } from 'express';
 import { logger } from '../utils';
 
 // Create a new meter provider
-const meter = new MeterProvider().getMeter('my-app');
+const meter = new MeterProvider().getMeter('Amazu');
 
 // Create a new metric
 const requestLatency = meter.createValueRecorder('http_request_latency');
