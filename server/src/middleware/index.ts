@@ -1,1 +1,1 @@
-export * from './latencyMiddleware';
+export * from './performanceMiddlewares';

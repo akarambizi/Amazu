@@ -1,35 +1,34 @@
-import { NodeTracerProvider } from '@opentelemetry/node';
-import { ConsoleSpanExporter, SimpleSpanProcessor } from '@opentelemetry/tracing';
+import { trace } from '@opentelemetry/api';
 import { ZipkinExporter } from '@opentelemetry/exporter-zipkin';
+import { Resource } from '@opentelemetry/resources';
+import { BasicTracerProvider, ConsoleSpanExporter, SimpleSpanProcessor } from '@opentelemetry/sdk-trace-base';
+import { SemanticResourceAttributes } from '@opentelemetry/semantic-conventions';
 
-export const setupTracer = () => {
-    // Create a tracer provider that will be responsible for creating traces and spans.
-    const provider = new NodeTracerProvider();
+// Define the service name for the tracer
+export const SERVICE_NAME = 'amazu-service-tracer';
 
-    // Create a console exporter that will print the span data to the console.
-    const consoleExporter = new ConsoleSpanExporter();
+// Create and register an SDK
+const provider = new BasicTracerProvider({
+    resource: new Resource({
+        [SemanticResourceAttributes.SERVICE_NAME]: SERVICE_NAME,
+    }),
+});
 
-    // Create a span processor that will send span data to the console exporter as soon as each span ends.
-    const consoleProcessor = new SimpleSpanProcessor(consoleExporter);
+// This will log all spans to the console
+const consoleExporter = new ConsoleSpanExporter();
+const consoleSpanProcessor = new SimpleSpanProcessor(consoleExporter);
+provider.addSpanProcessor(consoleSpanProcessor);
 
-    // Add the console processor to the tracer provider.
-    provider.addSpanProcessor(consoleProcessor);
+// This will send all spans to a Zipkin service at the given URL
+const zipkinExporter = new ZipkinExporter({
+    url: 'http://localhost:9411/api/v2/spans', // This is the default URL for the Zipkin service.
+    serviceName: SERVICE_NAME,
+});
 
-    // Create a Zipkin exporter that will send the span data to a Zipkin service.
-    // The Zipkin service is located at 'http://localhost:9411/api/v2/spans'.
+const zipkinSpanProcessor = new SimpleSpanProcessor(zipkinExporter);
+provider.addSpanProcessor(zipkinSpanProcessor);
 
-    const zipkinExporter = new ZipkinExporter({
-        url: 'http://localhost:9411/api/v2/spans',
-        serviceName: 'Amazu-service',
-    });
+// This makes our provider the default for all tracing
+trace.setGlobalTracerProvider(provider);
 
-    // Create a span processor that will send span data to the Zipkin exporter as soon as each span ends.
-    const zipkinProcessor = new SimpleSpanProcessor(zipkinExporter);
-    provider.addSpanProcessor(zipkinProcessor);
-
-    // Add the Zipkin processor to the tracer provider.
-    provider.addSpanProcessor(zipkinProcessor);
-
-    // Register the tracer provider.
-    provider.register();
-};
+export default trace;

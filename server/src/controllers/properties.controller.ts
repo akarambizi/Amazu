@@ -13,6 +13,21 @@ export const getAllProperties = async (req: Request, res: Response) => {
     }
 };
 
+// export const getAllProperties = async (req: Request, res: Response) => {
+//     try {
+//         const properties = await withSpan('getAllProperties', async () => {
+//             // Your code here...
+//             const properties = await Property.find({});
+//             // logger.info('All properties retrieved successfully');
+//             return properties;
+//         });
+//         res.send(properties);
+//     } catch (error) {
+//         // logger.error(error);
+//         res.status(500).send('An error occurred');
+//     }
+// };
+
 export const createProperty = async (req: Request, res: Response) => {
     try {
         const property = new Property(req.body);
@@ -30,7 +45,7 @@ export const getProperty = async (req: Request, res: Response) => {
         const property = await Property.findById(req.params.id);
         if (!property) {
             logger.warn(`Property not found: ${req.params.id}`);
-            return res.status(404).send();
+            res.status(404).send();
         }
         logger.info(`Property retrieved successfully: ${req.params.id}`);
         res.send(property);
@@ -47,7 +62,7 @@ export const updateProperty = async (req: Request, res: Response) => {
 
     if (!isValidOperation) {
         logger.warn(`Invalid updates attempted for property: ${req.params.id}`, req.body);
-        return res.status(400).send({ error: 'Invalid updates!' });
+        res.status(400).send({ error: 'Invalid updates!' });
     }
 
     try {
@@ -55,7 +70,7 @@ export const updateProperty = async (req: Request, res: Response) => {
 
         if (!property) {
             logger.warn(`Property not found: ${req.params.id}`);
-            return res.status(404).send();
+            res.status(404).send();
         }
 
         logger.info(`Property updated successfully: ${req.params.id}`);
@@ -72,7 +87,7 @@ export const deleteProperty = async (req: Request, res: Response) => {
 
         if (!property) {
             logger.warn(`Property not found: ${req.params.id}`);
-            return res.status(404).send();
+            res.status(404).send();
         }
 
         logger.info(`Property deleted successfully: ${req.params.id}`);

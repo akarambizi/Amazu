@@ -4,23 +4,18 @@ import express from 'express';
 import morgan from 'morgan';
 import swaggerUi from 'swagger-ui-express';
 import { swaggerDocs } from '../swagger';
-import { latencyMiddleware } from './middleware';
+import { performanceMiddlewares } from './middleware';
 import routes from './routes';
-import { logger, setupTracer } from './utils';
-
-// Set up OpenTelemetry
-setupTracer();
+import { logger } from './utils';
 
 const app = express();
 
-// Connect to the database
+// Apply performance monitoring middlewares
+performanceMiddlewares(app);
 
 // Use the cors middleware to enable Cross Origin Resource Sharing
 // This allows client applications from different domains to interact with the API.
 app.use(cors());
-
-// Use the latencyMiddleware to measure the time taken to process each request.
-app.use(latencyMiddleware);
 
 // Use the morgan middleware for logging HTTP requests in the 'dev' format.
 // This helps in debugging by logging information about every incoming request.
@@ -39,6 +34,7 @@ app.get('/', (req, res) => {
     res.send('Amazu!');
 });
 
+// Set up the routes
 app.use(routes);
 
 // 404 handler
