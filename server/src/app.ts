@@ -6,8 +6,7 @@ import swaggerUi from 'swagger-ui-express';
 import { swaggerDocs } from '../swagger';
 import { performanceMiddlewares } from './middleware';
 import routes from './routes';
-import { logger } from './utils';
-import { withSpan } from './utils/telemetry';
+import { logger, wrapWithTracingSpan } from './utils';
 
 const app = express();
 
@@ -35,7 +34,7 @@ app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocs, { explorer: t
 app.use(routes);
 
 // 404 handler
-app.use(withSpan((req, res) => {
+app.use(wrapWithTracingSpan((req, res) => {
     logger.warn(`404 Not Found: ${req.method} ${req.originalUrl}`);
     res.status(404).send({ error: 'Not Found', message: 'The requested resource could not be found' });
 }, '404Handler'));

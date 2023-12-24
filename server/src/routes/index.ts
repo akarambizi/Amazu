@@ -1,13 +1,12 @@
 import { Router } from 'express';
 import { propertiesRoutes } from './properties.routes';
-import { withSpan } from '../utils/telemetry';
-import { logger } from '../utils';
+import { wrapWithTracingSpan } from '../utils';
 
 const routes = Router();
 
 routes.get(
     '/',
-    withSpan((req, res) => {
+    wrapWithTracingSpan((req, res) => {
         res.send('Amazu Homepage!');
     }, 'getHomepage')
 );

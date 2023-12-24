@@ -10,7 +10,7 @@ import trace, { SERVICE_NAME } from './setupTracer';
  * @param middlewareFunction - The middleware function to wrap with a tracing span.
  * @returns A new middleware function that includes a tracing span.
  */
-export const withSpan = (middlewareFunction: RequestHandler, operationName?: string): RequestHandler => {
+export const wrapWithTracingSpan = (middlewareFunction: RequestHandler, operationName?: string): RequestHandler => {
     const tracer = trace.getTracer(SERVICE_NAME, '0.1.0');
     const operation = operationName ?? middlewareFunction.name;
 

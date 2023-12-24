@@ -1,11 +1,11 @@
 import express from 'express';
 import { propertiesController } from '../controllers';
-import { withSpan } from '../utils/telemetry';
+import { wrapWithTracingSpan } from '../utils';
 
 export const propertiesRoutes = express.Router();
 
-propertiesRoutes.get('/', withSpan(propertiesController.getAllProperties));
-propertiesRoutes.post('/', withSpan(propertiesController.createProperty));
-propertiesRoutes.get('/:id', withSpan(propertiesController.getProperty));
-propertiesRoutes.patch('/:id', withSpan(propertiesController.updateProperty));
-propertiesRoutes.delete('/:id', withSpan(propertiesController.deleteProperty));
+propertiesRoutes.get('/', wrapWithTracingSpan(propertiesController.getAllProperties));
+propertiesRoutes.post('/', wrapWithTracingSpan(propertiesController.createProperty));
+propertiesRoutes.get('/:id', wrapWithTracingSpan(propertiesController.getProperty));
+propertiesRoutes.patch('/:id', wrapWithTracingSpan(propertiesController.updateProperty));
+propertiesRoutes.delete('/:id', wrapWithTracingSpan(propertiesController.deleteProperty));
