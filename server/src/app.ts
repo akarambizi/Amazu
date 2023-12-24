@@ -7,6 +7,7 @@ import { swaggerDocs } from '../swagger';
 import { performanceMiddlewares } from './middleware';
 import routes from './routes';
 import { logger } from './utils';
+import { withSpan } from './utils/telemetry';
 
 const app = express();
 
@@ -30,17 +31,13 @@ app.use(express.urlencoded({ extended: true }));
 // Set up Swagger UI at the /api-docs route. The explorer option is enabled, allowing users to interact with the API documentation.
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocs, { explorer: true }));
 
-app.get('/', (req, res) => {
-    res.send('Amazu!');
-});
-
 // Set up the routes
 app.use(routes);
 
 // 404 handler
-app.use((req, res) => {
+app.use(withSpan((req, res) => {
     logger.warn(`404 Not Found: ${req.method} ${req.originalUrl}`);
     res.status(404).send({ error: 'Not Found', message: 'The requested resource could not be found' });
-});
+}, '404Handler'));
 
 export default app;

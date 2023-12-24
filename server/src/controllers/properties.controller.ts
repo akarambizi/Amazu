@@ -13,21 +13,6 @@ export const getAllProperties = async (req: Request, res: Response) => {
     }
 };
 
-// export const getAllProperties = async (req: Request, res: Response) => {
-//     try {
-//         const properties = await withSpan('getAllProperties', async () => {
-//             // Your code here...
-//             const properties = await Property.find({});
-//             // logger.info('All properties retrieved successfully');
-//             return properties;
-//         });
-//         res.send(properties);
-//     } catch (error) {
-//         // logger.error(error);
-//         res.status(500).send('An error occurred');
-//     }
-// };
-
 export const createProperty = async (req: Request, res: Response) => {
     try {
         const property = new Property(req.body);
