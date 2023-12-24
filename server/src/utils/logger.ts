@@ -2,11 +2,11 @@ import winston from 'winston';
 
 const customFormat = winston.format.printf((info) => `${info.timestamp} - ${info.level}: ${info.message}`);
 
-const logger = winston.createLogger({
+export const logger = winston.createLogger({
     level: 'info',
     format: winston.format.combine(
         winston.format.timestamp({
-            format: 'hh:mm:ss A',
+            format: 'YYYY-MM-DD hh:mm:ss A',
         }),
         winston.format.json()
     ),
@@ -22,12 +22,10 @@ if (process.env.NODE_ENV !== 'production') {
             format: winston.format.combine(
                 winston.format.colorize(),
                 winston.format.timestamp({
-                    format: 'hh:mm:ss A',
+                    format: 'YYYY-MM-DD hh:mm:ss A',
                 }),
                 customFormat
             ),
         })
     );
 }
-
-export default logger;

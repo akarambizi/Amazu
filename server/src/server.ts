@@ -1,19 +1,11 @@
-import dotenv from 'dotenv';
-import mongoose from 'mongoose';
-import path from 'path';
-import logger from '../logger';
+import app from "./app";
+import { connectDB } from "./database/dbConnect";
+import { logger } from "./utils";
 
-dotenv.config({ path: path.resolve(__dirname, '../.env') });
+const port = process.env.PORT || '5000';
 
-// Connects to MongoDB and handles any connection errors.
-export const connectDB = async () => {
-    try {
-        await mongoose.connect(process?.env?.MONGO_URI ?? '');
-        logger.info('MongoDB Connected');
-    } catch (error) {
-        logger.error('Error connecting to MongoDB:', error);
-
-        // Exit process with failure
-        process.exit(1);
-    }
-};
+connectDB().then(() => {
+    app.listen(port, () => {
+        logger.info(`Server listening on port ${port}`);
+    });
+});
