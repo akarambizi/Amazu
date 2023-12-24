@@ -1,5 +1,5 @@
 import { SpanStatusCode } from '@opentelemetry/api';
-import { RequestHandler } from 'express';
+import { RequestHandler, Request, Response } from 'express';
 import trace, { SERVICE_NAME } from './setupTracer';
 
 /**
@@ -30,4 +30,49 @@ export const wrapWithTracingSpan = (middlewareFunction: RequestHandler, operatio
             }
         });
     };
+};
+
+/**
+ * Get the span attributes from an HTTP request and response.
+ *
+ * @param {Request} req - The HTTP request.
+ * @param {Response} res - The HTTP response.
+ * @returns {Record<string, unknown>} The span attributes.
+ */
+const getSpanAttributes = (req: Request, res: Response) => {
+    const attributes = {
+        'http.url': req.protocol + '://' + req.get('host') + req.originalUrl,
+        'http.method': req.method,
+        'http.status_code': res.statusCode,
+        'http.status_text': res.statusMessage,
+        'http.route': req.baseUrl,
+        'http.request_content_length': req.headers['content-length'] || 0,
+        'http.response_content_length': res.getHeader('content-length') || 0,
+        'http.user_agent': req.headers['user-agent'] || '',
+        'http.flavor': req.httpVersion,
+        'http.client_ip': req.ip || '',
+        'http.params': JSON.stringify(req.params),
+    };
+
+    return attributes;
+}
+
+/**
+ * Create a new tracing span for an HTTP request and response.
+ *
+ * @param {Request} req - The HTTP request.
+ * @param {Response} res - The HTTP response.
+ */
+export const createTracingSpan = (req: Request, res: Response) => {
+    const tracer = trace.getTracer(SERVICE_NAME, '0.1.0');
+    const operationName = `${req.baseUrl}`;
+    const span = tracer.startSpan(operationName);
+
+    const attributes = getSpanAttributes(req, res);
+
+    for (const [key, value] of Object.entries(attributes)) {
+        span.setAttribute(key, value);
+    }
+
+    span.end();
 };

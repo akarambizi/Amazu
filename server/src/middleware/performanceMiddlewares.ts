@@ -1,6 +1,6 @@
 import { MeterProvider } from '@opentelemetry/metrics';
 import { NextFunction, Request, Response } from 'express';
-import { logger } from '../utils';
+import { createTracingSpan, logger } from '../utils';
 import { Express } from 'express';
 
 // Create a new meter provider
@@ -29,6 +29,9 @@ export const latencyMiddleware = (req: Request, res: Response, next: NextFunctio
         requestLatency.record(latency);
         // Log the latency
         logger.info(`Request: ${req.method} ${req.originalUrl} Status: ${res.statusCode} took ${latency}ms`);
+
+        // Create a new tracing span for the current HTTP request and response
+        createTracingSpan(req, res);
     });
     next();
 };
