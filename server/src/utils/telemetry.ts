@@ -1,5 +1,5 @@
 import { SpanStatusCode } from '@opentelemetry/api';
-import { RequestHandler, Request, Response } from 'express';
+import { Request, RequestHandler, Response } from 'express';
 import trace, { SERVICE_NAME } from './setupTracer';
 
 /**

@@ -1,14 +1,25 @@
-import { MeterProvider } from '@opentelemetry/metrics';
-import { NextFunction, Request, Response } from 'express';
-import { createTracingSpan, logger } from '../utils';
-import { Express } from 'express';
+import { Resource } from '@opentelemetry/resources';
+import { MeterProvider } from '@opentelemetry/sdk-metrics';
+import { SemanticResourceAttributes } from '@opentelemetry/semantic-conventions';
+import { Express, NextFunction, Request, Response } from 'express';
+import { createTracingSpan, logger, prometheusExporter } from '../utils';
 
-// Create a new meter provider
-const meter = new MeterProvider().getMeter('amazu-service');
+const SERVICE_NAME = 'amazu-service-prometheus';
+
+// Create a new meter for the service;
+const meterProvider = new MeterProvider({
+    resource: new Resource({
+        [SemanticResourceAttributes.SERVICE_NAME]: SERVICE_NAME,
+    }),
+});
+
+meterProvider.addMetricReader(prometheusExporter);
+const meter = meterProvider.getMeter('amazu-service-prometheus');
 
 // Create a new metric
-const requestLatency = meter.createValueRecorder('http_request_latency');
-
+const requestLatency = meter.createHistogram('http_request_latency', {
+    description: 'HTTP request latencies',
+});
 // Create a new counter metric for request count
 const requestCount = meter.createCounter('http_request_count', {
     description: 'Count of total HTTP requests',
@@ -19,14 +30,23 @@ const errorCount = meter.createCounter('http_error_count', {
     description: 'Count of HTTP requests that resulted in an error',
 });
 
+const getLabels = (req: Request, res: Response) => {
+    return {
+        method: req.method,
+        path: req.originalUrl,
+        status_code: res.statusCode.toString(),
+    };
+};
+
 export const latencyMiddleware = (req: Request, res: Response, next: NextFunction) => {
     const start = Date.now();
     res.on('finish', () => {
         const end = Date.now();
         const latency = end - start;
+        const labels = getLabels(req, res);
 
         // Record the latency
-        requestLatency.record(latency);
+        requestLatency.record(latency, labels);
         // Log the latency
         logger.info(`Request: ${req.method} ${req.originalUrl} Status: ${res.statusCode} took ${latency}ms`);
 
@@ -37,15 +57,19 @@ export const latencyMiddleware = (req: Request, res: Response, next: NextFunctio
 };
 
 export const requestCountMiddleware = (req: Request, res: Response, next: NextFunction) => {
+    const labels = getLabels(req, res);
+
     // Increment the request count
-    requestCount.bind({ method: req.method, path: req.path }).add(1);
+    requestCount.add(1, labels);
     next();
 };
 
 export const errorCountMiddleware = (err: any, req: Request, res: Response, next: NextFunction) => {
     if (res.statusCode >= 400) {
         // Increment the error count
-        errorCount.bind({ method: req.method, path: req.path, status_code: res.statusCode.toString() }).add(1);
+        const labels = getLabels(req, res);
+
+        errorCount.add(1, labels);
     }
     next(err);
 };
