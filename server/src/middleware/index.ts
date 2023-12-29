@@ -1,1 +1,1 @@
-export * from './performanceMiddlewares';
+export * from './metricsMiddlewares';

@@ -4,14 +4,14 @@ import express from 'express';
 import morgan from 'morgan';
 import swaggerUi from 'swagger-ui-express';
 import swaggerDocs from '../swagger.json';
-import { performanceMiddlewares } from './middleware';
+import { metricsMiddlewares } from './middleware';
 import { logger } from './monitor';
 import routes from './routes';
 
 const app = express();
 
-// Apply performance monitoring middlewares
-performanceMiddlewares(app);
+// Apply metrics monitoring middlewares
+metricsMiddlewares(app);
 
 // Use the cors middleware to enable Cross Origin Resource Sharing
 // This allows client applications from different domains to interact with the API.

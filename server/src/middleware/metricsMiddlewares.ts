@@ -1,34 +1,5 @@
-import { Resource } from '@opentelemetry/resources';
-import { MeterProvider } from '@opentelemetry/sdk-metrics';
-import { SemanticResourceAttributes } from '@opentelemetry/semantic-conventions';
 import { Express, NextFunction, Request, Response } from 'express';
-import { createTracingSpan, logger, prometheusExporter } from '../monitor';
-
-const SERVICE_NAME = 'amazu-service-prometheus';
-
-// Create a new meter for the service;
-const meterProvider = new MeterProvider({
-    resource: new Resource({
-        [SemanticResourceAttributes.SERVICE_NAME]: SERVICE_NAME,
-    }),
-});
-
-meterProvider.addMetricReader(prometheusExporter);
-const meter = meterProvider.getMeter('amazu-service-prometheus');
-
-// Create a new metric
-const requestLatency = meter.createHistogram('http_request_latency', {
-    description: 'HTTP request latencies',
-});
-// Create a new counter metric for request count
-const requestCount = meter.createCounter('http_request_count', {
-    description: 'Count of total HTTP requests',
-});
-
-// Create a new counter metric for error count
-const errorCount = meter.createCounter('http_error_count', {
-    description: 'Count of HTTP requests that resulted in an error',
-});
+import { createTracingSpan, errorCount, logger, requestCount, requestLatency } from '../monitor';
 
 const getLabels = (req: Request, res: Response) => {
     return {
@@ -74,7 +45,7 @@ export const errorCountMiddleware = (err: any, req: Request, res: Response, next
     next(err);
 };
 
-export const performanceMiddlewares = (app: Express) => {
+export const metricsMiddlewares = (app: Express) => {
     app.use(latencyMiddleware);
     app.use(requestCountMiddleware);
     app.use(errorCountMiddleware);
