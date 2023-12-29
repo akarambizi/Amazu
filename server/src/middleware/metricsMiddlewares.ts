@@ -5,7 +5,7 @@ const getLabels = (req: Request, res: Response) => {
     return {
         method: req.method,
         path: req.originalUrl,
-        http_status_code: res.statusCode,
+        http_status_code: res.statusCode.toString(),
         service_name: SERVICE_NAME_PROMETHEUS,
         http_route: req.baseUrl || req.route.path,
         span_kind: 'SPAN_KIND_SERVER',
