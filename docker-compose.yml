@@ -19,6 +19,7 @@ services:
         build: ./server
         ports:
             - 5000:5000
+            - 9464:9464 # prometheus
         volumes:
             - ./server:/app
             - /app/server/node_modules
@@ -32,5 +33,16 @@ services:
         image: openzipkin/zipkin
         ports:
             - '9411:9411'
+        depends_on:
+            - server
+
+    prometheus:
+        image: prom/prometheus
+        volumes:
+          - ./server/prometheus.yml:/etc/prometheus/prometheus.yml
+        command:
+          - '--config.file=/etc/prometheus/prometheus.yml'
+        ports:
+            - 9090:9090
         depends_on:
             - server

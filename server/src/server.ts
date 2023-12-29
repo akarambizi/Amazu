@@ -1,6 +1,6 @@
 import app from "./app";
 import { connectDB } from "./database/dbConnect";
-import { logger } from "./utils";
+import { logger } from "./monitor";
 
 const port = process.env.PORT || '5000';
 

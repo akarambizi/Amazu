@@ -1,15 +1,10 @@
 import dotenv from 'dotenv';
 import mongoose from 'mongoose';
 import path from 'path';
-import { logger } from '../utils/logger';
+import { logger } from '../monitor/logger';
+import { getMongoUri } from '../utils';
 
 dotenv.config({ path: path.resolve(__dirname, '../.env') });
-
-const getMongoUri = () => {
-    const isDocker = process.env.DOCKER_ENV === 'true';
-    const mongoUri = isDocker ? process?.env?.MONGO_URI_DOCKER : process?.env?.MONGO_URI_LOCAL;
-    return mongoUri ?? '';
-};
 
 // Connects to MongoDB and handles any connection errors.
 export const connectDB = async () => {

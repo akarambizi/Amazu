@@ -3,15 +3,15 @@ import 'dotenv/config';
 import express from 'express';
 import morgan from 'morgan';
 import swaggerUi from 'swagger-ui-express';
-import { swaggerDocs } from '../swagger';
-import { performanceMiddlewares } from './middleware';
+import swaggerDocs from '../swagger.json';
+import { metricsMiddlewares } from './middleware';
+import { logger } from './monitor';
 import routes from './routes';
-import { logger, wrapWithTracingSpan } from './utils';
 
 const app = express();
 
-// Apply performance monitoring middlewares
-performanceMiddlewares(app);
+// Apply metrics monitoring middlewares
+metricsMiddlewares(app);
 
 // Use the cors middleware to enable Cross Origin Resource Sharing
 // This allows client applications from different domains to interact with the API.
@@ -34,9 +34,9 @@ app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocs, { explorer: t
 app.use(routes);
 
 // 404 handler
-app.use(wrapWithTracingSpan((req, res) => {
+app.use((req, res) => {
     logger.warn(`404 Not Found: ${req.method} ${req.originalUrl}`);
     res.status(404).send({ error: 'Not Found', message: 'The requested resource could not be found' });
-}, '404Handler'));
+});
 
 export default app;
