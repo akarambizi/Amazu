@@ -1,12 +1,9 @@
-import { PrometheusExporter } from '@opentelemetry/exporter-prometheus';
-import { Resource } from '@opentelemetry/resources';
-import { MeterProvider } from '@opentelemetry/sdk-metrics';
-import { SemanticResourceAttributes } from '@opentelemetry/semantic-conventions';
+import { ExporterConfig, PrometheusExporter } from '@opentelemetry/exporter-prometheus';
 import { logger } from './logger';
 
 // Add your port and startServer to the Prometheus options
-const options = { port: 9464, startServer: true };
+const options: ExporterConfig = { port: 9464 };
 
 export const prometheusExporter = new PrometheusExporter(options, () => {
-    logger.info('Prometheus exporter is live on port 9464.');
+    logger.info(`Prometheus is live on http://localhost:${options.port}/metrics`);
 });
