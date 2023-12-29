@@ -2,7 +2,7 @@ import { Resource } from '@opentelemetry/resources';
 import { MeterProvider } from '@opentelemetry/sdk-metrics';
 import { SemanticResourceAttributes } from '@opentelemetry/semantic-conventions';
 import { Express, NextFunction, Request, Response } from 'express';
-import { createTracingSpan, logger, prometheusExporter } from '../utils';
+import { createTracingSpan, logger, prometheusExporter } from '../monitor';
 
 const SERVICE_NAME = 'amazu-service-prometheus';
 

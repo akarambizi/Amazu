@@ -1,7 +1,7 @@
 import dotenv from 'dotenv';
 import mongoose from 'mongoose';
 import path from 'path';
-import { logger } from '../utils/logger';
+import { logger } from '../monitor/logger';
 import { getMongoUri } from '../utils';
 
 dotenv.config({ path: path.resolve(__dirname, '../.env') });

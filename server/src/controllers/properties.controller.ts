@@ -1,6 +1,6 @@
 import { Request, Response } from 'express';
 import { Property } from '../models';
-import { logger } from '../utils';
+import { logger } from '../monitor';
 
 export const getAllProperties = async (req: Request, res: Response) => {
     try {

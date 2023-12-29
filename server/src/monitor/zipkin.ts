@@ -4,7 +4,7 @@ import { Resource } from '@opentelemetry/resources';
 import { BasicTracerProvider, ConsoleSpanExporter, SimpleSpanProcessor } from '@opentelemetry/sdk-trace-base';
 import { SemanticResourceAttributes } from '@opentelemetry/semantic-conventions';
 import { logger } from './logger';
-import { getZipkinUrl } from './environment';
+import { getZipkinUrl } from '../utils/environment';
 
 // Define the service name for the tracer
 export const SERVICE_NAME = 'amazu-service-tracer';

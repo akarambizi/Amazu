@@ -1,6 +1,6 @@
 import { SpanStatusCode } from '@opentelemetry/api';
 import { Request, RequestHandler, Response } from 'express';
-import trace, { SERVICE_NAME } from './setupTracer';
+import trace, { SERVICE_NAME } from './zipkin';
 
 /**
  * Creates a new middleware function that includes tracing capabilities.

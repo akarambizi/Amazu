@@ -5,8 +5,8 @@ import morgan from 'morgan';
 import swaggerUi from 'swagger-ui-express';
 import swaggerDocs from '../swagger.json';
 import { performanceMiddlewares } from './middleware';
+import { logger } from './monitor';
 import routes from './routes';
-import { logger } from './utils';
 
 const app = express();
 
