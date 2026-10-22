@@ -1,8 +1,8 @@
-import app from "./app";
-import { connectDB } from "./database/dbConnect";
-import { logger } from "./monitor";
+import app from './app';
+import { connectDB } from './database/dbConnect';
+import { logger } from './monitor';
 
-const port = process.env.PORT || '5000';
+const port = process.env.PORT || '5050';
 
 connectDB().then(() => {
     app.listen(port, () => {

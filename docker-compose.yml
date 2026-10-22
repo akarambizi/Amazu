@@ -17,7 +17,7 @@ services:
     server:
         build: ./server
         ports:
-            - 5000:5000
+            - 5050:5050
             - 9464:9464 # prometheus
         volumes:
             - ./server:/app
