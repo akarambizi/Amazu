@@ -4,7 +4,7 @@
 FROM node:20-slim
 
 # Set working directory
-WORKDIR /app/server
+WORKDIR /app
 
 # Enable pnpm via corepack (ships with Node >=16.13)
 RUN corepack enable

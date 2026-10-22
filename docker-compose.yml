@@ -5,12 +5,12 @@ services:
             - 3000:3000
         volumes:
             - ./client:/app
-            - /app/client/node_modules
+            - /app/node_modules
         environment:
             - NODE_ENV=development
-            - REACT_APP_API_ENV=dev
+            - VITE_API_ENV=dev
             - DOCKER_ENV=true
-        command: yarn start
+        command: pnpm run start --host
         depends_on:
             - server
 
@@ -21,10 +21,9 @@ services:
             - 9464:9464 # prometheus
         volumes:
             - ./server:/app
-            - /app/server/node_modules
+            - /app/node_modules
         environment:
             - NODE_ENV=development
-            - REACT_APP_API_ENV=dev
             - DOCKER_ENV=true
             - MONGO_URI_DOCKER=mongodb://mongo:27017/Amazu
         command: pnpm run serve

@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
-import { ReactComponent as OpenSvg } from '../../assets/images/icon-bars.svg';
-import { ReactComponent as CloseSvg } from '../../assets/images/icon-cross.svg';
+import OpenSvg from '../../assets/images/icon-bars.svg?react';
+import CloseSvg from '../../assets/images/icon-cross.svg?react';
 import { Wrapper } from '../../styles/elements';
 import * as Styles from './Header.styles';
 

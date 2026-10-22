@@ -8,6 +8,7 @@
 
 # testing
 /coverage
+**/coverage
 /server/bin
 /server/obj
 /server/.vs

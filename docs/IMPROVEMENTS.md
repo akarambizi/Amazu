@@ -42,50 +42,64 @@ everything else.
 
 ## 3. Security & input handling
 
-- [ ] Add a validation library (Zod recommended, matches TypeScript well)
+- [x] Add a validation library (Zod recommended, matches TypeScript well)
   for all request bodies — currently Mongoose schema validation is the
   only defense, and it runs after a request is already accepted.
-- [ ] Add `helmet` to `server/src/app.ts` for standard security headers —
+- [x] Add `helmet` to `server/src/app.ts` for standard security headers —
   currently absent.
-- [ ] Add rate limiting (`express-rate-limit`) at least on the future
+- [x] Add rate limiting (`express-rate-limit`) at least on the future
   sign-in endpoint, to blunt brute-force attempts once auth exists.
-- [ ] Restrict CORS to known origins in production — `cors()` with no
-  options currently allows any origin.
+  (Applied globally via env-configurable middleware in `app.ts`; narrow
+  further once the sign-in endpoint exists.)
+- [x] Restrict CORS to known origins in production — `cors()` with no
+  options currently allows any origin. (Now reads `CORS_ORIGINS` from
+  env, see `server/.env.example`.)
 - [ ] `npm audit` / `yarn audit` on both workspaces once dependencies are
   updated — likely several known vulnerabilities given the dependency age.
+  (Deferred: run once on `main` after this PR merges, as its own
+  follow-up — fixing audit findings is a distinct piece of work from the
+  tooling migration itself.)
 
 ## 4. Developer experience / environment
 
-- [ ] Add `server/.env.example` (referenced as a prerequisite in
+- [x] Add `server/.env.example` (referenced as a prerequisite in
   `specs/001-authentication/plan.md` for `JWT_SECRET`, and already
   overdue for the existing `MONGO_URI`).
-- [ ] Add MongoDB to `docker-compose.yml` as its own service so the whole
+- [x] Add MongoDB to `docker-compose.yml` as its own service so the whole
   stack — not just client/server/observability — comes up with one
   command, instead of requiring a natively-installed MongoDB
   (`server/src/docs/database.md`'s current instructions).
-- [ ] Resolve the dual lockfile in `server/` (`package-lock.json` +
+- [x] Resolve the dual lockfile in `server/` (`package-lock.json` +
   `yarn.lock>` — pick one, delete the other, document the choice).
-- [ ] Write a root `README.md` — there currently isn't one at all (only
+  (Both workspaces migrated to pnpm; `pnpm-lock.yaml` is now the single
+  lockfile in `client/`, `server/`, and the repo root.)
+- [x] Write a root `README.md` — there currently isn't one at all (only
   the default, unedited CRA README inside `client/`). Should cover: what
   Amazu is, how to run it locally (Docker and non-Docker paths), links to
   `docs/AUDIT.md`, `specs/`, and the existing `server/src/docs/*.md`
   files, and the monitoring stack (Grafana/Prometheus/Zipkin URLs once
   running).
-- [ ] Consider a `Makefile` (or npm/yarn workspace scripts at the repo
+- [x] Consider a `Makefile` (or npm/yarn workspace scripts at the repo
   root) so `make up` / `make test` work across both `client/` and
   `server/` without `cd`-ing into each — similar to the pattern already
   used in your FitTrack project.
 
 ## 5. Dependency / platform modernization
 
-- [ ] CRA (`react-scripts`) is in maintenance mode upstream — consider a
+- [x] CRA (`react-scripts`) is in maintenance mode upstream — consider a
   migration path to Vite once the app is otherwise stable (not urgent,
   but worth knowing CRA won't get meaningful updates going forward).
-- [ ] React 18 → latest, TypeScript 5.2 → latest, and the rest of both
+  (Migrated: `client/` now runs on Vite + Vitest, see `vite.config.ts`.)
+- [x] React 18 → latest, TypeScript 5.2 → latest, and the rest of both
   dependency trees — do this as its own PR (or a few, grouped logically)
   before building heavily on top of 2-years-stale packages, rather than
   mixing dependency bumps into feature PRs.
-- [ ] Remove `@types/axios` from `client/package.json` — axios ships its
+  (Bumped within the same majors on both workspaces. Deliberately
+  deferred riskier majors: Express 5, ESLint 9 flat config, TypeScript 7,
+  Mongoose 9, React 19, react-router-dom 7, styled-components 6, and
+  `react-query` v3 → `@tanstack/react-query` v4/v5 — each is its own
+  breaking-change PR.)
+- [x] Remove `@types/axios` from `client/package.json` — axios ships its
   own types natively since v0.14+; this devDependency is dead weight that
   can actually conflict with the real types.
 

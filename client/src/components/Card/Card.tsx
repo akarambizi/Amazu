@@ -1,6 +1,6 @@
-import { ReactComponent as IconAreaSvg } from '../../assets/images/icon-area.svg';
-import { ReactComponent as IconBathRoomSvg } from '../../assets/images/icon-bathroom.svg';
-import { ReactComponent as IconBedSvg } from '../../assets/images/icon-bed.svg';
+import IconAreaSvg from '../../assets/images/icon-area.svg?react';
+import IconBathRoomSvg from '../../assets/images/icon-bathroom.svg?react';
+import IconBedSvg from '../../assets/images/icon-bed.svg?react';
 import { Text } from '../../styles/elements';
 import { CardContent, CardIcons, CardImageLink, CardLink, CardWrapper } from './Card.styles';
 import { ICardProps } from './Card.types';

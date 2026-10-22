@@ -1,24 +1,27 @@
 # Dockerfile
 
-# Base image
-FROM node:16
+# Base image (Node 20 LTS; Node 16 reached end-of-life)
+FROM node:20-slim
 
 # Set working directory
-WORKDIR /app/client
+WORKDIR /app
 
-# Copy package.json and yarn.lock
-COPY package.json yarn.lock ./
+# Enable pnpm via corepack (ships with Node >=16.13)
+RUN corepack enable
 
 ENV HUSKY_SKIP_INSTALL=1
 
-# Install dependencies
-RUN yarn install --ignore-scripts
+# Copy package.json, pnpm-lock.yaml and pnpm config
+COPY package.json pnpm-lock.yaml .npmrc ./
 
-# Copy the rest of your app's source code
+# Install dependencies using the lockfile as-is
+RUN pnpm install --frozen-lockfile --ignore-scripts
+
+# Copy the rest of the app's source code
 COPY . ./
 
 # Expose port 3000
 EXPOSE 3000
 
-# Start the app
-CMD ["yarn", "start"]
+# Start the Vite dev server
+CMD ["pnpm", "run", "start", "--host"]

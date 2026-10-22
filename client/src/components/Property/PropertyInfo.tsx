@@ -1,6 +1,6 @@
-import { ReactComponent as IconAreaSvg } from '../../assets/images/icon-area.svg';
-import { ReactComponent as IconBathRoomSvg } from '../../assets/images/icon-bathroom.svg';
-import { ReactComponent as IconBedSvg } from '../../assets/images/icon-bed.svg';
+import IconAreaSvg from '../../assets/images/icon-area.svg?react';
+import IconBathRoomSvg from '../../assets/images/icon-bathroom.svg?react';
+import IconBedSvg from '../../assets/images/icon-bed.svg?react';
 import * as Styles from './Property.styles';
 
 export const PropertyInfo = () => {
@@ -51,9 +51,10 @@ export const PropertyInfo = () => {
             <Styles.PropertyInfoSection>
                 <h4>Description</h4>
                 <p className="description">
-                    From the outside this house looks warm and cozy. It has been built with spruce wood and has sandstone decorations. Small, rectangular windows let in plenty of light and have been added to the house in a mostly asymmetric way. The house is equipped with an old-fashioned kitchen
-                    and two bathrooms, it also has a small living room, three bedrooms, a grand dining area and a large storage room. The building is square shaped. The house is partially surrounded by glass overhanging panels on two sides. The second floor is bigger than the first, which creates a
-                    stylish overhang around half the house. This floor has a very different style than the floor below.
+                    From the outside this house looks warm and cozy. It has been built with spruce wood and has sandstone decorations. Small, rectangular windows let in plenty of light and have been
+                    added to the house in a mostly asymmetric way. The house is equipped with an old-fashioned kitchen and two bathrooms, it also has a small living room, three bedrooms, a grand
+                    dining area and a large storage room. The building is square shaped. The house is partially surrounded by glass overhanging panels on two sides. The second floor is bigger than the
+                    first, which creates a stylish overhang around half the house. This floor has a very different style than the floor below.
                 </p>
             </Styles.PropertyInfoSection>
         </Styles.PropertyInfoContainer>
