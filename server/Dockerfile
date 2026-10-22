@@ -1,25 +1,28 @@
 # Dockerfile
 
-# Base image
-FROM node:16
+# Base image (Node 20 LTS; Node 16 reached end-of-life)
+FROM node:20-slim
 
 # Set working directory
 WORKDIR /app/server
 
-# Copy package.json and yarn.lock
-COPY package.json yarn.lock ./
+# Enable pnpm via corepack (ships with Node >=16.13)
+RUN corepack enable
 
-# Install dependencies
-RUN yarn install --ignore-scripts
+# Copy package.json, pnpm-lock.yaml and pnpm config
+COPY package.json pnpm-lock.yaml .npmrc ./
+
+# Install dependencies using the lockfile as-is
+RUN pnpm install --frozen-lockfile --ignore-scripts
 
 # Copy the rest of the app's source code
 COPY . ./
 
 # Build the app
-RUN yarn build
+RUN pnpm run build
 
 # Expose port 5000
 EXPOSE 5000
 
 # Start the server
-CMD ["yarn", "serve"]
+CMD ["pnpm", "run", "serve"]

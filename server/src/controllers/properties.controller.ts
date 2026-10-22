@@ -31,6 +31,7 @@ export const getProperty = async (req: Request, res: Response) => {
         if (!property) {
             logger.warn(`Property not found: ${req.params.id}`);
             res.status(404).send();
+            return;
         }
         logger.info(`Property retrieved successfully: ${req.params.id}`);
         res.send(property);
@@ -48,6 +49,7 @@ export const updateProperty = async (req: Request, res: Response) => {
     if (!isValidOperation) {
         logger.warn(`Invalid updates attempted for property: ${req.params.id}`, req.body);
         res.status(400).send({ error: 'Invalid updates!' });
+        return;
     }
 
     try {
@@ -56,6 +58,7 @@ export const updateProperty = async (req: Request, res: Response) => {
         if (!property) {
             logger.warn(`Property not found: ${req.params.id}`);
             res.status(404).send();
+            return;
         }
 
         logger.info(`Property updated successfully: ${req.params.id}`);
@@ -73,6 +76,7 @@ export const deleteProperty = async (req: Request, res: Response) => {
         if (!property) {
             logger.warn(`Property not found: ${req.params.id}`);
             res.status(404).send();
+            return;
         }
 
         logger.info(`Property deleted successfully: ${req.params.id}`);

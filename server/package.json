@@ -3,6 +3,7 @@
     "version": "1.0.0",
     "main": "dist/server.js",
     "license": "MIT",
+    "packageManager": "pnpm@10.17.1",
     "scripts": {
         "build": "rimraf dist && tsc",
         "start": "tsc-watch --onSuccess \"nodemon dist/src/server.js\"",

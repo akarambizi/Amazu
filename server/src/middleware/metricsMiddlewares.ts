@@ -7,7 +7,10 @@ const getLabels = (req: Request, res: Response) => {
         path: req.originalUrl,
         http_status_code: res.statusCode.toString(),
         service_name: SERVICE_NAME_PROMETHEUS,
-        http_route: req.baseUrl || req.route.path,
+        // req.route is only set when a route handler matched; unmatched requests
+        // (e.g. the catch-all 404 handler in app.ts) would otherwise throw here and
+        // crash the process entirely.
+        http_route: req.baseUrl || req.route?.path || req.originalUrl,
         span_kind: 'SPAN_KIND_SERVER',
     };
 };

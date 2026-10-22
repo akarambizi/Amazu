@@ -2,6 +2,7 @@
     "name": "amazu",
     "version": "1.0.0",
     "private": true,
+    "packageManager": "pnpm@10.17.1",
     "description": "Shared repo-level tooling for Amazu (client + server are independent pnpm projects).",
     "scripts": {
         "prepare": "husky",

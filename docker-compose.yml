@@ -1,4 +1,3 @@
-version: '3.8'
 services:
     client:
         build: ./client
@@ -27,7 +26,17 @@ services:
             - NODE_ENV=development
             - REACT_APP_API_ENV=dev
             - DOCKER_ENV=true
-        command: yarn serve
+            - MONGO_URI_DOCKER=mongodb://mongo:27017/Amazu
+        command: pnpm run serve
+        depends_on:
+            - mongo
+
+    mongo:
+        image: mongo:7
+        ports:
+            - '27017:27017'
+        volumes:
+            - amazu-mongo-data:/data/db
 
     zipkin:
         image: openzipkin/zipkin
@@ -53,3 +62,6 @@ services:
             - 4000:3000
         depends_on:
             - prometheus
+
+volumes:
+    amazu-mongo-data:
