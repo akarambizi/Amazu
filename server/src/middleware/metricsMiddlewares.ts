@@ -31,7 +31,7 @@ export const latencyMiddleware = (req: Request, res: Response, next: NextFunctio
     next();
 };
 
-export const errorCountMiddleware = (err: any, req: Request, res: Response, next: NextFunction) => {
+export const errorCountMiddleware = (err: unknown, req: Request, res: Response, next: NextFunction) => {
     if (res.statusCode >= 400) {
         // Increment the error count
         const labels = getLabels(req, res);
