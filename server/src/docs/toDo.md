@@ -1,15 +1,13 @@
 # To-Do List
 
-## Routes
-
-- [ ] **User routes**: These could include routes for user registration, login, logout, and profile management.
-
-- [ ] **Booking routes**: These would handle creating, viewing, updating, and cancelling bookings.
-
-- [ ] **Search routes**: These would allow users to search for properties based on various criteria, such as location, price, number of bedrooms, and availability dates.
-
-- [ ] **Review routes**: These would allow users to create, view, update, and delete reviews for properties.
-
-- [ ] **Payment routes**: These would handle payment processing, including creating and viewing transactions.
-
-- [ ] **Admin routes**: These would be used by administrators to manage properties, users, bookings, and reviews.
+> **Superseded** — this list has been turned into tracked specs under
+> `specs/` at the repo root, each with user stories, acceptance criteria,
+> and (for authentication) a task-by-task implementation plan:
+>
+> - User routes → [`specs/001-authentication/`](../../../specs/001-authentication/spec.md)
+> - Booking, search, review, payment, admin routes →
+>   [`specs/002-core-marketplace-features/`](../../../specs/002-core-marketplace-features/spec.md)
+>
+> See `specs/001-authentication/tasks.md` for the current, checkbox-level
+> progress tracker. This file is kept for history; update the specs above,
+> not this file, going forward.
