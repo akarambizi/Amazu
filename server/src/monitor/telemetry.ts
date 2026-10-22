@@ -45,7 +45,7 @@ const getSpanAttributes = (req: Request, res: Response) => {
         'http.method': req.method,
         'http.status_code': res.statusCode,
         'http.status_text': res.statusMessage,
-        'http.route': req.baseUrl || req.route.path,
+        'http.route': req.baseUrl || req.route?.path || req.originalUrl,
         'http.request_content_length': req.headers['content-length'] || 0,
         'http.response_content_length': res.getHeader('content-length') || 0,
         'http.user_agent': req.headers['user-agent'] || '',
@@ -55,7 +55,7 @@ const getSpanAttributes = (req: Request, res: Response) => {
     };
 
     return attributes;
-}
+};
 
 /**
  * Create a new tracing span for an HTTP request and response.
@@ -65,7 +65,7 @@ const getSpanAttributes = (req: Request, res: Response) => {
  */
 export const createTracingSpan = (req: Request, res: Response) => {
     const tracer = trace.getTracer(SERVICE_NAME, '0.1.0');
-    const operationName = `${req.baseUrl || req.route.path}`;
+    const operationName = `${req.baseUrl || req.route?.path || req.originalUrl}`;
     const span = tracer.startSpan(operationName);
 
     const attributes = getSpanAttributes(req, res);

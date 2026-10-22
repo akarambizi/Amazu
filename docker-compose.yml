@@ -1,4 +1,3 @@
-version: '3.8'
 services:
     client:
         build: ./client
@@ -6,28 +5,37 @@ services:
             - 3000:3000
         volumes:
             - ./client:/app
-            - /app/client/node_modules
+            - /app/node_modules
         environment:
             - NODE_ENV=development
-            - REACT_APP_API_ENV=dev
+            - VITE_API_ENV=dev
             - DOCKER_ENV=true
-        command: yarn start
+        command: pnpm run start --host
         depends_on:
             - server
 
     server:
         build: ./server
         ports:
-            - 5000:5000
+            - 5050:5050
             - 9464:9464 # prometheus
         volumes:
             - ./server:/app
-            - /app/server/node_modules
+            - /app/node_modules
         environment:
             - NODE_ENV=development
-            - REACT_APP_API_ENV=dev
             - DOCKER_ENV=true
-        command: yarn serve
+            - MONGO_URI_DOCKER=mongodb://mongo:27017/Amazu
+        command: pnpm run serve
+        depends_on:
+            - mongo
+
+    mongo:
+        image: mongo:7
+        ports:
+            - '27017:27017'
+        volumes:
+            - amazu-mongo-data:/data/db
 
     zipkin:
         image: openzipkin/zipkin
@@ -53,3 +61,6 @@ services:
             - 4000:3000
         depends_on:
             - prometheus
+
+volumes:
+    amazu-mongo-data:

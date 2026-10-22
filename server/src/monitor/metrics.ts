@@ -1,18 +1,18 @@
-import { Resource } from '@opentelemetry/resources';
+import { resourceFromAttributes } from '@opentelemetry/resources';
 import { MeterProvider } from '@opentelemetry/sdk-metrics';
-import { SemanticResourceAttributes } from '@opentelemetry/semantic-conventions';
+import { ATTR_SERVICE_NAME } from '@opentelemetry/semantic-conventions';
 import { prometheusExporter } from './prometheus';
 
 export const SERVICE_NAME_PROMETHEUS = 'amazu-service-prometheus';
 
 // Create a new meter for the service;
 const meterProvider = new MeterProvider({
-    resource: new Resource({
-        [SemanticResourceAttributes.SERVICE_NAME]: SERVICE_NAME_PROMETHEUS,
+    resource: resourceFromAttributes({
+        [ATTR_SERVICE_NAME]: SERVICE_NAME_PROMETHEUS,
     }),
+    readers: [prometheusExporter],
 });
 
-meterProvider.addMetricReader(prometheusExporter);
 const meter = meterProvider.getMeter('amazu-service-prometheus');
 
 // Create a new metric

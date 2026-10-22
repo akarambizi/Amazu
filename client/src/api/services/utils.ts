@@ -5,9 +5,9 @@
  */
 export const getUrl = (path: string) => {
     let baseUrl;
-    switch (process.env.REACT_APP_API_ENV) {
+    switch (import.meta.env.VITE_API_ENV) {
         case 'dev':
-            baseUrl = 'http://localhost:5000'; // dev server
+            baseUrl = 'http://localhost:5050'; // dev server
             break;
         case 'mock':
             baseUrl = 'http://localhost:4200'; // mock server
