@@ -1,7 +1,7 @@
 # Dockerfile
 
 # Base image (Node 20 LTS; Node 16 reached end-of-life)
-FROM node:20-slim
+FROM node:25-slim
 
 # Set working directory
 WORKDIR /app
