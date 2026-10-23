@@ -1,0 +1,36 @@
+# Config for actions/labeler - auto-labels PRs by changed file paths.
+# See .github/workflows/labeler.yml.
+
+area/client:
+  - changed-files:
+      - any-glob-to-any-file: 'client/**'
+
+area/server:
+  - changed-files:
+      - any-glob-to-any-file: 'server/**'
+
+area/docs:
+  - changed-files:
+      - any-glob-to-any-file:
+          - 'docs/**'
+          - '**/*.md'
+          - 'specs/**'
+
+area/ci:
+  - changed-files:
+      - any-glob-to-any-file:
+          - '.github/**'
+          - 'Makefile'
+
+area/docker:
+  - changed-files:
+      - any-glob-to-any-file:
+          - '**/Dockerfile'
+          - 'docker-compose.yml'
+          - '**/.dockerignore'
+
+dependencies:
+  - changed-files:
+      - any-glob-to-any-file:
+          - '**/package.json'
+          - '**/pnpm-lock.yaml'

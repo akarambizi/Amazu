@@ -1,0 +1,66 @@
+# Source of truth for repo labels, applied by .github/workflows/label-sync.yml
+# (via EndBug/label-sync). Edit here, don't edit labels directly in the GitHub UI.
+
+- name: 'bug'
+  color: 'd73a4a'
+  description: "Something isn't working"
+
+- name: 'enhancement'
+  color: 'a2eeef'
+  description: 'New feature or request'
+
+- name: 'documentation'
+  color: '0075ca'
+  description: 'Improvements or additions to documentation'
+
+- name: 'dependencies'
+  color: '0366d6'
+  description: 'Dependency updates (Dependabot or manual)'
+
+- name: 'area/client'
+  color: 'c2e0c6'
+  description: 'React/Vite client'
+
+- name: 'area/server'
+  color: 'fef2c0'
+  description: 'Express/TypeScript server'
+
+- name: 'area/ci'
+  color: 'bfd4f2'
+  description: 'GitHub Actions, Dependabot, repo tooling'
+
+- name: 'area/docs'
+  color: 'd4c5f9'
+  description: 'docs/, README, specs/'
+
+- name: 'area/docker'
+  color: 'c5def5'
+  description: 'Dockerfiles, docker-compose.yml'
+
+- name: 'breaking-change'
+  color: 'b60205'
+  description: 'Deliberately deferred major-version bump (see docs/IMPROVEMENTS.md)'
+
+- name: 'good first issue'
+  color: '7057ff'
+  description: 'Good for newcomers'
+
+- name: 'help wanted'
+  color: '008672'
+  description: 'Extra attention is needed'
+
+- name: 'question'
+  color: 'd876e3'
+  description: 'Further information is requested'
+
+- name: 'wontfix'
+  color: 'ffffff'
+  description: 'This will not be worked on'
+
+- name: 'duplicate'
+  color: 'cfd3d7'
+  description: 'This issue or pull request already exists'
+
+- name: 'invalid'
+  color: 'e4e669'
+  description: "This doesn't seem right"
